@@ -6,7 +6,7 @@ project: tm70
 
 # Force payu to always find, and save, files in this scratch project directory
 # (you may need to add the corresponding PBS -l storage flag in sync_data.sh)
-shortpath: /scratch/tm70/as2285/experiments/cice650_debug
+shortpath: /scratch/tm70/as2285/experiments/cice650_netcdf
 
 queue: normal
 ncpus: 48
@@ -18,9 +18,9 @@ jobname: 1deg_jra55do_ryf_cice650
 
 model: access-om3
 
-# exe: /g/data/ik11/inputs/access-om3/bin/access-om3-MOM6-CICE6-fdaa3a6
-# exe: /g/data/tm70/as2285/access-om3/bin/access-om3-MOM6-CICE6-37f9856-modified
-exe: /g/data/tm70/as2285/access-om3/bin/access-om3-MOM6-CICE6-Debug-37f9856-modified-37f9856-modified
+exe: /g/data/ik11/inputs/access-om3/bin/access-om3-MOM6-CICE6-fdaa3a6
+# exe: /g/data/tm70/as2285/access-om3/bin/access-om3-MOM6-CICE6-Debug-4c25570-modified
+
 input: 
     - /g/data/ik11/inputs/access-om3/0.x.0/1deg/share # shared grids and topography
     - /g/data/ik11/inputs/access-om3/0.x.0/1deg/mom # grids, ICs etc
@@ -34,7 +34,9 @@ runlog: false
 modules:
   use:
       - /g/data/ik11/spack/0.20.1/modules/access-om3/0.x.0/linux-rocky8-cascadelake
+   
   load:
       - intel-compiler/2021.6.0
       - openmpi/4.1.4
-      - parallelio/2.5.10
+      # - parallelio/2.5.10
+      - esmf/8.4.2
