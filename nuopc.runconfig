@@ -1,12 +1,12 @@
 DRIVER_attributes::
-     Verbosity = off
+     Verbosity = max
      cime_model = cesm
      drv_restart_pointer = rpointer.cpl
      logFilePostFix = .log
      outPathRoot = ./
      pio_blocksize = -1
      pio_buffer_size_limit = -1
-     pio_debug_level = 0
+     pio_debug_level = 2
      pio_rearr_comm_enable_hs_comp2io = .true.
      pio_rearr_comm_enable_hs_io2comp = .false.
      pio_rearr_comm_enable_isend_comp2io = .false.
@@ -311,7 +311,7 @@ ATM_attributes::
 ::
 
 ICE_attributes::
-     Verbosity = off
+     Verbosity = max
 ::
 
 GLC_attributes::
@@ -353,10 +353,10 @@ ATM_modelio::
      logfile = atm.log
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
-     pio_numiotasks = -99
-     pio_rearranger = 1
-     pio_root = 1
-     pio_stride = 48
+     pio_numiotasks = 48
+     pio_rearranger = 2
+     pio_root = 0
+     pio_stride = 1
      pio_typename = netcdf
 ::
 
@@ -367,7 +367,7 @@ LND_modelio::
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
      pio_rearranger = 2
-     pio_root = 1
+     pio_root = 2
      pio_stride = 48
      pio_typename = netcdf
 ::
@@ -376,12 +376,12 @@ ICE_modelio::
      diro = ./log
      logfile = ice.log
      pio_async_interface = .false.
-     pio_netcdf_format = 64bit_offset
-     pio_numiotasks = -99
+     pio_netcdf_format = nothing
+     pio_numiotasks = 48
      pio_rearranger = 2
-     pio_root = 1
-     pio_stride = 48
-     pio_typename = netcdf
+     pio_root = 0
+     pio_stride = 1
+     pio_typename = netcdf4p
 ::
 
 OCN_modelio::
@@ -410,7 +410,7 @@ ROF_modelio::
 
 GLC_modelio::
      diro = ./log
-     logfile = glc/log
+     logfile = glc.log
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
