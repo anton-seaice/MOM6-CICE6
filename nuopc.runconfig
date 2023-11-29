@@ -6,7 +6,7 @@ DRIVER_attributes::
      outPathRoot = ./
      pio_blocksize = -1
      pio_buffer_size_limit = -1
-     pio_debug_level = 2
+     pio_debug_level = 4
      pio_rearr_comm_enable_hs_comp2io = .true.
      pio_rearr_comm_enable_hs_io2comp = .false.
      pio_rearr_comm_enable_isend_comp2io = .false.
