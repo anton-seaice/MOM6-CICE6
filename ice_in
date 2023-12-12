@@ -74,7 +74,7 @@
   maskhalo_bound = .true.
   maskhalo_dyn = .true.
   maskhalo_remap = .true.
-  max_blocks = 10
+  max_blocks = 50
   ns_boundary_type = "tripole"
   nx_global = 360
   ny_global = 300
