@@ -60,93 +60,15 @@ SAVE_INITIAL_CONDS = True       !   [Boolean] default = False
                                 ! If true, write the initial conditions to a file given by IC_OUTPUT_FILE.
 
 ! === module MOM_domains ===
-
-TRIPOLAR_N = True
-                                ! "[Boolean] default = False
-                                ! Use tripolar connectivity at the northern edge of the
-                                ! domain.  With TRIPOLAR_N, NIGLOBAL must be even."
-
-NIHALO = 4
-                                ! "default = 2
-                                ! The number of halo points on each side in the
-                                ! x-direction.  With STATIC_MEMORY_ this is set as NIHALO_
-                                ! in MOM_memory.h at compile time; without STATIC_MEMORY_
-                                ! the default is NIHALO_ in MOM_memory.h (if defined) or 2."
-
-NJHALO = 4
-                                ! "default = 2
-                                ! The number of halo points on each side in the
-                                ! y-direction.  With STATIC_MEMORY_ this is set as NJHALO_
-                                ! in MOM_memory.h at compile time; without STATIC_MEMORY_
-                                ! the default is NJHALO_ in MOM_memory.h (if defined) or 2."
-
-NIGLOBAL = 1440
-                                ! "The total number of thickness grid points in the
-                                ! x-direction in the physical domain. With STATIC_MEMORY_
-                                ! this is set in MOM_memory.h at compile time."
-
-NJGLOBAL = 1080
-                                ! "The total number of thickness grid points in the
-                                ! y-direction in the physical domain. With STATIC_MEMORY_
-                                ! this is set in MOM_memory.h at compile time.
-                                ! The number of processors in the x-direction. With
-                                ! STATIC_MEMORY_ this is set in MOM_memory.h at compile time.
-                                ! The number of processors in the x-direction. With
-                                ! STATIC_MEMORY_ this is set in MOM_memory.h at compile time.
-                                ! The processor layout that was acutally used."
-
-! === module MOM_verticalGrid ===
-NK = 100
-                                ! "[nondim]
-                                ! The number of model layers."
-
-! === module MOM_grid_init ===
-GRID_CONFIG = mosaic
-                                ! "A character string that determines the method for
-                                ! defining the horizontal grid.  Current options are:
-                                ! mosaic - read the grid from a mosaic (supergrid)
-                                ! file set by GRID_FILE.
-                                ! cartesian - use a (flat) Cartesian grid.
-                                ! spherical - use a simple spherical grid.
-                                ! mercator - use a Mercator spherical grid."
-
-GRID_FILE = ocean_hgrid.nc
-                                ! "Name of the file from which to read horizontal grid data."
-
-TOPO_CONFIG = file
-                                ! "This specifies how bathymetry is specified:
-                                ! file - read bathymetric information from the file
-                                ! specified by (TOPO_FILE).
-                                ! flat - flat bottom set to MAXIMUM_DEPTH.
-                                ! bowl - an analytically specified bowl-shaped basin
-                                ! ranging between MAXIMUM_DEPTH and MINIMUM_DEPTH.
-                                ! spoon - a similar shape to 'bowl', but with an vertical
-                                ! wall at the southern face.
-                                ! halfpipe - a zonally uniform channel with a half-sine
-                                ! profile in the meridional direction.
-                                ! benchmark - use the benchmark test case topography.
-                                ! DOME - use a slope and channel configuration for the
-                                ! DOME sill-overflow test case.
-                                ! DOME2D - use a shelf and slope configuration for the
-                                ! DOME2D gravity current/overflow test case.
-                                ! seamount - Gaussian bump for spontaneous motion test case.
-                                ! USER - call a user modified routine."
-
-TOPO_FILE = topog.nc
-                                ! "default = 'topog.nc'
-                                ! The file from which the bathymetry is read."
-
-MAXIMUM_DEPTH = 6000.0
-                                ! "[m]
-                                ! The maximum depth of the ocean."
-
-MINIMUM_DEPTH = 0.5
-                                ! "[m] default = 0.0
-                                ! If MASKING_DEPTH is unspecified, then anything shallower than
-                                ! MINIMUM_DEPTH is assumed to be land and all fluxes are masked out.
-                                ! If MASKING_DEPTH is specified, then all depths shallower than
-                                ! MINIMUM_DEPTH but depper than MASKING_DEPTH are rounded to
-                                ! MINIMUM_DEPTH."
+TRIPOLAR_N = True               !   [Boolean] default = False
+                                ! Use tripolar connectivity at the northern edge of the domain.  With
+                                ! TRIPOLAR_N, NIGLOBAL must be even.
+NIGLOBAL = 1440                  !
+                                ! The total number of thickness grid points in the x-direction in the physical
+                                ! domain. With STATIC_MEMORY_ this is set in MOM_memory.h at compile time.
+NJGLOBAL = 1080                  !
+                                ! The total number of thickness grid points in the y-direction in the physical
+                                ! domain. With STATIC_MEMORY_ this is set in MOM_memory.h at compile time.
 
 ! === module MOM_fixed_initialization ===
 INPUTDIR = "./input/"           ! default = "."
@@ -211,152 +133,13 @@ MAXIMUM_DEPTH = 6000.0          !   [m]
 
 ! === module MOM_verticalGrid ===
 ! Parameters providing information about the vertical grid.
-NK = 50                         !   [nondim]
+NK = 100                         !   [nondim]
                                 ! The number of model layers.
 
 ! === module MOM_EOS ===
-EQN_OF_STATE = "WRIGHT"         ! default = "WRIGHT"
-                                ! EQN_OF_STATE determines which ocean equation of state should be used.
-                                ! Currently, the valid choices are "LINEAR", "UNESCO", "WRIGHT", "NEMO" and
-                                ! "TEOS10". This is only used if USE_EOS is true.
-
-DTFREEZE_DP = -7.75e-08
-                                ! "[deg C Pa-1] default = 0.0
-                                ! When TFREEZE_FORM=LINEAR,
-                                ! this is the derivative of the freezing potential
-                                ! temperature with pressure."
-
-! === module MOM_surface_forcing ===
-RESTORE_SALINITY = True
-                                ! "[Boolean] default = False
-                                ! If true, the coupled driver will add a globally-balanced
-                                ! fresh-water flux that drives sea-surface salinity
-                                ! toward specified values."
-
-SALT_RESTORE_FILE = salt_sfc_restore.nc
-                                ! "default = salt_restore.nc
-                                ! A file in which to find the surface salinity to use for restoring."
-
-FLUXCONST = 0.11
-                                ! "[m day-1]
-                                ! The constant that relates the restoring surface fluxes
-                                ! to the relative surface anomalies (akin to a piston
-                                ! velocity).  Note the non-MKS units."
-
-MAX_DELTA_SRESTORE = 0.5
-                                ! "[PSU or g kg-1] default = 999.0
-                                ! The maximum salinity difference used in restoring terms."
-
-SRESTORE_AS_SFLUX = True
-                                ! "[Boolean] default = False
-                                ! If true, the restoring of salinity is applied as a salt
-                                ! flux instead of as a freshwater flux."
-
-MASK_SRESTORE_UNDER_ICE = False
-                                ! "[Boolean] default = False
-                                ! If true, disables SSS restoring under sea-ice based on a frazil
-                                ! criteria (SST<=Tf). Only used when RESTORE_SALINITY is True."
-
-ADJUST_NET_SRESTORE_TO_ZERO = True
-                                ! "[Boolean] default = RESTORE_SALINITY
-                                ! If true, adjusts the salinity restoring seen to zero
-                                ! whether restoring is via a salt flux or virtual precip."
-
-ADJUST_NET_FRESH_WATER_TO_ZERO = True
-                                ! "[Boolean] default = False
-                                ! If true, adjusts the net fresh-water forcing seen
-                                ! by the ocean (including restoring) to zero."
-
-GUST_CONST = 0.02
-                                ! "[Pa] default = 0.02
-                                !  The background gustiness in the winds."
-
-FIX_USTAR_GUSTLESS_BUG = True
-                                ! "[Boolean] default = False
-                                ! If true correct a bug in the time-averaging of the gustless wind
-                                ! friction velocity."
-
-! === module MOM_debugging ===
-DEBUG = False
-                                ! "If true, write out verbose debugging data."
-
-! === module MOM_ALE ===
-REGRIDDING_COORDINATE_MODE = ZSTAR
-                                ! "default = 'LAYER'
-                                ! Coordinate mode for vertical regridding.
-                                ! Choose among the following possibilities:
-                                ! LAYER - Isopycnal or stacked shallow water layers
-                                ! ZSTAR, Z* - stetched geopotential z*
-                                ! SIGMA_SHELF_ZSTAR - stetched geopotential z* ignoring shelf
-                                ! SIGMA - terrain following coordinates
-                                ! RHO   - continuous isopycnal
-                                ! HYCOM1 - HyCOM-like hybrid coordinate
-                                ! SLIGHT - stretched coordinates above continuous isopycnal
-                                ! ADAPTIVE - optimize for smooth neutral density surfaces"
-
-REMAP_UV_USING_OLD_ALG = False
-                                ! "[Boolean] default = True
-                                ! If true, uses the old remapping-via-a-delta-z method for remapping u and v. If
-                                ! false, uses the new method that remaps between grids described by an old and
-                                ! new thickness."
-
-REMAPPING_SCHEME = PPM_H4
-                                ! "default = 'PLM'
-                                ! This sets the reconstruction scheme used
-                                ! for vertical remapping for all variables.
-                                ! It can be one of the following schemes:
-                                ! PCM         (1st-order accurate)
-                                ! PLM         (2nd-order accurate)
-                                ! PPM_H4      (3rd-order accurate)
-                                ! PPM_IH4     (3rd-order accurate)
-                                ! PQM_IH4IH3  (4th-order accurate)
-                                ! PQM_IH6IH5  (5th-order accurate)"
-
-! === module MOM_regridding ===
-ALE_COORDINATE_CONFIG = "FILE:ocean_vgrid.nc,interfaces=zeta"
-                                ! "default = 'UNIFORM'
-                                ! Determines how to specify the coordinate
-                                ! resolution. Valid options are:
-                                ! PARAM       - use the vector-parameter ALE_RESOLUTION
-                                ! UNIFORM[:N] - uniformly distributed
-                                ! FILE:string - read from a file. The string specifies
-                                ! the filename and variable name, separated
-                                ! by a comma or space, e.g. FILE:lev.nc,dz
-                                ! or FILE:lev.nc,interfaces=zw
-                                ! WOA09[:N]   - the WOA09 vertical grid (approximately)
-                                ! FNC1:string - FNC1:dz_min,H_total,power,precision
-                                ! HYBRID:string - read from a file. The string specifies
-                                ! the filename and two variable names, separated
-                                ! by a comma or space, for sigma-2 and dz. e.g.
-                                ! HYBRID:vgrid.nc,sigma2,dz"
-
-! === module MOM_diabatic_driver ===
-USE_LEGACY_DIABATIC_DRIVER = False
-                                ! "[Boolean] default = True
-                                ! If true, use the a legacy version of the diabatic subroutine.
-                                ! This is temporary and is needed avoid change in answers."
-
-! === module MOM_ocean_model_nuopc ===
-DIABATIC_FIRST = True
-                                ! "[Boolean] default = False
-                                ! If true, apply diabatic and thermodynamic processes,
-                                ! including buoyancy forcing and mass gain or loss,
-                                ! before stepping the dynamics forward."
-
-OCEAN_SURFACE_STAGGER = A
-                                ! "default = 'C'
-                                ! A case-insensitive character string to indicate the
-                                ! staggering of the surface velocity field that is
-                                ! returned to the coupler.  Valid values include
-                                ! 'A', 'B', or 'C'."
-
-RESTART_CONTROL = 1
-                                ! "default = 1
-                                ! An integer whose bits encode which restart files are
-                                ! written. Add 2 (bit 1) for a time-stamped file, and odd
-                                ! (bit 0) for a non-time-stamped file. A non-time-stamped
-                                ! restart file is saved at the end of the run segment
-                                ! for any non-negative value."
+DTFREEZE_DP = -7.75E-08         !   [deg C Pa-1] default = 0.0
+                                ! When TFREEZE_FORM=LINEAR, this is the derivative of the freezing potential
+                                ! temperature with pressure.
 
 ! === module MOM_tracer_flow_control ===
 USE_IDEAL_AGE_TRACER = True     !   [Boolean] default = False

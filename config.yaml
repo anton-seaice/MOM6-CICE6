@@ -20,12 +20,16 @@ model: access-om3
 
 exe:  /g/data/ik11/spack/0.20.1/opt/linux-rocky8-cascadelake/intel-2021.6.0/access-om3-main-lxbeca7/bin/access-om3-MOM6-CICE6
 input: 
-    - /g/data/ik11/inputs/access-om3/0.x.0/025deg/share # shared grids and topography
+    - /g/data/ik11/inputs/access-om3/0.x.0/025deg/share/access-om2-025deg-ESMFmesh.nc # shared grids and topography
+    - /g/data/ik11/inputs/access-om3/0.x.0/025deg/share/access-om2-nomask-025deg-ESMFmesh.nc
+    - /g/data/ik11/inputs/access-om3/0.x.0/025deg/share/ocean_hgrid.nc
+    - /g/data/ik11/inputs/access-om3/0.x.0/025deg/share/ocean_mask.nc
+    - /g/data/ik11/inputs/access-om3/0.x.0/025deg/share/topog.nc
     - /g/data/ik11/inputs/access-om3/0.x.0/025deg/mom # grids, ICs etc
-    - /g/data/ik11/inputs/access-om3/0.x.0/025deg/cice # grids, ICs etc
-    - /g/data/tm70/as2285/om3-scripts/grid_generation/025deg/
+    - /g/data/tm70/as2285/om3-scripts/grid_generation/025deg/grid.nc
+    - /g/data/tm70/as2285/om3-scripts/grid_generation/025deg/kmt.nc
     - /g/data/ik11/inputs/access-om3/0.x.0/share/meshes/JRA55do-ESMFmesh.nc # mesh for JRA55-do stream
-    - /g/data/ik11/inputs/JRA-55/RYF/v1-4 # datm and drof JRA55-do streams data
+    - /g/data/ik11/inputs/JRA-55/RYF/v1-4/ # datm and drof JRA55-do streams data
  
 collate: false
 runlog: false
