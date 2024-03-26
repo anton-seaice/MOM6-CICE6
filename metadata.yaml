@@ -1,2 +1,8 @@
-experiment_uuid: 071afe24-6659-4385-baa0-28e6eb1f588e
+experiment_uuid: 826172ac-09e7-4941-a5f3-f91eb505f36d
 parent_experiment: 76c010c8-6f80-4600-bbd2-3135bed38cd5
+created: '2024-03-26'
+name: MOM6-CICE6-B-025deg_jra55do_ryf_iss101-826172ac
+model: ACCESS-OM3
+url: git@github.com:COSIMA/MOM6-CICE6.git
+contact: anton-climate
+email: anton.steketee@anu.edu.au
