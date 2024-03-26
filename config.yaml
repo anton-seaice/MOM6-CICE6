@@ -2,11 +2,11 @@
 
 # If submitting to a different project to your default, uncomment line below 
 # and change project code as appropriate; also set shortpath below
-project: tm70
+# project: x77
 
 # Force payu to always find, and save, files in this scratch project directory
 # (you may need to add the corresponding PBS -l storage flag in sync_data.sh)
-shortpath: /scratch/tm70
+# shortpath: /scratch/v45
 
 queue: normal
 ncpus: 240
@@ -23,6 +23,7 @@ input:
     - /g/data/ik11/inputs/access-om3/0.x.0/025deg/share # shared grids and topography
     - /g/data/ik11/inputs/access-om3/0.x.0/025deg/mom # grids, ICs etc
     - /g/data/ik11/inputs/access-om3/0.x.0/025deg/cice # grids, ICs etc
+    - /g/data/tm70/as2285/om3-scripts/grid_generation/025deg/
     - /g/data/ik11/inputs/access-om3/0.x.0/share/meshes/JRA55do-ESMFmesh.nc # mesh for JRA55-do stream
     - /g/data/ik11/inputs/JRA-55/RYF/v1-4 # datm and drof JRA55-do streams data
  

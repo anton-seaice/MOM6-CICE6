@@ -87,7 +87,7 @@ work/input/global_gx1v5_grid.nc:
     binhash: 341d37e811ef29789441c37d6ea8e5f1
     md5: bacabd01f14a75e4e68d136c3b7b9c54
 work/input/grid.nc:
-  fullpath: /g/data/ik11/inputs/access-om3/0.x.0/025deg/share/grid.nc
+  fullpath: /g/data/tm70/as2285/om3-scripts/grid_generation/025deg/grid.nc
   hashes:
     binhash: 0962dcfdeb454b2b0a192bba573f2c2d
     md5: 1967bc8dd2f8041f59bb4d98f856e3ed
@@ -97,7 +97,7 @@ work/input/i2o.nc:
     binhash: 26590c644b064b989abbb5dda467786c
     md5: ca16c9eef58814b9ff13fd5e8bd88a25
 work/input/kmt.nc:
-  fullpath: /g/data/ik11/inputs/access-om3/0.x.0/025deg/cice/kmt.nc
+  fullpath: /g/data/tm70/as2285/om3-scripts/grid_generation/025deg/kmt.nc
   hashes:
     binhash: a0ce4678336868ffb933aecc9d62db5f
     md5: 2e9743de8f4cb868d9802db8c8e6e9ca
