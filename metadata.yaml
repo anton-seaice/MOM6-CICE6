@@ -1,1 +1,7 @@
-experiment_uuid: 12bb2148-cbfd-43f4-8e21-b88cc883d59c
+experiment_uuid: a39872eb-ce6c-4732-b057-85b7ba046cfa
+created: '2024-06-19'
+name: MOM6-CICE6-1deg_jra55do_iaf.iss39.b_grid-a39872eb
+model: ACCESS-OM3
+url: git@github.com:COSIMA/MOM6-CICE6.git
+contact: anton-climate
+email: anton.steketee@anu.edu.au
