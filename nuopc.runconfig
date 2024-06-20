@@ -293,7 +293,7 @@ CLOCK_attributes::
      rof_cpl_dt = 3600
      start_tod = 0
      start_ymd = 19580101
-     stop_n = 5
+     stop_n = 10
      stop_option = nyears
      stop_tod = 0
      stop_ymd = -999
