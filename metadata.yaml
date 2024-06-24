@@ -1,6 +1,6 @@
-experiment_uuid: 531ebd31-b52a-48cc-a31f-aca8acf3a1e5
+experiment_uuid: 74742f97-906a-4435-91c6-af209c7d4cc2
 created: '2024-06-24'
-name: MOM6-CICE6-1deg_jra55do_iaf.iss39.b_grid-531ebd31
+name: MOM6-CICE6-1deg_jra55do_iaf.iss39.b_grid-74742f97
 model: ACCESS-OM3
 url: git@github.com:COSIMA/MOM6-CICE6.git
 contact: anton-climate
