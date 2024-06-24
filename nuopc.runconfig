@@ -213,7 +213,7 @@ MED_attributes::
      histaux_ocn2med_file1_flds = So_bldepth:So_t:So_u:So_v
      histaux_ocn2med_file1_history_n = 1
      histaux_ocn2med_file1_history_option = ndays
-     histaux_ocn2med_file1_ntperfile = 30
+     histaux_ocn2med_file1_ntperfile = 1
      histaux_rof2med_file1_auxname = rof.24h.avrg
      histaux_rof2med_file1_doavg = .true.
      histaux_rof2med_file1_enabled = .false.
@@ -221,30 +221,30 @@ MED_attributes::
      histaux_rof2med_file1_history_n = 3
      histaux_rof2med_file1_history_option = nhours
      histaux_rof2med_file1_ntperfile = 2
-     history_n_atm_avg = -999
+     history_n_atm_avg = 1
      history_n_atm_inst = -999
      history_n_glc_avg = -999
      history_n_glc_inst = -999
-     history_n_ice_avg = -999
+     history_n_ice_avg = 1
      history_n_ice_inst = -999
      history_n_lnd_avg = -999
      history_n_lnd_inst = -999
-     history_n_med_inst = -999
+     history_n_med_inst = 1
      history_n_ocn_avg = -999
      history_n_ocn_inst = -999
      history_n_rof_avg = -999
      history_n_rof_inst = -999
      history_n_wav_avg = -999
      history_n_wav_inst = -999
-     history_option_atm_avg = never
+     history_option_atm_avg = nmonths
      history_option_atm_inst = never
      history_option_glc_avg = never
      history_option_glc_inst = never
-     history_option_ice_avg = never
+     history_option_ice_avg = nmonths
      history_option_ice_inst = never
      history_option_lnd_avg = never
      history_option_lnd_inst = never
-     history_option_med_inst = never
+     history_option_med_inst = nmonths
      history_option_ocn_avg = never
      history_option_ocn_inst = never
      history_option_rof_avg = never
@@ -293,7 +293,7 @@ CLOCK_attributes::
      rof_cpl_dt = 3600
      start_tod = 0
      start_ymd = 19580101
-     stop_n = 10
+     stop_n = 5
      stop_option = nyears
      stop_tod = 0
      stop_ymd = -999
@@ -341,11 +341,11 @@ MED_modelio::
      diro = ./log
      logfile = med.log
      pio_async_interface = .false.
-     pio_netcdf_format = 64bit_offset
-     pio_numiotasks = -99
-     pio_rearranger = 2
+     pio_netcdf_format = nothing
+     pio_numiotasks = 2
+     pio_rearranger = 1
      pio_root = 1
-     pio_stride = 48
+     pio_stride = 24
      pio_typename = netcdf
 ::
 
@@ -380,7 +380,7 @@ ICE_modelio::
      pio_netcdf_format = nothing
      pio_numiotasks = 1
      pio_rearranger = 1
-     pio_root = 0
+     pio_root = 1
      pio_stride = 48
      pio_typename = netcdf4p
 ::
