@@ -132,8 +132,8 @@
   f_strintx = "md", f_strinty = "md"
   f_strcorx = "md" , f_strcory = "md"
   f_uvel = "md" , f_vvel = "md"
-  f_uvelE = "md" , f_vvelE = "md"
-! f_uvelN = "md" , f_vvelN = "md"
+!  f_uvelE = "md" , f_vvelE = "md"
+!  f_uvelN = "md" , f_vvelN = "md"
   f_vicen = "m"
   !-----------------------------------
   ! These fields are on by default (in ice_history_shared.F90) but lets turn them off
