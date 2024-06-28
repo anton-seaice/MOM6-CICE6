@@ -1,6 +1,6 @@
-experiment_uuid: 4dc9dfd6-3031-4efa-80d1-cc10adec04af
+experiment_uuid: 36be9ddb-79b9-4c42-9a45-d0b19f378dc7
 created: '2024-06-28'
-name: MOM6-CICE6-c_grid-1deg_jra55do_iaf.iss39.c_grid-4dc9dfd6
+name: MOM6-CICE6-c_grid-1deg_jra55do_iaf.iss39.c_grid-36be9ddb
 model: ACCESS-OM3
 url: https://github.com/anton-seaice/MOM6-CICE6
 contact: anton-seaice
