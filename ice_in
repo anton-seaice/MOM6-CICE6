@@ -21,7 +21,7 @@
   grid_atm = "A"
   grid_file = "./input/grid.nc"
   grid_format = "nc"
-  grid_ice = "B"
+  grid_ice = "C"
   grid_ocn = "A"
   grid_type = "tripole"
   kcatbound = 0
@@ -127,6 +127,10 @@
   f_hs = "md"
   f_sifb = "md"
   f_snoice = "md"
+  f_strairx = "md" , f_strairy = "md"
+  f_strocnx = "md", f_strocny = "md"
+  f_strintx = "md", f_strinty = "md"
+  f_strcorx = "md" , f_strcory = "md"
   f_uvel = "md" , f_vvel = "md"
   f_vicen = "m"
   !-----------------------------------
