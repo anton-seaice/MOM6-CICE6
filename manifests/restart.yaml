@@ -1,3 +1,53 @@
 format: yamanifest
 version: 1.0
---- {}
+---
+work/access-om3.cice.r.1905-01-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4/restart000/access-om3.cice.r.1905-01-01-00000.nc
+  hashes:
+    binhash: 3089f721476085b4596129ce46e05d03
+    md5: b86f817c065cd5423593cce724fe51c4
+work/access-om3.cpl.r.1905-01-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4/restart000/access-om3.cpl.r.1905-01-01-00000.nc
+  hashes:
+    binhash: bf0fbf8832dc2eebcf2c0adac6900c40
+    md5: c7d1ed24d94cbaf2a5a576d081e01d49
+work/access-om3.datm.r.1905-01-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4/restart000/access-om3.datm.r.1905-01-01-00000.nc
+  hashes:
+    binhash: 6c4a8b87e425abb485dee54e6d48b62a
+    md5: 4dcd761f946c3b29a130e3ced8d36e07
+work/access-om3.drof.r.1905-01-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4/restart000/access-om3.drof.r.1905-01-01-00000.nc
+  hashes:
+    binhash: 14eeeaa8bf4947f60fc98540b27e6315
+    md5: 3783efd4517c8fe4d9c2d0efd05c3ed3
+work/access-om3.mom6.r.1905-01-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4/restart000/access-om3.mom6.r.1905-01-01-00000.nc
+  hashes:
+    binhash: c98ca8091b7fb83deaea9e93583f54c9
+    md5: 47306a43f923677623a5c9d1853420e3
+work/rpointer.atm:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4/restart000/rpointer.atm
+  hashes:
+    binhash: 4363356877a7a447ad26c9bf41688cc2
+    md5: 4229089b000f6b39394bef7714cc7bf4
+work/rpointer.cpl:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4/restart000/rpointer.cpl
+  hashes:
+    binhash: 61e0fb1d49a1bf355e4a34f1e0acfdb2
+    md5: 328fc787f20984220b1fb08e62e902e3
+work/rpointer.ice:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4/restart000/rpointer.ice
+  hashes:
+    binhash: d0012e513b54a66114a64a09f32ca0cc
+    md5: 7432f15844239333ab7ae2f3d4c8930a
+work/rpointer.ocn:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4/restart000/rpointer.ocn
+  hashes:
+    binhash: 9b13bc23827beb47c3b07c809139f5db
+    md5: e87ecc6cc435a70698169a62d832b483
+work/rpointer.rof:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4/restart000/rpointer.rof
+  hashes:
+    binhash: 8621b082e49d07fc0b0d2095bc71fdd2
+    md5: e402ce2a355d562c38a16cc978814009
