@@ -8,13 +8,19 @@
 # (you may need to add the corresponding PBS -l storage flag in sync_data.sh)
 # shortpath: /scratch/v45
 
+# Sync options for automatically copying data from ephemeral scratch space to 
+# longer term storage
+sync:
+    enable: True # set path below and change to true
+    path: /g/data/tm70/as2285 # Set to location on /g/data or a remote server and path (rsync syntax)
+
 queue: normal
 ncpus: 48
 jobfs: 10GB
 mem: 192GB
 
-walltime: 01:00:00
-jobname: 1deg_jra55do_ryf
+walltime: 48:00:00
+jobname: 1deg_jra55do_ryf_b_grid
 
 model: access-om3
 
@@ -34,10 +40,10 @@ input:
     - /g/data/vk83/experiments/inputs/JRA-55/RYF/v1-4/data
  
 collate: false
-runlog: false
+runlog: true
 metadata: 
-    enable: false
+    enable: true
 
 userscripts:
     setup: ./setup_cice_restarts.sh
-    archive: ./archive_cice_restarts.sh
+    archive: ./concat_ice_daily.sh
