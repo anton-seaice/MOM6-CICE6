@@ -1,0 +1,7 @@
+experiment_uuid: d5bfdb01-08d1-4e1f-8c88-a49084a57f2f
+created: '2024-07-10'
+name: MOM6-CICE6-b_grid-1deg_jra55do_ryf-d5bfdb01
+model: ACCESS-OM3
+url: https://github.com/COSIMA/MOM6-CICE6.git
+contact: anton-seaice
+email: anton.steketee@anu.edu.au
