@@ -1,6 +1,6 @@
-experiment_uuid: 4e71c06b-e583-4552-bb63-29048a28b708
+experiment_uuid: 42928ba4-ef9a-4009-8c79-e0d4c059fe46
 created: '2024-07-10'
-name: MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-4e71c06b
+name: MOM6-CICE6-c_grid-1deg_jra55do_ryf.iss39.cgrid-42928ba4
 model: ACCESS-OM3
 url: https://github.com/COSIMA/MOM6-CICE6.git
 contact: anton-seaice
