@@ -12,7 +12,7 @@
 # longer term storage
 sync:
     enable: True # set path below and change to true
-    path: /g/data/tm70/as2285 # Set to location on /g/data or a remote server and path (rsync syntax)
+    path: /g/data/tm70/as2285/MOM6-CICE6-b_grid/ # Set to location on /g/data or a remote server and path (rsync syntax)
 
 queue: normal
 ncpus: 48
@@ -46,4 +46,5 @@ metadata:
 
 userscripts:
     setup: ./setup_cice_restarts.sh
-    archive: ./concat_ice_daily.sh
+    archive: ./archive_cice_restarts.sh
+    sync: ./concat_ice_daily.sh
