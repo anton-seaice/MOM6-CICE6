@@ -2,7 +2,10 @@ name: Generate Initial Checksums
 on:
   workflow_dispatch:
     inputs:
-      config-branch-name: "main"
+      config-branch-name:
+        type: string
+        required: true
+        description: The configuration branch that will be run that will generate the checksums.
       commit-checksums:
         type: boolean
         required: true
@@ -38,6 +41,7 @@ jobs:
         uses: access-nri/model-config-tests/.github/actions/parse-ci-config@main
         with:
           check: reproducibility
+          config-branch-name: "main"
           branch-or-tag: ${{ inputs.config-branch-name }}
           config-filepath: "config/ci.json"
 
@@ -57,7 +61,7 @@ jobs:
       host : ${{ secrets.SSH_HOST}}
     if: ${{ env.host == ''}}
     steps:
-      -run: echo 'have you set SSH_HOST ?'
+      - run: echo 'have you set SSH_HOST ?'
 
   generate-checksums:
     name: Generate Checksums
