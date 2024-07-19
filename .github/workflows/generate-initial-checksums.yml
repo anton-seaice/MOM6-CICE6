@@ -57,6 +57,7 @@ jobs:
 
   secrets:
     name: Check Secrets
+    runs-on: ubuntu-latest
     steps:
       - env:
         - host : ${{ secrets.SSH_HOST}}
