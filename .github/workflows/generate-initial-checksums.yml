@@ -45,16 +45,6 @@ jobs:
           branch-or-tag: ${{ inputs.config-branch-name }}
           config-filepath: "config/ci.json"
 
-  log-inputs:
-    name: Log Inputs
-    needs:
-      - config
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo '::notice::This deployment is using the following inputs: `config-branch-name`=`${{ inputs.config-branch-name }}`, `commit-checksums`=`${{ inputs.commit-checksums }}`, `committed-checksum-location`=`${{ inputs.committed-checksum-location }}`,`committed-checksum-tag-version`=`${{ inputs.committed-checksum-tag-version }}`.'
-          echo '::notice::This deployment is using Python Version ${{ needs.config.outputs.python-version }} and Model Config Tests Version ${{ needs.config.outputs.model-config-tests-version }}'
-
   secrets:
     runs-on: ubuntu-latest
     env:
