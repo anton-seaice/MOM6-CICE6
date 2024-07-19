@@ -56,13 +56,12 @@ jobs:
           echo '::notice::This deployment is using Python Version ${{ needs.config.outputs.python-version }} and Model Config Tests Version ${{ needs.config.outputs.model-config-tests-version }}'
 
   secrets:
-    name: Check Secrets
     runs-on: ubuntu-latest
+    env:
+      - host : ${{ secrets.SSH_HOST}}
+    if: "${{ env.host == ''}}"
     steps:
-      - env:
-        - host : ${{ secrets.SSH_HOST}}
-        if: ${{ env.host == ''}}
-        run: echo 'have you set SSH_HOST ?'
+      - run: echo 'have you set SSH_HOST ?'
 
   generate-checksums:
     name: Generate Checksums
