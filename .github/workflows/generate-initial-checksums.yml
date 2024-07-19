@@ -58,10 +58,11 @@ jobs:
   secrets:
     runs-on: ubuntu-latest
     env:
-      - host : ${{ secrets.SSH_HOST}}
+      - host : ${{ secrets.SSH_HOST }}
     if: "${{ $host == ''}}"
     steps:
       - run: echo 'have you set SSH_HOST ?'
+
 
   generate-checksums:
     name: Generate Checksums
