@@ -57,11 +57,11 @@ jobs:
 
   secrets:
     name: Check Secrets
-    env:
-      host : ${{ secrets.SSH_HOST}}
     steps:
-      - if: ${{ env.host == ''}}
-      - run: echo 'have you set SSH_HOST ?'
+      - env:
+        - host : ${{ secrets.SSH_HOST}}
+        if: ${{ env.host == ''}}
+        run: echo 'have you set SSH_HOST ?'
 
   generate-checksums:
     name: Generate Checksums
