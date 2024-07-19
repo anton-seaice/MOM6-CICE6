@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       - host : ${{ secrets.SSH_HOST}}
-    if: "${{ host == ''}}"
+    if: "${{ $host == ''}}"
     steps:
       - run: echo 'have you set SSH_HOST ?'
 
