@@ -41,7 +41,6 @@ jobs:
         uses: access-nri/model-config-tests/.github/actions/parse-ci-config@main
         with:
           check: reproducibility
-          config-branch-name: "main"
           branch-or-tag: ${{ inputs.config-branch-name }}
           config-filepath: "config/ci.json"
 
