@@ -1,7 +1,21 @@
-experiment_uuid: 4aae7cfa-f154-4ae5-a359-52816a38d89c
+experiment_uuid: 1cb1cbeb-abde-48b0-a3c5-5771bf52fa2c
 created: '2024-09-27'
-name: dev-025deg_jra55do_ryf-bgrid-dev-025deg_jra55do_ryf-bgrid-4aae7cfa
+name: dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-bgrid-1cb1cbeb
 model: ACCESS-OM3
-url: https://github.com/accESS-NRI/access-om3-configs
+url: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-bgrid
 contact: anton-seaice
 email: anton.steketee@anu.edu.au
+schema_version:  # The version of the schema (string)
+description: # Short description of the experiment (string, < 150 char)
+long_description: # Long description of the experiment (string)
+realm: # The realm(s) included in the experiment (string)
+frequency: # The frequency(/ies) included in the experiment (string)
+variable: # The variable(s) included in the experiment (string)
+nominal_resolution: # The nominal resolution(s) of model(s) used in the experiment (string)
+version: # The version of the experiment (number, string)
+reference: # Citation or reference information (string)
+license: # License of the experiment (string)
+parent_experiment: # experiment_uuid for parent experiment if appropriate (string)
+related_experiments: # experiment_uuids for any related experiment(s) (string)
+notes: # Additional notes (string)
+keywords: # Keywords to associated with experiment (string)
