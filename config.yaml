@@ -43,7 +43,7 @@ userscripts:
     setup: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
     archive: /usr/bin/bash /g/data/tm70/as2285/om3-scripts/payu_config/archive.sh
 
-postscript: -v PAYU_ARCHIVE_DIR,PROJECT -lstorage=gdata/hh5+${PBS_NCI_STORAGE} /g/data/tm70/as2285/om3-scripts/payu_config/postscript.sh
+postscript: -lstorage=gdata/hh5+${PBS_NCI_STORAGE} /g/data/tm70/as2285/om3-scripts/payu_config/postscript.sh
 
 modules:
     use:
