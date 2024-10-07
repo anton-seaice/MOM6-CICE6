@@ -1,10 +1,5 @@
 &setup_nml
   debug_forcing=.true.
-  debug_model=.true.
-  debug_model_i=340
-  debug_model_j=793
-  debug_model_task=8
-  debug_model_block=12
   bfbflag = "off" 
   conserv_check = .false.
   diagfreq = 960
@@ -86,7 +81,6 @@
   nx_global = 1440
   ny_global = 1080
   processor_shape = "square-ice"
-  debug_blocks = .true.
 /
 &ice_prescribed_nml
 /
