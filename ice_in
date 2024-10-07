@@ -1,4 +1,8 @@
 &setup_nml
+  debug_forcing=.true.
+  debug_model=.true.
+  debug_model_i=340
+  debug_model_j=793
   bfbflag = "off" 
   conserv_check = .false.
   diagfreq = 960
