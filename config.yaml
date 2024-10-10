@@ -35,9 +35,13 @@ input:
     - /g/data/vk83/configurations/inputs/JRA-55/RYF/v1-4/data
  
 collate: false
-runlog: false
+runlog: true
 metadata: 
-    enable: false
+    enable: true
+
+sync:
+    enable: true
+    path: /g/data/tm70/as2285/dev-1deg_jra55do_ryf_no_s_restore
 
 userscripts:
     setup: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
@@ -46,9 +50,8 @@ userscripts:
 modules:
     use:
         - /g/data/vk83/modules
-        - /g/data/hh5/public/modules
     load:
         - access-om3/2024.09.0
-        - conda/analysis3-24.01
+        - nco/5.0.5
 
 payu_minimum_version: 1.1.4
