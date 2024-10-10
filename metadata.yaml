@@ -1,6 +1,6 @@
-experiment_uuid: 927f6a0a-afee-45ba-9a76-e3801b787d07
+experiment_uuid: 3e0e8931-0dd6-45a5-92fe-7a4b233a2c91
 created: '2024-10-10'
-name: dev-1deg_jra55do_ryf_no_s_restore-no_s_restore-927f6a0a
+name: dev-1deg_jra55do_ryf_no_s_restore-no_s_restore-3e0e8931
 model: ACCESS-OM3
 url: https://github.com/accESS-NRI/access-om3-configs
 contact: anton-seaice
