@@ -41,6 +41,7 @@ collate: false
 runlog: true
 metadata: 
     enable: true
+prune: 1
 
 userscripts:
     setup: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
