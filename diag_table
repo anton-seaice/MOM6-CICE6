@@ -5,7 +5,7 @@
 "access-om3.mom6.h.rho2%4yr-%2mo",                      1,  "months", 1, "days",   "time", 1, "months"
 "access-om3.mom6.h.native%4yr-%2mo",                    1,  "months", 1, "days",   "time", 1, "months"
 "access-om3.mom6.h.z%4yr-%2mo",                         1,  "months", 1, "days",   "time", 1, "months"
-"access-om3.mom6.h.sfc%4yr-%2mo-%2da",                       1,  "days",   1, "days",   "time", 1, "days"
+"access-om3.mom6.h.sfc%4yr-%2mo-%2dy",                       1,  "days",   1, "days",   "time", 1, "days"
 "access-om3.mom6.h.static",                             -1, "days",   1, "days",   "time"
 
 ### Section-2: Fields List
@@ -113,19 +113,19 @@
 "ocean_model_z", "uhGM",    "uhGM",    "access-om3.mom6.h.z%4yr-%2mo", "all", "mean", "none", 2
 "ocean_model_z", "uhml",    "uhml",    "access-om3.mom6.h.z%4yr-%2mo", "all", "mean", "none", 2
 
-# "access-om3.mom6.h.sfc%4yr-%2mo-%2da"
-"ocean_model", "SSH",          "SSH",          "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "tos",          "tos",          "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "sos",          "sos",          "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "SSU",          "SSU",          "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "SSV",          "SSV",          "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "mass_wt",      "mass_wt",      "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "opottempmint", "opottempmint", "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "somint",       "somint",       "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "Rd_dx",        "Rd_dx",        "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "speed",        "speed",        "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "mlotst",       "mlotst",       "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
-"ocean_model", "KPP_OBLdepth", "oml",          "access-om3.mom6.h.sfc%4yr-%2mo-%2da", "all", "mean", "none", 2
+# "access-om3.mom6.h.sfc%4yr-%2mo-%2dy"
+"ocean_model", "SSH",          "SSH",          "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "tos",          "tos",          "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "sos",          "sos",          "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "SSU",          "SSU",          "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "SSV",          "SSV",          "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "mass_wt",      "mass_wt",      "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "opottempmint", "opottempmint", "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "somint",       "somint",       "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "Rd_dx",        "Rd_dx",        "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "speed",        "speed",        "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "mlotst",       "mlotst",       "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
+"ocean_model", "KPP_OBLdepth", "oml",          "access-om3.mom6.h.sfc%4yr-%2mo-%2dy", "all", "mean", "none", 2
 
 # "access-om3.mom6.h.static"
 "ocean_model", "geolon",      "geolon",      "access-om3.mom6.h.static", "all", ".false.", "none", 2
