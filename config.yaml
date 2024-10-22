@@ -49,10 +49,9 @@ userscripts:
 
 modules:
     use:
-        - /g/data/vk83/modules
-        - /g/data/hh5/public/modules
+        - /g/data/tm70/as2285/spack0.22/release/modules/linux-rocky8-x86_64
     load:
-        - access-om3/2024.09.0
-        - conda/analysis3-24.01
+        - access-om3/2024.09.mom-trunc
+        - nco/5.0.5
 
 payu_minimum_version: 1.1.4
