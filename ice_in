@@ -5,7 +5,7 @@
   diagfreq = 960
   dumpfreq = "y"
   dump_last = .true.
-  histfreq = "d", "m", "x", "x", "x"
+  histfreq = "d", "m", "1", "x", "x"
   hist_suffix = "", "m", "x", "x", "x" !limited to one character due to https://github.com/COSIMA/access-om3/issues/201
   hist_time_axis = "middle"
   history_deflate = 1
@@ -111,29 +111,29 @@
   f_smassliq = "m"
 /
 &icefields_nml
-  f_aice = "md"
-  f_aicen = "m"
+  f_aice = "md1"
+  f_aicen = "m1"
   f_bounds = .false.
   f_fcondtopn_ai = "m"
   f_congel = "md"
-  f_dvidtd = "md"
-  f_dvidtt = "md"
+  f_dvidtd = "md1"
+  f_dvidtt = "md1"
   f_fmelttn_ai = "m"
-  f_frzmlt = "md"
-  f_frazil = "md"
+  f_frzmlt = "md1"
+  f_frazil = "md1"
   f_flatn_ai   = "m"
   f_fsens_ai = "m"
   f_fsensn_ai = "m"
   f_fsurfn_ai = "m"
-  f_hi = "md"
-  f_hs = "md"
+  f_hi = "md1"
+  f_hs = "md1"
   f_sifb = "md"
   f_snoice = "md"
   f_strairx = "md" , f_strairy = "md"
   f_strocnx = "md", f_strocny = "md"
   f_strintx = "md", f_strinty = "md"
   f_strcorx = "md" , f_strcory = "md"
-  f_uvel = "md" , f_vvel = "md"
+  f_uvel = "md1" , f_vvel = "md1"
   f_vicen = "m"
   !-----------------------------------
   ! These fields are on by default (in ice_history_shared.F90) but lets turn them off
@@ -162,7 +162,7 @@
   f_fresh = 'x'
   f_fswthru = 'x'
   f_fsurf_ai = 'x'
-  f_hisnap = 'x', f_aisnap = 'x',
+  f_hisnap = 'd', f_aisnap = 'd',
   f_icedir = 'x'
   f_icespd = 'x'
   f_mlt_onset = 'x', f_frz_onset  = 'x'
