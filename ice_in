@@ -1,7 +1,8 @@
 &setup_nml
   bfbflag = "off" 
   conserv_check = .false.
-  diagfreq = 960
+  diagfreq = 1
+  print_global      = .false.
   dumpfreq = "y"
   dump_last = .true.
   histfreq = "d", "m", "x", "x", "x"
@@ -15,18 +16,20 @@
   lcdf64 = .false.
   npt = 35040
   pointer_file      = './rpointer.ice'
-  print_global      = .false.
 /
 &grid_nml
   bathymetry_file = "./INPUT/topog.nc"
   grid_atm = "A"
-  grid_file = "./INPUT/grid.nc"
-  grid_format = "nc"
+  !grid_file = "./INPUT/grid.nc"
+  !grid_format = "nc"
+  grid_file = "./INPUT/ocean_hgrid.nc"
+  grid_format = "mom_mosaic"
   grid_ice = "B"
   grid_ocn = "A"
   grid_type = "tripole"
   kcatbound = 0
-  kmt_file = "./INPUT/kmt.nc"
+  !kmt_file = "./INPUT/kmt.nc"
+   kmt_file = "./INPUT/ocean_mask.nc"
   nblyr = 1
   ncat = 5
   nfsd = 1
@@ -71,7 +74,7 @@
   block_size_x = 15
   block_size_y = 20
   distribution_type = "cartesian"
-  distribution_wght = "latitude"
+  distribution_wght = "blockall"
   maskhalo_bound = .true.
   maskhalo_dyn = .true.
   maskhalo_remap = .true.
@@ -112,7 +115,7 @@
 &icefields_nml
   f_aice = "md"
   f_aicen = "m"
-  f_bounds = .false.
+  f_bounds = .true.
   f_fcondtopn_ai = "m"
   f_congel = "md"
   f_dvidtd = "md"
@@ -133,19 +136,20 @@
   !-----------------------------------
   ! These fields are on by default (in ice_history_shared.F90) but lets turn them off
   !-----------------------------------
-  f_tlon         = .false. , f_tlat         = .false.
-  f_ulon         = .false. , f_ulat         = .false.
-  f_nlon         = .false. , f_nlat         = .false.
-  f_elon         = .false. , f_elat         = .false.
-  f_tmask        = .false. , f_umask        = .false.
-  f_nmask        = .false. , f_emask        = .false.
-  f_tarea        = .false. , f_uarea        = .false.
-  f_narea        = .false. , f_earea        = .false.
-  f_dxt          = .false. , f_dyt          = .false.
-  f_dxu          = .false. , f_dyu          = .false.
-  f_dxe          = .false. , f_dye          = .false.
-  f_dxn          = .false. , f_dyn          = .false.
-  f_HTN          = .false. , f_HTE          = .false.
+  f_tlon         = .true. , f_tlat         = .true.
+  f_ulon         = .true. , f_ulat         = .true.
+  f_nlon         = .true. , f_nlat         = .true.
+  f_elon         = .true. , f_elat         = .true.
+  f_tmask        = .true. , f_umask        = .true.
+  f_nmask        = .true. , f_emask        = .true.
+  f_tarea        = .true. , f_uarea        = .true.
+  f_narea        = .true. , f_earea        = .true.
+  f_dxt          = .true. , f_dyt          = .true.
+  f_dxu          = .true. , f_dyu          = .true.
+  f_dxe          = .true. , f_dye          = .true.
+  f_dxn          = .true. , f_dyn          = .true.
+  f_HTN          = .true. , f_HTE          = .true.
+  f_angle = .true. , f_angleT = .true.
   f_albpnd = 'x'
   f_atmdir = 'x' , f_atmspd = 'x'
   f_coszen = 'x'

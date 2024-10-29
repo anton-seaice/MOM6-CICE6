@@ -148,4 +148,15 @@
 "ocean_model", "areacello_bu","areacello_bu","access-om3.mom6.h.static", "all", ".false.", "none", 2
 "ocean_model", "sin_rot",     "sin_rot",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
 "ocean_model", "cos_rot",     "cos_rot",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
-
+"ocean_model", "area_t",     "area_t",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "area_u",     "area_u",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "area_v",     "area_v",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "area_q",     "area_q",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "dxt",     "dxt",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "dyt",     "dyt",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "dxCu",     "dxCu",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "dyCu",     "dyCu",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "dxCv",     "dxCv",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "dyCv",     "dyCv",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "dxCvo",     "dxCvo",     "access-om3.mom6.h.static", "all", ".false.", "none", 2
+"ocean_model", "dyCuo",     "dyCuo",     "access-om3.mom6.h.static", "all", ".false.", "none", 2

@@ -96,11 +96,21 @@ work/INPUT/kmt.nc:
   hashes:
     binhash: 670a7fb52cdc440673304d9a775b3dac
     md5: 4dae75252ac93467f10ea26e833e13d2
+work/INPUT/manifest.yaml:
+  fullpath: /g/data/vk83/configurations/inputs/JRA-55/RYF/v1-4/data/manifest.yaml
+  hashes:
+    binhash: 885b5f01bc4bc4185d04d5ffda889843
+    md5: d67345586ac529ddc6cbbbffbfa6b80f
 work/INPUT/ocean_hgrid.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-om3/mom/grids/mosaic/global.1deg/2020.05.30/ocean_hgrid.nc
   hashes:
     binhash: 3526d89ffb639455c6a1218f5139d5b2
     md5: 51f58be0f4ea6da2cb438a893f95c689
+work/INPUT/ocean_mask.nc:
+  fullpath: /g/data/vk83/configurations/inputs/access-om2/ocean/grids/bathymetry/global.1deg/2020.10.22/ocean_mask.nc
+  hashes:
+    binhash: 29f2932b5555d9f0c0e38a8329fa1da2
+    md5: 411567441c64bcfa814259736c5ed1a3
 work/INPUT/ocean_temp_salt.res.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-om3/mom/initial_conditions/global.1deg/2020.10.22/ocean_temp_salt.res.nc
   hashes:
