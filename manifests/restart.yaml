@@ -2,62 +2,62 @@ format: yamanifest
 version: 1.0
 ---
 work/access-om3.cice.r.1901-03-01-00000.nc:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/access-om3.cice.r.1901-03-01-00000.nc
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/access-om3.cice.r.1901-03-01-00000.nc
   hashes:
     binhash: 14533ac08326e3d7f01adb3e06bec0bc
     md5: b31e0c2b4acbf2278e57e52347103a6d
 work/access-om3.cpl.r.1901-03-01-00000.nc:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/access-om3.cpl.r.1901-03-01-00000.nc
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/access-om3.cpl.r.1901-03-01-00000.nc
   hashes:
     binhash: e2855628ebb9eac3f08c4446d5072f77
     md5: 83dc4a25e385f4776bf2579b133889fe
 work/access-om3.datm.r.1901-03-01-00000.nc:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/access-om3.datm.r.1901-03-01-00000.nc
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/access-om3.datm.r.1901-03-01-00000.nc
   hashes:
     binhash: e22604bf4237e9670390177a54121d27
     md5: 71cf8001553bc4a14cb6d0711787270e
 work/access-om3.drof.r.1901-03-01-00000.nc:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/access-om3.drof.r.1901-03-01-00000.nc
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/access-om3.drof.r.1901-03-01-00000.nc
   hashes:
     binhash: e088988b2b6ef607f0f65203e134e5e1
     md5: 4762a202be1be503b80e63ee86ba48e3
 work/access-om3.mom6.r.1901-03-01-00000.nc:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/access-om3.mom6.r.1901-03-01-00000.nc
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/access-om3.mom6.r.1901-03-01-00000.nc
   hashes:
     binhash: 011b02e013917f3421972405840ed10b
     md5: 8db04fc160ebcbc21ac321c80278c512
 work/access-om3.mom6.r.1901-03-01-00000_1.nc:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/access-om3.mom6.r.1901-03-01-00000_1.nc
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/access-om3.mom6.r.1901-03-01-00000_1.nc
   hashes:
     binhash: a87e2b85a1a0bb174df4b6eb4e30e320
     md5: d68476750b4235ad07edbbbc3cbf8127
 work/access-om3.mom6.r.1901-03-01-00000_2.nc:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/access-om3.mom6.r.1901-03-01-00000_2.nc
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/access-om3.mom6.r.1901-03-01-00000_2.nc
   hashes:
     binhash: bcf1c2aa7a918bf8c5cc640df6e5e622
     md5: a05c36813a395a28a5944d3be4a9758f
 work/rpointer.atm:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/rpointer.atm
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/rpointer.atm
   hashes:
     binhash: caf783f5131f90c42d7656adfbe26bc4
     md5: a2e85ca5ce2f4e8a2f986d97c8add1cd
 work/rpointer.cpl:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/rpointer.cpl
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/rpointer.cpl
   hashes:
     binhash: 5781cb7f2855fa735b58d238425d7001
     md5: f7a4417f6fe027b343c5d2c289c012d0
 work/rpointer.ice:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/rpointer.ice
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/rpointer.ice
   hashes:
     binhash: 80d61d637fa2616c0aa91db4b457c628
     md5: c1b2645e7f3fd92f222fd0afffed4e27
 work/rpointer.ocn:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/rpointer.ocn
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/rpointer.ocn
   hashes:
     binhash: 75f4cd195d83383c7fb42cc3ece7ea08
     md5: 23f0b8a73540901456b8d5c7037e8b3b
 work/rpointer.rof:
-  fullpath: /scratch/tm70/as2285/access-om3/archive/dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8/restart013/rpointer.rof
+  fullpath: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013/rpointer.rof
   hashes:
     binhash: c629c7c8efbbd739bcac2ecb1bbe82a3
     md5: 709e860ed2cb5af2a32716f27beeecbe

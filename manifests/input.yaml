@@ -94,7 +94,7 @@ work/INPUT/kmt.nc:
 work/INPUT/manifest.yaml:
   fullpath: /g/data/vk83/configurations/inputs/JRA-55/RYF/v1-4/data/manifest.yaml
   hashes:
-    binhash: 885b5f01bc4bc4185d04d5ffda889843
+    binhash: b2467bfa667db06dc77e222cc46140f7
     md5: d67345586ac529ddc6cbbbffbfa6b80f
 work/INPUT/ocean_hgrid.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-om3/mom/grids/mosaic/global.025deg/2020.05.30/ocean_hgrid.nc
