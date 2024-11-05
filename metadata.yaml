@@ -1,8 +1,8 @@
-experiment_uuid: fdc63cf8-3f8f-415a-92ba-8cb73374af63
-created: '2024-10-08'
-name: dev-025deg_jra55do_ryf-cgrid-dev-025deg_jra55do_ryf-cgrid-fdc63cf8
+experiment_uuid: 86752e50-7dd0-4beb-a2e2-c6d0f72022fb
+created: '2024-11-06'
+name: dev-025_crid-ctrl-86752e50
 model: ACCESS-OM3
-url: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-bgrid
+url: https://github.com/anton-seaice/MOM6-CICE6
 contact: anton-seaice
 email: anton.steketee@anu.edu.au
 schema_version:  # The version of the schema (string)
@@ -15,7 +15,7 @@ nominal_resolution: # The nominal resolution(s) of model(s) used in the experime
 version: # The version of the experiment (number, string)
 reference: # Citation or reference information (string)
 license: # License of the experiment (string)
-parent_experiment: # experiment_uuid for parent experiment if appropriate (string)
+parent_experiment: fdc63cf8-3f8f-415a-92ba-8cb73374af63 # experiment_uuid for parent experiment if appropriate (string)
 related_experiments: # experiment_uuids for any related experiment(s) (string)
 notes: # Additional notes (string)
 keywords: # Keywords to associated with experiment (string)
