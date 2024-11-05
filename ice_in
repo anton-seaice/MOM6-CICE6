@@ -179,4 +179,5 @@
   f_taubx = 'x' , f_tauby = 'x'
   f_Tref = 'x', f_Qref = 'x'
   f_uocn = 'x' , f_vocn = 'x'
+    f_shear = md1
 /
