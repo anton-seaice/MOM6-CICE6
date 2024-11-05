@@ -9,8 +9,8 @@
 # shortpath: /scratch/v45
 
 sync:
-    enable: True
-    path: /g/data/tm70/as2285/experiments/025deg_jra55do_ryf_cgrid
+  enable: true
+  path: /g/data/tm70/as2285/experiments/025deg_jra55do_ryf_cgrid
 
 queue: normal
 ncpus: 1440
@@ -18,40 +18,41 @@ jobfs: 10GB
 mem: 5760GB
 
 walltime: 24:00:00
-jobname: 025deg_jra55do_ryf_cgrid
+jobname: dev-025_crid
 
 model: access-om3
 
 exe: access-om3-MOM6-CICE6
 input:
-    - /g/data/vk83/configurations/inputs/access-om3/share/meshes/global.025deg/2024.03.26/access-om2-025deg-ESMFmesh.nc
-    - /g/data/vk83/configurations/inputs/access-om3/share/meshes/global.025deg/2024.03.26/access-om2-025deg-nomask-ESMFmesh.nc
-    - /g/data/vk83/configurations/inputs/access-om3/share/meshes/share/2024.09.16/JRA55do-datm-ESMFmesh.nc
-    - /g/data/vk83/configurations/inputs/access-om3/share/meshes/share/2024.09.16/JRA55do-drof-ESMFmesh.nc
-    - /g/data/vk83/configurations/inputs/access-om3/share/grids/global.025deg/2023.05.15/topog.nc
-    - /g/data/vk83/configurations/inputs/access-om3/mom/grids/mosaic/global.025deg/2020.05.30/ocean_hgrid.nc
-    - /g/data/vk83/configurations/inputs/access-om3/mom/grids/vertical/global.025deg/2024.04.04/ocean_vgrid.nc
-    - /g/data/vk83/configurations/inputs/access-om3/mom/initial_conditions/global.025deg/2020.10.22/ocean_temp_salt.res.nc
-    - /g/data/vk83/configurations/inputs/access-om3/mom/surface_salt_restoring/global.025deg/2020.05.30/salt_sfc_restore.nc
-    - /g/data/vk83/configurations/inputs/access-om3/cice/grids/global.025deg/2024.05.14/grid.nc
-    - /g/data/vk83/configurations/inputs/access-om3/cice/grids/global.025deg/2024.05.14/kmt.nc
-    - /g/data/vk83/configurations/inputs/JRA-55/RYF/v1-4/data
- 
+- /g/data/vk83/configurations/inputs/access-om3/share/meshes/global.025deg/2024.03.26/access-om2-025deg-ESMFmesh.nc
+- /g/data/vk83/configurations/inputs/access-om3/share/meshes/global.025deg/2024.03.26/access-om2-025deg-nomask-ESMFmesh.nc
+- /g/data/vk83/configurations/inputs/access-om3/share/meshes/share/2024.09.16/JRA55do-datm-ESMFmesh.nc
+- /g/data/vk83/configurations/inputs/access-om3/share/meshes/share/2024.09.16/JRA55do-drof-ESMFmesh.nc
+- /g/data/vk83/configurations/inputs/access-om3/share/grids/global.025deg/2023.05.15/topog.nc
+- /g/data/vk83/configurations/inputs/access-om3/mom/grids/mosaic/global.025deg/2020.05.30/ocean_hgrid.nc
+- /g/data/vk83/configurations/inputs/access-om3/mom/grids/vertical/global.025deg/2024.04.04/ocean_vgrid.nc
+- /g/data/vk83/configurations/inputs/access-om3/mom/initial_conditions/global.025deg/2020.10.22/ocean_temp_salt.res.nc
+- /g/data/vk83/configurations/inputs/access-om3/mom/surface_salt_restoring/global.025deg/2020.05.30/salt_sfc_restore.nc
+- /g/data/vk83/configurations/inputs/access-om3/cice/grids/global.025deg/2024.05.14/grid.nc
+- /g/data/vk83/configurations/inputs/access-om3/cice/grids/global.025deg/2024.05.14/kmt.nc
+- /g/data/vk83/configurations/inputs/JRA-55/RYF/v1-4/data
+
 collate: false
 runlog: true
-metadata: 
-    enable: true
+metadata:
+  enable: true
 prune: 1
 
 userscripts:
-    setup: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
-    archive: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/archive.sh
+  setup: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
+  archive: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/archive.sh
 
 modules:
-    use:
-        - /g/data/tm70/as2285/spack0.22/release/modules/linux-rocky8-x86_64
-    load:
-        - access-om3/2024.09.mom-trunc
-        - nco/5.0.5
+  use:
+  - /g/data/tm70/as2285/spack0.22/release/modules/linux-rocky8-x86_64
+  load:
+  - access-om3/2024.09.mom-trunc
+  - nco/5.0.5
 
 payu_minimum_version: 1.1.4
+restart: /g/data/tm70/as2285/payu/dev-025deg_jra55do_ryf-cgrid/archive/restart013
