@@ -8,9 +8,9 @@
 # (you may need to add the corresponding PBS -l storage flag in sync_data.sh)
 # shortpath: /scratch/v45
 
-sync:
-  enable: true
-  path: /g/data/tm70/as2285/experiments/025deg_jra55do_ryf_cgrid
+# sync:
+  # enable: true
+  # path: /g/data/tm70/as2285/experiments/025deg_jra55do_ryf_cgrid
 
 queue: normal
 ncpus: 1440
