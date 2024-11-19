@@ -1,0 +1,5 @@
+Loading access-om3/2024.09.mom-trunc
+  Loading requirement: access-om3-nuopc/mom-trunc
+Currently Loaded Modulefiles:
+ 1) access-om3-nuopc/mom-trunc     3) nco/5.0.5                5) pbs  
+ 2) access-om3/2024.09.mom-trunc   4) openmpi/4.1.4(default)  
