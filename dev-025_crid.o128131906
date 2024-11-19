@@ -1,0 +1,55 @@
+laboratory path:  /scratch/tm70/as2285/access-om3
+binary path:  /scratch/tm70/as2285/access-om3/bin
+input path:  /scratch/tm70/as2285/access-om3/input
+work path:  /scratch/tm70/as2285/access-om3/work
+archive path:  /scratch/tm70/as2285/access-om3/archive
+Updated metadata. Experiment UUID: 86752e50-7dd0-4beb-a2e2-c6d0f72022fb
+nruns: 1 nruns_per_submit: 1 subrun: 1
+payu: Found modules in /opt/Modules/v4.3.0
+Loading input manifest: manifests/input.yaml
+Loading restart manifest: manifests/restart.yaml
+Loading exe manifest: manifests/exe.yaml
+Setting up access-om3
+Checking exe, input and restart manifests
+Writing manifests/input.yaml
+Writing manifests/restart.yaml
+/usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
+mod access-om3-nuopc/mom-trunc
+mod access-om3/2024.09.mom-trunc
+mod nco/5.0.5
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/config.yaml
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/drv_in
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/fd.yaml
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/nuopc.runconfig
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/nuopc.runseq
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/input.nml
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/diag_table
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/ice_in
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/datm_in
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/datm.streams.xml
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/drof_in
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/drof.streams.xml
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/MOM_input
+git add /g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/MOM_override
+git add manifests/input.yaml
+git add manifests/restart.yaml
+git add manifests/exe.yaml
+git commit -am "2024-11-06 10:55:48: Run 0"
+mpirun  -wdir /scratch/tm70/as2285/access-om3/work/dev-025_crid-ctrl-86752e50 -np 1440  /scratch/tm70/as2285/access-om3/work/dev-025_crid-ctrl-86752e50/access-om3-MOM6-CICE6
+/g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/access-om3.err /scratch/tm70/as2285/access-om3/archive/dev-025_crid-ctrl-86752e50/error_logs/access-om3.128131906.gadi-pbs.err
+/g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/access-om3.out /scratch/tm70/as2285/access-om3/archive/dev-025_crid-ctrl-86752e50/error_logs/access-om3.128131906.gadi-pbs.out
+/g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/job.yaml /scratch/tm70/as2285/access-om3/archive/dev-025_crid-ctrl-86752e50/error_logs/job.128131906.gadi-pbs.yaml
+/g/data/tm70/as2285/om3-scripts/expts_manager/test/dev-025_crid/env.yaml /scratch/tm70/as2285/access-om3/archive/dev-025_crid-ctrl-86752e50/error_logs/env.128131906.gadi-pbs.yaml
+
+======================================================================================
+                  Resource Usage on 2024-11-06 12:11:14:
+   Job Id:             128131906.gadi-pbs
+   Project:            tm70
+   Exit Status:        1
+   Service Units:      3636.00
+   NCPUs Requested:    1440                   NCPUs Used: 1440            
+                                           CPU Time Used: 1800:54:16      
+   Memory Requested:   5.62TB                Memory Used: 677.47GB        
+   Walltime requested: 24:00:00            Walltime Used: 01:15:45        
+   JobFS requested:    10.0GB                 JobFS used: 8.16MB          
+======================================================================================

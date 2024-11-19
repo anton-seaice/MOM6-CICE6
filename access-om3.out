@@ -1,0 +1,506 @@
+NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to    32768.
+NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to  5000000.
+ 
+ Dumping coupler_mod/types tree
+types/
+      air_sea_gas_flux_generic/
+            implementation/
+                  ocmip2/
+                        num_parameters = 2
+                  duce/
+                        num_parameters = 1
+                  johnson/
+                        num_parameters = 2
+            num_flags = 0
+            use_atm_pressure = T
+            use_10m_wind_speed = T
+            pass_through_ice = F
+            atm/
+                  name[1] = 'pcair'
+                  name[2] = 'u10'
+                  name[3] = 'psurf'
+                  long_name[1] = 'Atmospheric concentration'
+                  long_name[2] = 'Wind speed at 10 m'
+                  long_name[3] = 'Surface atmospheric pressure'
+                  units[1] = 'mol/mol'
+                  units[2] = 'm/s'
+                  units[3] = 'Pa'
+            ice/
+                  name[1] = 'alpha'
+                  name[2] = 'csurf'
+                  name[3] = 'sc_no'
+                  long_name[1] = 'Solubility w.r.t. atmosphere'
+                  long_name[2] = 'Ocean concentration'
+                  long_name[3] = 'Schmidt number'
+                  units[1] = 'mol/m^3/atm'
+                  units[2] = 'mol/m^3'
+                  units[3] = 'dimensionless'
+            flux/
+                  name[1] = 'flux'
+                  name[2] = 'deltap'
+                  name[3] = 'kw'
+                  name[4] = 'flux0'
+                  long_name[1] = 'Surface flux'
+                  long_name[2] = 'Ocean-air delta pressure'
+                  long_name[3] = 'Piston velocity'
+                  long_name[4] = 'Surface flux no atm'
+                  units[1] = 'mol/m^2/s'
+                  units[2] = 'uatm'
+                  units[3] = 'm/s'
+                  units[4] = 'mol/m^2/s'
+      air_sea_gas_flux/
+            implementation/
+                  ocmip2/
+                        num_parameters = 2
+                  ocmip2_data/
+                        num_parameters = 2
+                  linear/
+                        num_parameters = 3
+            num_flags = 0
+            use_atm_pressure = T
+            use_10m_wind_speed = T
+            pass_through_ice = F
+            atm/
+                  name[1] = 'pcair'
+                  name[2] = 'u10'
+                  name[3] = 'psurf'
+                  long_name[1] = 'Atmospheric concentration'
+                  long_name[2] = 'Wind speed at 10 m'
+                  long_name[3] = 'Surface atmospheric pressure'
+                  units[1] = 'mol/mol'
+                  units[2] = 'm/s'
+                  units[3] = 'Pa'
+            ice/
+                  name[1] = 'alpha'
+                  name[2] = 'csurf'
+                  long_name[1] = 'Solubility from atmosphere times Schmidt number term'
+                  long_name[2] = 'Ocean concentration times Schmidt number term'
+                  units[1] = 'mol/m^3/atm'
+                  units[2] = 'mol/m^3'
+            flux/
+                  name = 'flux'
+                  long_name = 'Surface flux'
+                  units = 'mol/m^2/s'
+      air_sea_deposition/
+            implementation/
+                  dry/
+                        num_parameters = 1
+                  wet/
+                        num_parameters = 1
+            num_flags = 0
+            use_atm_pressure = F
+            use_10m_wind_speed = F
+            pass_through_ice = T
+            atm/
+                  name = 'deposition'
+                  long_name = 'Atmospheric deposition'
+                  units = 'kg/m^2/s'
+            ice/
+                  name = NULL
+                  long_name = NULL
+                  units = NULL
+            flux/
+                  name = 'flux'
+                  long_name = 'Surface deposition'
+                  units = 'mol/m^2/s'
+      land_sea_runoff/
+            implementation/
+                  river/
+                        num_parameters = 1
+            num_flags = 0
+            use_atm_pressure = F
+            use_10m_wind_speed = F
+            pass_through_ice = T
+            atm/
+                  name = 'runoff'
+                  long_name = 'Concentration in land runoff'
+                  units = 'mol/m^3'
+            ice/
+                  name = NULL
+                  long_name = NULL
+                  units = NULL
+            flux/
+                  name = 'flux'
+                  long_name = 'Concentration in land runoff'
+                  units = 'mol/m^3'
+NOTE from PE     0: open_param_file: MOM_input has been opened successfully.
+NOTE from PE     0: open_param_file: MOM_override has been opened successfully.
+NOTE from PE     0: close_param_file: MOM_input has been closed successfully.
+NOTE from PE     0: close_param_file: MOM_override has been closed successfully.
+ ==>Note from atmos_ocean_fluxes_mod(atmos_ocean_fluxes_init): No gas fluxes
+NOTE from PE     0: callTree: ---> ocean_model_init(), ocean_model_MOM.F90
+NOTE from PE     0: open_param_file: MOM_input has been opened successfully.
+NOTE from PE     0: open_param_file: MOM_override has been opened successfully.
+NOTE from PE     0: Found the optimum layout for auto-masking. Terminating iteration...
+NOTE from PE     0: MOM_domains_init: reading maskmap information from MOM_auto_mask_table
+ parse_mask_table: Number of domain regions masked in MOM_in =          392
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+ MOM_inc domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   24  24  24  24  23  23  23  23  23  23  23  23  23  23  23  22  23  23  23  23  23  23  23  23
+             23  23  23  24  24  24  24
+  Y-AXIS =   10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10   9   9   9   9   9   9
+              9   9   9   9   9   9   9   9   9   9   9   9   9   9  10  10  10  10  10  10  10  10  10  10
+             10  10  10  10  10  10  10  10
+NOTE from PE     0: diag_manager_mod::diag_manager_init: diag_manager is using fms2_io
+NOTE from PE     0: diag_manager_mod::diag_manager_init: prepend_date only supported when diag_manager_init is called with time_init present.
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+ MOM_in domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   24  24  24  24  23  23  23  23  23  23  23  23  23  23  23  22  23  23  23  23  23  23  23  23
+             23  23  23  24  24  24  24
+  Y-AXIS =   10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10   9   9   9   9   9   9
+              9   9   9   9   9   9   9   9   9   9   9   9   9   9  10  10  10  10  10  10  10  10  10  10
+             10  10  10  10  10  10  10  10
+ MOM_MOSAIC domain decomposition
+whalo =    9, ehalo =    9, shalo =    9, nhalo =    9
+  X-AXIS =   94  94  94  94  94  94  94  92  92  92  92  92  92  92  92  92  92  92  92  92  92  92  92  92
+             94  94  94  94  94  94  94
+  Y-AXIS =   40  40  40  40  40  40  40  40  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38
+             38  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38  38
+             40  40  40  40  40  40  40  40
+ MOM_MOSAIC domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+ MOM_in domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   24  24  24  24  23  23  23  23  23  23  23  23  23  23  23  22  23  23  23  23  23  23  23  23
+             23  23  23  24  24  24  24
+  Y-AXIS =   10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10   9   9   9   9   9   9
+              9   9   9   9   9   9   9   9   9   9   9   9   9   9  10  10  10  10  10  10  10  10  10  10
+             10  10  10  10  10  10  10  10
+NOTE from PE     0: MOM_restart: MOM run restarted using : ./access-om3.mom6.r.1901-03-01-00000.nc
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+ MOM_in domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   24  24  24  24  23  23  23  23  23  23  23  23  23  23  23  22  23  23  23  23  23  23  23  23
+             23  23  23  24  24  24  24
+  Y-AXIS =   10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10   9   9   9   9   9   9
+              9   9   9   9   9   9   9   9   9   9   9   9   9   9  10  10  10  10  10  10  10  10  10  10
+             10  10  10  10  10  10  10  10
+NOTE from PE     0: MOM_restart: MOM run restarted using : ./access-om3.mom6.r.1901-03-01-00000_1.nc
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+ MOM_in domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   24  24  24  24  23  23  23  23  23  23  23  23  23  23  23  22  23  23  23  23  23  23  23  23
+             23  23  23  24  24  24  24
+  Y-AXIS =   10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10   9   9   9   9   9   9
+              9   9   9   9   9   9   9   9   9   9   9   9   9   9  10  10  10  10  10  10  10  10  10  10
+             10  10  10  10  10  10  10  10
+NOTE from PE     0: MOM_restart: MOM run restarted using : ./access-om3.mom6.r.1901-03-01-00000_2.nc
+
+WARNING from PE     0: KVML is a deprecated parameter. Use KV_ML_INVZ2 instead.
+
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+ MOM_in domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   24  24  24  24  23  23  23  23  23  23  23  23  23  23  23  22  23  23  23  23  23  23  23  23
+             23  23  23  24  24  24  24
+  Y-AXIS =   10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10   9   9   9   9   9   9
+              9   9   9   9   9   9   9   9   9   9   9   9   9   9  10  10  10  10  10  10  10  10  10  10
+             10  10  10  10  10  10  10  10
+
+WARNING from PE     0: bkgnd_mixing_init: a nonzero constant background diffusivity (KD) is specified along with HORIZ_VARYING_BACKGROUND
+
+ MOM_in domain decomposition
+whalo =    0, ehalo =    0, shalo =    0, nhalo =    0
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+NOTE from PE     0: data_override_mod: File data_table does not exist.
+NOTE from PE     0: data_table is empty, not doing any data_overrides
+-------->(med_phases_restart_read) mediating for: 1901  3  1  0  0  0   0
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+ MOM_in domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   24  24  24  24  23  23  23  23  23  23  23  23  23  23  23  22  23  23  23  23  23  23  23  23
+             23  23  23  24  24  24  24
+  Y-AXIS =   10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10   9   9   9   9   9   9
+              9   9   9   9   9   9   9   9   9   9   9   9   9   9  10  10  10  10  10  10  10  10  10  10
+             10  10  10  10  10  10  10  10
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+ MOM_in domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   24  24  24  24  23  23  23  23  23  23  23  23  23  23  23  22  23  23  23  23  23  23  23  23
+             23  23  23  24  24  24  24
+  Y-AXIS =   10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10   9   9   9   9   9   9
+              9   9   9   9   9   9   9   9   9   9   9   9   9   9  10  10  10  10  10  10  10  10  10  10
+             10  10  10  10  10  10  10  10
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   47  47  47  47  47  47  47  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46  46
+             47  47  47  47  47  47  47
+  Y-AXIS =   20  20  20  20  20  20  20  20  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19  19
+             20  20  20  20  20  20  20  20
+ MOM_in domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   24  24  24  24  23  23  23  23  23  23  23  23  23  23  23  22  23  23  23  23  23  23  23  23
+             23  23  23  24  24  24  24
+  Y-AXIS =   10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10  10   9   9   9   9   9   9
+              9   9   9   9   9   9   9   9   9   9   9   9   9   9  10  10  10  10  10  10  10  10  10  10
+             10  10  10  10  10  10  10  10
+  max rss=2350096384.0 MB
+  max rss=2356350976.0 MB
+  max rss=2386472960.0 MB
+  max rss=2390925312.0 MB
+  max rss=2394636288.0 MB
+  max rss=2401300480.0 MB
+  max rss=2404884480.0 MB
+  max rss=2410532864.0 MB
+  max rss=2410532864.0 MB
+  max rss=2414346240.0 MB
+  max rss=2419068928.0 MB
+  max rss=2428403712.0 MB
+  max rss=2468728832.0 MB
+  max rss=2468728832.0 MB
+  max rss=2468728832.0 MB
+  max rss=2468728832.0 MB
+  max rss=2468728832.0 MB
+  max rss=2471555072.0 MB
+  max rss=2473795584.0 MB
+  max rss=2479423488.0 MB
+  max rss=2484703232.0 MB
+  max rss=2486325248.0 MB
+  max rss=2501406720.0 MB
+  max rss=2505043968.0 MB
+  max rss=2507497472.0 MB
+  
+ New mass < 0, i, j =          50          31
+ Old mass =  1.584993725340139E-004
+ New mass = -5.727752649206490E-006
+ Net transport = -1.642271251832203E-004
+ istep1, my_task, iblk, cat =       28799          80           4           2
+ (print_state) negative area (ice)¦
+ (print_state) istep1, my_task, i, j, iblk:       28799          80          50
+          31           4
+ (print_state) Global block:         450
+ (print_state) Global i and j:        1069        1002
+ (print_state) Lat, Lon (degrees):   81.6865092532964     
+  -14.8643879243489     
+  
+ aice    1.00000000000000     
+ aice0  1.110223024625157E-016
+  
+ n =           1
+ aicen  0.000000000000000E+000
+ vicen  0.000000000000000E+000
+ vsnon  0.000000000000000E+000
+ Tsfcn  -1.79028623325174     
+  
+  
+ n =           2
+ aicen  1.584993725340139E-004
+ vicen  1.541077117507753E-004
+ vsnon  2.501025765687183E-009
+ hin  0.972292251300263     
+ hsn  1.577940483739432E-005
+ Tsfcn  -20.1079585645912     
+  
+  
+ n =           3
+ aicen  2.710599464180833E-004
+ vicen  5.327318905188697E-004
+ vsnon  4.277164629733349E-009
+ hin   1.96536558631641     
+ hsn  1.577940483739432E-005
+ Tsfcn  -22.7879628146431     
+  
+  
+ n =           4
+ aicen  1.058556202804489E-002
+ vicen  3.713120284791096E-002
+ vsnon  4.344231959587402E-003
+ hin   3.50772143694754     
+ hsn  0.410392187781622     
+ Tsfcn  -26.5975737336460     
+  
+  
+ n =           5
+ aicen  0.988984878653003     
+ vicen   8.07225859281393     
+ vsnon  0.575890443169084     
+ hin   8.16216583999580     
+ hsn  0.582304598987849     
+ Tsfcn  -26.7320323153733     
+  
+ qice, cat            1  layer            1  0.000000000000000E+000
+ qice, cat            1  layer            2  0.000000000000000E+000
+ qice, cat            1  layer            3  0.000000000000000E+000
+ qice, cat            1  layer            4  0.000000000000000E+000
+  
+ qice, cat            2  layer            1  -307755649.562915     
+ qi/rhoi  -335611.395379406     
+ qice, cat            2  layer            2  -305955239.880947     
+ qi/rhoi  -333648.026042472     
+ qice, cat            2  layer            3  -305976569.446496     
+ qi/rhoi  -333671.286201195     
+ qice, cat            2  layer            4  -305655112.966541     
+ qi/rhoi  -333320.733878453     
+  
+ qice, cat            3  layer            1  -306509750.424470     
+ qi/rhoi  -334252.726744242     
+ qice, cat            3  layer            2  -305988097.504735     
+ qi/rhoi  -333683.857693277     
+ qice, cat            3  layer            3  -305997732.789325     
+ qi/rhoi  -333694.365091957     
+ qice, cat            3  layer            4  -305915232.195830     
+ qi/rhoi  -333604.397160120     
+  
+ qice, cat            4  layer            1  -330320531.213201     
+ qi/rhoi  -360218.681802837     
+ qice, cat            4  layer            2  -321686608.131194     
+ qi/rhoi  -350803.280404791     
+ qice, cat            4  layer            3  -312374812.336550     
+ qi/rhoi  -340648.650312486     
+ qice, cat            4  layer            4  -298970272.633928     
+ qi/rhoi  -326030.831661863     
+  
+ qice, cat            5  layer            1  -335702127.033382     
+ qi/rhoi  -366087.379534768     
+ qice, cat            5  layer            2  -324703839.344245     
+ qi/rhoi  -354093.608881401     
+ qice, cat            5  layer            3  -313196657.706246     
+ qi/rhoi  -341544.882994815     
+ qice, cat            5  layer            4  -297369967.905740     
+ qi/rhoi  -324285.679286521     
+  
+ qice(i,j)  -4984078201.07574     
+  
+ qsnow, cat            2  layer            1  -110121000.000000     
+ qs/rhos  -333700.000000000     
+ Tsnow  0.000000000000000E+000
+  
+ qsnow, cat            3  layer            1  -110121000.000000     
+ qs/rhos  -333700.000000000     
+ Tsnow  0.000000000000000E+000
+  
+ qsnow, cat            4  layer            1  -125310280.183219     
+ qs/rhos  -379728.121767329     
+ Tsnow  -21.7393727617777     
+  
+ qsnow, cat            5  layer            1  -126251426.824129     
+ qs/rhos  -382580.081285240     
+ Tsnow  -23.0863712635802     
+  
+ qsnow(i,j)  -471803707.007348     
+  
+ sice, cat            1  layer            1  0.000000000000000E+000
+ sice, cat            1  layer            2  0.000000000000000E+000
+ sice, cat            1  layer            3  0.000000000000000E+000
+ sice, cat            1  layer            4  0.000000000000000E+000
+ sice, cat            2  layer            1  0.649201856400313     
+ sice, cat            2  layer            2   2.35458111192744     
+ sice, cat            2  layer            3   3.03109206979846     
+ sice, cat            2  layer            4   3.18929777221700     
+ sice, cat            3  layer            1  0.649201856400314     
+ sice, cat            3  layer            2   2.35458111192744     
+ sice, cat            3  layer            3   3.03109206979846     
+ sice, cat            3  layer            4   3.18929777221700     
+ sice, cat            4  layer            1  0.649201856400311     
+ sice, cat            4  layer            2   2.35458111192744     
+ sice, cat            4  layer            3   3.03109206979848     
+ sice, cat            4  layer            4   3.18929777221700     
+ sice, cat            5  layer            1  0.649201856400316     
+ sice, cat            5  layer            2   2.35458111192745     
+ sice, cat            5  layer            3   3.03109206979847     
+ sice, cat            5  layer            4   3.18929777221700     
+  
+ uvel(i,j)  0.421109861482645     
+ vvel(i,j)  0.626738511376921     
+ uvelE(i,j)   2.01817027718648     
+ uvelN(i,j)  0.109513019152795     
+  
+ atm states and fluxes
+             uatm    =    11.4565684617028     
+             vatm    =   -5.35149824880375     
+             potT    =    247.552100916471     
+             Tair    =    247.552100916471     
+             Qa      =   2.939509003865902E-004
+             rhoa    =    1.39554159484570     
+             swvdr   =   0.000000000000000E+000
+             swvdf   =   0.000000000000000E+000
+             swidr   =   0.000000000000000E+000
+             swidf   =   0.000000000000000E+000
+             flw     =    173.710396449191     
+             frain   =   6.817549163993367E-009
+             fsnow   =   3.857187849140834E-006
+  
+ ocn states and fluxes
+             frzmlt  =    1130.89758885969     
+             sst     =   -1.78566706771846     
+             sss     =    32.9096734053628     
+             Tf      =   -1.79028623325174     
+             uocn    =   7.000659626299037E-002
+             vocn    =   4.925604188204023E-002
+             strtltxU=  -7.371310560342537E-003
+             strtltyU=   3.605963438896476E-002
+  
+ srf states and fluxes
+             Tref    =    247.355015644017     
+             Qref    =   3.016600190419180E-004
+             Uref    =    12.5024800827170     
+             fsens   =    33.0991790281445     
+             flat    =   -3.38962097696834     
+             evap    =  -1.175569424330643E-006
+             flwout  =   -207.304897334251     
+  
+  
+ (abort_ice)ABORTED: 
+ (abort_ice) error = (diagnostic_abort)ERROR: negative area (ice)
+ ERROR: (abort_ice)(diagnostic_abort)ERROR: negative area (ice)
