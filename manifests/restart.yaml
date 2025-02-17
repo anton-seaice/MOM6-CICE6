@@ -1,3 +1,53 @@
 format: yamanifest
 version: 1.0
---- {}
+---
+work/access-om3.cice.r.1900-05-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6/restart003/access-om3.cice.r.1900-05-01-00000.nc
+  hashes:
+    binhash: 0eaf9980b7f7cabcb7a044c61c9a3065
+    md5: 63d7619e138d87768f3f0f00b7398ef6
+work/access-om3.cpl.r.1900-05-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6/restart003/access-om3.cpl.r.1900-05-01-00000.nc
+  hashes:
+    binhash: 75a85b86003b6d39b55022c42dbb0bf5
+    md5: a9a87776990568718e1f8f5ae0c7967a
+work/access-om3.datm.r.1900-05-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6/restart003/access-om3.datm.r.1900-05-01-00000.nc
+  hashes:
+    binhash: 9e9e1d522177e0fdfff4d2a859994da0
+    md5: 71cf8001553bc4a14cb6d0711787270e
+work/access-om3.drof.r.1900-05-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6/restart003/access-om3.drof.r.1900-05-01-00000.nc
+  hashes:
+    binhash: 47021d77df5027c439f1c6d28611e5e1
+    md5: 4762a202be1be503b80e63ee86ba48e3
+work/access-om3.mom6.r.1900-05-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6/restart003/access-om3.mom6.r.1900-05-01-00000.nc
+  hashes:
+    binhash: 71ed5efaf25416724999d47f5e94cdf2
+    md5: 5dcbd65cb3435c4966d5e9bc4622a703
+work/rpointer.atm:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6/restart003/rpointer.atm
+  hashes:
+    binhash: ac119f4aac2710fb21599d95de7d2453
+    md5: 48965f33b8333ed09a5987ec0ed5d141
+work/rpointer.cpl:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6/restart003/rpointer.cpl
+  hashes:
+    binhash: 2a14ed8dec84a8fcbdad1495c92d70d5
+    md5: 14bb995e5f471dfa80af30d906dba34d
+work/rpointer.ice:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6/restart003/rpointer.ice
+  hashes:
+    binhash: b00a762544fe165cb488f90fbc7f98a5
+    md5: a942c76f6f0cf2ce25e8cf26c89f152f
+work/rpointer.ocn:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6/restart003/rpointer.ocn
+  hashes:
+    binhash: 10f4c44030fbf19b3fe8872631d6de38
+    md5: 03eef60c10d99cfa7d34d53ab9f8fd1e
+work/rpointer.rof:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/MOM6-CICE6/restart003/rpointer.rof
+  hashes:
+    binhash: 5098ceb611e26664e2f91ae556a399e0
+    md5: 506910ed398b832b4193efdcd7621fdc
