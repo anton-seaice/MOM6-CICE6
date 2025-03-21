@@ -1,3 +1,68 @@
 format: yamanifest
 version: 1.0
---- {}
+---
+work/access-om3.cice.r.1900-02-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/access-om3.cice.r.1900-02-01-00000.nc
+  hashes:
+    binhash: db43bb42e5fdf1331297af36a6400080
+    md5: eec395d10716e9ba82daab4ac4613197
+work/access-om3.cpl.r.1900-02-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/access-om3.cpl.r.1900-02-01-00000.nc
+  hashes:
+    binhash: 69485dd8848eae40c483879c1dc36cf6
+    md5: 59c00bc21343c2c7c15052a1bfa5e688
+work/access-om3.datm.r.1900-02-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/access-om3.datm.r.1900-02-01-00000.nc
+  hashes:
+    binhash: ae37b8252f32bc5e1f7d9f76ac83880f
+    md5: c87e8ec464bbcc95cc5dc210a52d3357
+work/access-om3.drof.r.1900-02-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/access-om3.drof.r.1900-02-01-00000.nc
+  hashes:
+    binhash: f467d1b21333e451b1c4c435fc077209
+    md5: 477dc3b180ee4ff7b8e9c7d7ada81280
+work/access-om3.mom6.r.1900-02-01-00000.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/access-om3.mom6.r.1900-02-01-00000.nc
+  hashes:
+    binhash: 926b20ac36b933e1b784aa6ce597904e
+    md5: 168751bc15492d153aa1f2ae6da149c8
+work/access-om3.mom6.r.1900-02-01-00000_1.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/access-om3.mom6.r.1900-02-01-00000_1.nc
+  hashes:
+    binhash: c823eaa9fac70ba575739ae19e656787
+    md5: c434d67527d439f91fc935e6a82ee7f5
+work/access-om3.mom6.r.1900-02-01-00000_2.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/access-om3.mom6.r.1900-02-01-00000_2.nc
+  hashes:
+    binhash: 6ffaefceeec66697910d50c92a7414a0
+    md5: f3ce5c573c8e7f85551f5368f71d662f
+work/access-om3.mom6.r.1900-02-01-00000_3.nc:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/access-om3.mom6.r.1900-02-01-00000_3.nc
+  hashes:
+    binhash: e06ef093c39234f7a110fe5f555140e2
+    md5: 2a52e6df37c546f5758e62f1a0947aca
+work/rpointer.atm:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/rpointer.atm
+  hashes:
+    binhash: 62553548b7214d0cd6f3c076a2884dc5
+    md5: bd9e55d4c79406b2b0d0b49972b19138
+work/rpointer.cpl:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/rpointer.cpl
+  hashes:
+    binhash: 1ea9eb9ee7d89cc2fdf218ec07353418
+    md5: f78aca9a14d6fdea61e3325944957e72
+work/rpointer.ice:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/rpointer.ice
+  hashes:
+    binhash: 3f7683fe5878a1794c856dfacc51b175
+    md5: 959e57bc31b34017a11eb8ff594844e6
+work/rpointer.ocn:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/rpointer.ocn
+  hashes:
+    binhash: 3591b250010083fff938a4c30ab11648
+    md5: 34ca5da74d18ecffb6bd1433c335daae
+work/rpointer.rof:
+  fullpath: /scratch/tm70/as2285/access-om3/archive/025_ryf_momsupergrid/restart000/rpointer.rof
+  hashes:
+    binhash: 10a26cf4634368484d3df6f456c70fd3
+    md5: 7a832b03e631c040a77aa0458e041ab1
