@@ -1,2 +1,74 @@
-! NOTE: User made changes to this file override the settings in MOM_input
-!       This provides a clear record of how your configuration differs from the standard
+#override DT=50
+#override DT_THERM=300
+! === Added with RM6 ===
+#override MINIMUM_DEPTH = 5.0 !None
+#override NK = 75 !None
+#override OBC_NUMBER_OF_SEGMENTS = 4 !None
+#override OBC_FREESLIP_VORTICITY = False !None
+#override OBC_FREESLIP_STRAIN = False !None
+#override OBC_COMPUTED_VORTICITY = True !None
+#override OBC_COMPUTED_STRAIN = True !None
+#override OBC_ZERO_BIHARMONIC = True !None
+#override OBC_TRACER_RESERVOIR_LENGTH_SCALE_OUT = 3.0E+04 !None
+#override OBC_TRACER_RESERVOIR_LENGTH_SCALE_IN = 3000.0 !None
+#override BRUSHCUTTER_MODE = True !None
+#override OBC_SEGMENT_001 = "J=N,I=N:0,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN" !None
+#override OBC_SEGMENT_001_VELOCITY_NUDGING_TIMESCALES = 0.3, 360.0 !None
+#override OBC_SEGMENT_001_DATA = "U=file:forcing_obc_segment_001.nc(u_segment_001),
+V=file:forcing_obc_segment_001.nc(v_segment_001),
+SSH=file:forcing_obc_segment_001.nc(eta_segment_001),
+TEMP=file:forcing_obc_segment_001.nc(temp_segment_001),
+SALT=file:forcing_obc_segment_001.nc(salt_segment_001),
+NO3=file:forcing_obc_segment_001.nc(no3_segment_001),
+FE=file:forcing_obc_segment_001.nc(fe_segment_001),
+O2=file:forcing_obc_segment_001.nc(o2_segment_001),
+DIC=file:forcing_obc_segment_001.nc(dic_segment_001),
+ADIC=file:forcing_obc_segment_001.nc(adic_segment_001),
+ZOO=file:forcing_obc_segment_001.nc(zoo_segment_001),
+PHY=file:forcing_obc_segment_001.nc(phy_segment_001),
+DET=file:forcing_obc_segment_001.nc(det_segment_001),
+Uamp=file:tu_segment_001.nc(uamp),
+Uphase=file:tu_segment_001.nc(uphase),
+Vamp=file:tu_segment_001.nc(vamp),
+Vphase=file:tu_segment_001.nc(vphase),
+SSHamp=file:tz_segment_001.nc(zamp),
+SSHphase=file:tz_segment_001.nc(zphase),Uamp=file:tu_segment_001.nc(uamp),Uphase=file:tu_segment_001.nc(uphase),Vamp=file:tu_segment_001.nc(vamp),Vphase=file:tu_segment_001.nc(vphase),SSHamp=file:tz_segment_001.nc(zamp),SSHphase=file:tz_segment_001.nc(zphase)" !None
+#override OBC_SEGMENT_002 = "J=0,I=0:N,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN" !None
+#override OBC_SEGMENT_002_VELOCITY_NUDGING_TIMESCALES = 0.3, 360.0 !None
+#override OBC_SEGMENT_002_DATA = "U=file:forcing_obc_segment_002.nc(u),V=file:forcing_obc_segment_002.nc(v),SSH=file:forcing_obc_segment_002.nc(eta),TEMP=file:forcing_obc_segment_002.nc(temp),SALT=file:forcing_obc_segment_002.nc(salt),
+NO3=file:forcing_obc_segment_002.nc(no3_segment_002),
+FE=file:forcing_obc_segment_002.nc(fe_segment_002),
+O2=file:forcing_obc_segment_002.nc(o2_segment_002),
+DIC=file:forcing_obc_segment_002.nc(dic_segment_002),
+ADIC=file:forcing_obc_segment_002.nc(adic_segment_002),
+ZOO=file:forcing_obc_segment_002.nc(zoo_segment_002),
+PHY=file:forcing_obc_segment_002.nc(phy_segment_002),
+DET=file:forcing_obc_segment_002.nc(det_segment_002),
+Uamp=file:tu_segment_002.nc(uamp),Uphase=file:tu_segment_002.nc(uphase),Vamp=file:tu_segment_002.nc(vamp),Vphase=file:tu_segment_002.nc(vphase),SSHamp=file:tz_segment_002.nc(zamp),SSHphase=file:tz_segment_002.nc(zphase)" !None
+#override OBC_SEGMENT_003 = "I=N,J=0:N,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN" !None
+#override OBC_SEGMENT_003_VELOCITY_NUDGING_TIMESCALES = 0.3, 360.0 !None
+#override OBC_SEGMENT_003_DATA = "U=file:forcing_obc_segment_003.nc(u),V=file:forcing_obc_segment_003.nc(v),SSH=file:forcing_obc_segment_003.nc(eta),TEMP=file:forcing_obc_segment_003.nc(temp),SALT=file:forcing_obc_segment_003.nc(salt),NO3=file:forcing_obc_segment_003.nc(no3_segment_003),
+FE=file:forcing_obc_segment_003.nc(fe_segment_003),
+O2=file:forcing_obc_segment_003.nc(o2_segment_003),
+DIC=file:forcing_obc_segment_003.nc(dic_segment_003),
+ADIC=file:forcing_obc_segment_003.nc(adic_segment_003),
+ZOO=file:forcing_obc_segment_003.nc(zoo_segment_003),
+PHY=file:forcing_obc_segment_003.nc(phy_segment_003),
+DET=file:forcing_obc_segment_003.nc(det_segment_003),
+Uamp=file:tu_segment_003.nc(uamp),Uphase=file:tu_segment_003.nc(uphase),Vamp=file:tu_segment_003.nc(vamp),Vphase=file:tu_segment_003.nc(vphase),SSHamp=file:tz_segment_003.nc(zamp),SSHphase=file:tz_segment_003.nc(zphase)" !None
+#override OBC_SEGMENT_004 = "I=0,J=N:0,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN" !None
+#override OBC_SEGMENT_004_VELOCITY_NUDGING_TIMESCALES = 0.3, 360.0 !None
+#override OBC_SEGMENT_004_DATA = "U=file:forcing_obc_segment_004.nc(u),V=file:forcing_obc_segment_004.nc(v),SSH=file:forcing_obc_segment_004.nc(eta),TEMP=file:forcing_obc_segment_004.nc(temp),SALT=file:forcing_obc_segment_004.nc(salt),NO3=file:forcing_obc_segment_004.nc(no3_segment_004),
+FE=file:forcing_obc_segment_004.nc(fe_segment_004),
+O2=file:forcing_obc_segment_004.nc(o2_segment_004),
+DIC=file:forcing_obc_segment_004.nc(dic_segment_004),
+ADIC=file:forcing_obc_segment_004.nc(adic_segment_004),
+ZOO=file:forcing_obc_segment_004.nc(zoo_segment_004),
+PHY=file:forcing_obc_segment_004.nc(phy_segment_004),
+DET=file:forcing_obc_segment_004.nc(det_segment_004),
+Uamp=file:tu_segment_004.nc(uamp),Uphase=file:tu_segment_004.nc(uphase),Vamp=file:tu_segment_004.nc(vamp),Vphase=file:tu_segment_004.nc(vphase),SSHamp=file:tz_segment_004.nc(zamp),SSHphase=file:tz_segment_004.nc(zphase)" !None
+#override TIDES = True !None
+#override OBC_TIDE_ADD_EQ_PHASE = True !None
+#override OBC_TIDE_N_CONSTITUENTS = 2 !None
+#override OBC_TIDE_CONSTITUENTS = "M2, S2" !None
+#override OBC_TIDE_REF_DATE = 2017, 1, 1 !None

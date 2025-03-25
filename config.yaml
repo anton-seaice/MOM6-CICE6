@@ -2,55 +2,74 @@
 
 # If submitting to a different project to your default, uncomment line below 
 # and change project code as appropriate; also set shortpath below
-# project: x77
+project: x77
 
 # Force payu to always find, and save, files in this scratch project directory
 # (you may need to add the corresponding PBS -l storage flag in sync_data.sh)
 # shortpath: /scratch/v45
-
+    #- /g/data/vk83/configurations/inputs/access-om3/wombat/forcing/global.1deg/2022.02.24/dust.nc
+    #- /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2021.06.07/FEMIP_model_median_iron_2016_fillmiss.nc
+    #- /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/GLODAPv2.2016b.NO3_fillmiss.nc
+    #- /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/GLODAPv2.2016b.oxygen_fillmiss.nc
+    #- /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/GLODAPv2.2016b.PI_TCO2_fillmiss.nc
+    #- /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/GLODAPv2.2016b.TAlk_fillmiss.nc
+    #- /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/GLODAPv2.2016b.TCO2_fillmiss.nc
+    #- /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/init_ocean_wombatlite.res.nc
+    #- /g/data/vk83/configurations/inputs/JRA-55/RYF/v1-4/data
 queue: normal
-ncpus: 240
+ncpus: 100
 jobfs: 10GB
-mem: 960GB
+mem: 100GB
 
-walltime: 02:00:00
+walltime: 00:30:00
 jobname: 1deg_jra55do_ryf_wombatlite
 
 model: access-om3
 
-exe: access-om3-MOM6-CICE6
+exe: access-om3-MOM6
+
 input:
-    - /g/data/vk83/configurations/inputs/access-om3/share/meshes/global.1deg/2024.01.25/access-om2-1deg-ESMFmesh.nc
-    - /g/data/vk83/configurations/inputs/access-om3/share/meshes/global.1deg/2024.01.25/access-om2-1deg-nomask-ESMFmesh.nc
     - /g/data/vk83/configurations/inputs/access-om3/share/meshes/share/2024.09.16/JRA55do-datm-ESMFmesh.nc
     - /g/data/vk83/configurations/inputs/access-om3/share/meshes/share/2024.09.16/JRA55do-drof-ESMFmesh.nc
     - /g/data/vk83/configurations/inputs/access-om3/share/grids/global.1deg/2020.10.22/topog.nc
-    - /g/data/vk83/configurations/inputs/access-om3/mom/grids/mosaic/global.1deg/2020.05.30/ocean_hgrid.nc
     - /g/data/vk83/configurations/inputs/access-om3/mom/grids/mosaic/global.1deg/2020.05.30/ocean_mosaic.nc
     - /g/data/vk83/configurations/inputs/access-om3/mom/grids/mosaic/global.1deg/2024.05.08/grid_spec.nc
-    - /g/data/vk83/configurations/inputs/access-om3/mom/grids/vertical/global.1deg/2023.07.28/ocean_vgrid.nc
-    - /g/data/vk83/configurations/inputs/access-om3/mom/initial_conditions/global.1deg/2020.10.22/ocean_temp_salt.res.nc
     - /g/data/vk83/configurations/inputs/access-om3/mom/surface_salt_restoring/global.1deg/2020.05.30/salt_sfc_restore.nc
     - /g/data/vk83/configurations/inputs/access-om3/cice/grids/global.1deg/2024.05.14/grid.nc
     - /g/data/vk83/configurations/inputs/access-om3/cice/grids/global.1deg/2024.05.14/kmt.nc
     - /g/data/vk83/configurations/inputs/access-om3/cice/initial_conditions/global.1deg/2023.07.28/iced.1900-01-01-10800.nc
-    - /g/data/vk83/configurations/inputs/access-om3/wombat/forcing/global.1deg/2022.02.24/dust.nc
-    - /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2021.06.07/FEMIP_model_median_iron_2016_fillmiss.nc
-    - /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/GLODAPv2.2016b.NO3_fillmiss.nc
-    - /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/GLODAPv2.2016b.oxygen_fillmiss.nc
-    - /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/GLODAPv2.2016b.PI_TCO2_fillmiss.nc
-    - /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/GLODAPv2.2016b.TAlk_fillmiss.nc
-    - /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/GLODAPv2.2016b.TCO2_fillmiss.nc
-    - /g/data/vk83/configurations/inputs/access-om3/wombat/initial_conditions/global.1deg/2024.04.02/init_ocean_wombatlite.res.nc
-    - /g/data/vk83/configurations/inputs/JRA-55/RYF/v1-4/data
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/hgrid.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/vcoord.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/bathymetry.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/init_tracers.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/init_eta.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/init_vel.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/forcing_obc_segment_001.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/forcing_obc_segment_002.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/forcing_obc_segment_003.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/forcing_obc_segment_004.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/tu_segment_001.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/tu_segment_002.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/tu_segment_003.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/tu_segment_004.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/tz_segment_001.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/tz_segment_002.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/tz_segment_003.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/tz_segment_004.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/grid_spec.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/ocean_mosaic.nc 
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/access-rom3-ESMFmesh.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/access-rom3-nomask-ESMFmesh.nc
+    - /scratch/x77/ee8016/regional_mom6_configs/trying_bgc/land_mask.nc
+    
  
 collate: false
-runlog: false
+runlog: true
 metadata: 
     enable: false
 
 userscripts:
-    setup: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
+    #setup: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
     archive: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/archive.sh
 
 modules:
