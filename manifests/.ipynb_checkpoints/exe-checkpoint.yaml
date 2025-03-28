@@ -1,0 +1,8 @@
+format: yamanifest
+version: 1.0
+---
+work/access-om3-MOM6:
+  fullpath: /g/data/vk83/prerelease/apps/spack/0.22/release/linux-rocky8-x86_64/intel-2021.10.0/access-om3-nuopc-git.0.3.1_0.3.1-fvr7qawdyqb5qfmlu5so4rjjtvkhasp6/bin/access-om3-MOM6
+  hashes:
+    binhash: d5a10b04ac54b15e0058617563a7205a
+    md5: fc7526ca7bc5e03c692d4647cfd44456

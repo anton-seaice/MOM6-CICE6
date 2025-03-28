@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/g/data/vk83/apps/payu/1.1.5/bin/payu-run", line 10, in <module>
+    sys.exit(runscript())
+  File "/g/data/vk83/apps/payu/1.1.5/lib/python3.10/site-packages/payu/subcommands/run_cmd.py", line 123, in runscript
+    expt = Experiment(lab, reproduce=run_args.reproduce, force=run_args.force)
+  File "/g/data/vk83/apps/payu/1.1.5/lib/python3.10/site-packages/payu/experiment.py", line 121, in __init__
+    init_script = self.userscripts.get('init')
+AttributeError: 'NoneType' object has no attribute 'get'
