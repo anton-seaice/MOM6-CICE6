@@ -1,0 +1,6 @@
+Loading access-om3/2025.01.0
+  Loading requirement: access-om3-nuopc/0.4.0-bmecwy5
+Currently Loaded Modulefiles:
+ 1) access-om3-nuopc/0.4.0-bmecwy5   3) nco/5.0.5                5) pbs  
+ 2) access-om3/2025.01.0             4) openmpi/4.1.7(default)  
+payu: Model exited with error code 1; aborting.

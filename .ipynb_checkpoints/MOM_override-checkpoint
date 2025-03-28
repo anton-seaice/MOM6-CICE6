@@ -14,16 +14,104 @@
 #override BRUSHCUTTER_MODE = True !None
 #override OBC_SEGMENT_001 = "J=N,I=N:0,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN" !None
 #override OBC_SEGMENT_001_VELOCITY_NUDGING_TIMESCALES = 0.3, 360.0 !None
-#override OBC_SEGMENT_001_DATA = "U=file:forcing_obc_segment_001.nc(u),V=file:forcing_obc_segment_001.nc(v),SSH=file:forcing_obc_segment_001.nc(eta),TEMP=file:forcing_obc_segment_001.nc(temp),SALT=file:forcing_obc_segment_001.nc(salt),Uamp=file:tu_segment_001.nc(uamp),Uphase=file:tu_segment_001.nc(uphase),Vamp=file:tu_segment_001.nc(vamp),Vphase=file:tu_segment_001.nc(vphase),SSHamp=file:tz_segment_001.nc(zamp),SHphase=file:tz_segment_001.nc(zphase),Uamp=file:tu_segment_001.nc(uamp),Uphase=file:tu_segment_001.nc(uphase),Vamp=file:tu_segment_001.nc(vamp),Vphase=file:tu_segment_001.nc(vphase),SSHamp=file:tz_segment_001.nc(zamp),SSHphase=file:tz_segment_001.nc(zphase),no3=file:forcing_obc_segment_001.nc(no3),fe=file:forcing_obc_segment_001.nc(fe),o2=file:forcing_obc_segment_001.nc(o2),dic=file:forcing_obc_segment_001.nc(dic),adic=file:forcing_obc_segment_001.nc(adic),zoo=file:forcing_obc_segment_001.nc(zoo),phy=file:forcing_obc_segment_001.nc(phy),det=file:forcing_obc_segment_001.nc(det),alk=file:forcing_obc_segment_001.nc(alk),caco3=file:forcing_obc_segment_001.nc(caco3),caco3_sediment=file:forcing_obc_segment_001.nc(caco3_sediment),det_sediment=file:forcing_obc_segment_001.nc(det_sediment)" !None
+#override OBC_SEGMENT_001_DATA = "U=file:forcing_obc_segment_001.nc(u)," // &
+                                "V=file:forcing_obc_segment_001.nc(v)," // &
+                                "SSH=file:forcing_obc_segment_001.nc(eta)," // &
+                                "TEMP=file:forcing_obc_segment_001.nc(temp)," // &
+                                "SALT=file:forcing_obc_segment_001.nc(salt)," // &
+                                "Uamp=file:tu_segment_001.nc(uamp)," // &
+                                "Uphase=file:tu_segment_001.nc(uphase)," // &
+                                "Vamp=file:tu_segment_001.nc(vamp)," // &
+                                "Vphase=file:tu_segment_001.nc(vphase)," // &
+                                "SSHamp=file:tz_segment_001.nc(zamp)," // &
+                                "SSHphase=file:tz_segment_001.nc(zphase)," // &
+                                "no3=file:forcing_obc_segment_001.nc(no3)," // &
+                                "fe=file:forcing_obc_segment_001.nc(fe)," // &
+                                "o2=file:forcing_obc_segment_001.nc(o2)," // &
+                                "dic=file:forcing_obc_segment_001.nc(dic)," // &
+                                "adic=file:forcing_obc_segment_001.nc(adic)," // &
+                                "zoo=file:forcing_obc_segment_001.nc(zoo)," // &
+                                "phy=file:forcing_obc_segment_001.nc(phy)," // &
+                                "det=file:forcing_obc_segment_001.nc(det)," // &
+                                "alk=file:forcing_obc_segment_001.nc(alk)," // &
+                                "caco3=file:forcing_obc_segment_001.nc(caco3)," // &
+                                "caco3_sediment=file:forcing_obc_segment_001.nc(caco3_sediment)," // &
+                                "det_sediment=file:forcing_obc_segment_001.nc(det_sediment)" !None
 #override OBC_SEGMENT_002 = "J=0,I=0:N,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN" !None
 #override OBC_SEGMENT_002_VELOCITY_NUDGING_TIMESCALES = 0.3, 360.0 !None
-#override OBC_SEGMENT_002_DATA = "U=file:forcing_obc_segment_002.nc(u),V=file:forcing_obc_segment_002.nc(v),SSH=file:forcing_obc_segment_002.nc(eta),TEMP=file:forcing_obc_segment_002.nc(temp),SALT=file:forcing_obc_segment_002.nc(salt),Uamp=file:tu_segment_002.nc(uamp),Uphase=file:tu_segment_002.nc(uphase),Vamp=file:tu_segment_002.nc(vamp),Vphase=file:tu_segment_002.nc(vphase),SSHamp=file:tz_segment_002.nc(zamp),SHphase=file:tz_segment_002.nc(zphase),Uamp=file:tu_segment_002.nc(uamp),Uphase=file:tu_segment_002.nc(uphase),Vamp=file:tu_segment_002.nc(vamp),Vphase=file:tu_segment_002.nc(vphase),SSHamp=file:tz_segment_002.nc(zamp),SSHphase=file:tz_segment_002.nc(zphase),no3=file:forcing_obc_segment_002.nc(no3),fe=file:forcing_obc_segment_002.nc(fe),o2=file:forcing_obc_segment_002.nc(o2),dic=file:forcing_obc_segment_002.nc(dic),adic=file:forcing_obc_segment_002.nc(adic),zoo=file:forcing_obc_segment_002.nc(zoo),phy=file:forcing_obc_segment_002.nc(phy),det=file:forcing_obc_segment_002.nc(det),alk=file:forcing_obc_segment_002.nc(alk),caco3=file:forcing_obc_segment_002.nc(caco3),caco3_sediment=file:forcing_obc_segment_002.nc(caco3_sediment),det_sediment=file:forcing_obc_segment_002.nc(det_sediment)" !None
+#override OBC_SEGMENT_002_DATA = "U=file:forcing_obc_segment_002.nc(u)," // &
+                                "V=file:forcing_obc_segment_002.nc(v)," // &
+                                "SSH=file:forcing_obc_segment_002.nc(eta)," // &
+                                "TEMP=file:forcing_obc_segment_002.nc(temp)," // &
+                                "SALT=file:forcing_obc_segment_002.nc(salt)," // &
+                                "Uamp=file:tu_segment_002.nc(uamp)," // &
+                                "Uphase=file:tu_segment_002.nc(uphase)," // &
+                                "Vamp=file:tu_segment_002.nc(vamp)," // &
+                                "Vphase=file:tu_segment_002.nc(vphase)," // &
+                                "SSHamp=file:tz_segment_002.nc(zamp)," // &
+                                "SSHphase=file:tz_segment_002.nc(zphase)," // &
+                                "no3=file:forcing_obc_segment_002.nc(no3)," // &
+                                "fe=file:forcing_obc_segment_002.nc(fe)," // &
+                                "o2=file:forcing_obc_segment_002.nc(o2)," // &
+                                "dic=file:forcing_obc_segment_002.nc(dic)," // &
+                                "adic=file:forcing_obc_segment_002.nc(adic)," // &
+                                "zoo=file:forcing_obc_segment_002.nc(zoo)," // &
+                                "phy=file:forcing_obc_segment_002.nc(phy)," // &
+                                "det=file:forcing_obc_segment_002.nc(det)," // &
+                                "alk=file:forcing_obc_segment_002.nc(alk)," // &
+                                "caco3=file:forcing_obc_segment_002.nc(caco3)," // &
+                                "caco3_sediment=file:forcing_obc_segment_002.nc(caco3_sediment)," // &
+                                "det_sediment=file:forcing_obc_segment_002.nc(det_sediment)" !None
 #override OBC_SEGMENT_003 = "I=N,J=0:N,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN" !None
 #override OBC_SEGMENT_003_VELOCITY_NUDGING_TIMESCALES = 0.3, 360.0 !None
-#override OBC_SEGMENT_003_DATA = "U=file:forcing_obc_segment_003.nc(u),V=file:forcing_obc_segment_003.nc(v),SSH=file:forcing_obc_segment_003.nc(eta),TEMP=file:forcing_obc_segment_003.nc(temp),SALT=file:forcing_obc_segment_003.nc(salt),Uamp=file:tu_segment_003.nc(uamp),Uphase=file:tu_segment_003.nc(uphase),Vamp=file:tu_segment_003.nc(vamp),Vphase=file:tu_segment_003.nc(vphase),SSHamp=file:tz_segment_003.nc(zamp),SHphase=file:tz_segment_003.nc(zphase),Uamp=file:tu_segment_003.nc(uamp),Uphase=file:tu_segment_003.nc(uphase),Vamp=file:tu_segment_003.nc(vamp),Vphase=file:tu_segment_003.nc(vphase),SSHamp=file:tz_segment_003.nc(zamp),SSHphase=file:tz_segment_003.nc(zphase),no3=file:forcing_obc_segment_003.nc(no3),fe=file:forcing_obc_segment_003.nc(fe),o2=file:forcing_obc_segment_003.nc(o2),dic=file:forcing_obc_segment_003.nc(dic),adic=file:forcing_obc_segment_003.nc(adic),zoo=file:forcing_obc_segment_003.nc(zoo),phy=file:forcing_obc_segment_003.nc(phy),det=file:forcing_obc_segment_003.nc(det),alk=file:forcing_obc_segment_003.nc(alk),caco3=file:forcing_obc_segment_003.nc(caco3),caco3_sediment=file:forcing_obc_segment_003.nc(caco3_sediment),det_sediment=file:forcing_obc_segment_003.nc(det_sediment)" !None
+#override OBC_SEGMENT_003_DATA = "U=file:forcing_obc_segment_003.nc(u)," // &
+                                "V=file:forcing_obc_segment_003.nc(v)," // &
+                                "SSH=file:forcing_obc_segment_003.nc(eta)," // &
+                                "TEMP=file:forcing_obc_segment_003.nc(temp)," // &
+                                "SALT=file:forcing_obc_segment_003.nc(salt)," // &
+                                "Uamp=file:tu_segment_003.nc(uamp)," // &
+                                "Uphase=file:tu_segment_003.nc(uphase)," // &
+                                "Vamp=file:tu_segment_003.nc(vamp)," // &
+                                "Vphase=file:tu_segment_003.nc(vphase)," // &
+                                "SSHamp=file:tz_segment_003.nc(zamp)," // &
+                                "SSHphase=file:tz_segment_003.nc(zphase)," // &
+                                "no3=file:forcing_obc_segment_003.nc(no3)," // &
+                                "fe=file:forcing_obc_segment_003.nc(fe)," // &
+                                "o2=file:forcing_obc_segment_003.nc(o2)," // &
+                                "dic=file:forcing_obc_segment_003.nc(dic)," // &
+                                "adic=file:forcing_obc_segment_003.nc(adic)," // &
+                                "zoo=file:forcing_obc_segment_003.nc(zoo)," // &
+                                "phy=file:forcing_obc_segment_003.nc(phy)," // &
+                                "det=file:forcing_obc_segment_003.nc(det)," // &
+                                "alk=file:forcing_obc_segment_003.nc(alk)," // &
+                                "caco3=file:forcing_obc_segment_003.nc(caco3)," // &
+                                "caco3_sediment=file:forcing_obc_segment_003.nc(caco3_sediment)," // &
+                                "det_sediment=file:forcing_obc_segment_003.nc(det_sediment)" !None
 #override OBC_SEGMENT_004 = "I=0,J=N:0,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN" !None
 #override OBC_SEGMENT_004_VELOCITY_NUDGING_TIMESCALES = 0.3, 360.0 !None
-#override OBC_SEGMENT_004_DATA = "U=file:forcing_obc_segment_004.nc(u),V=file:forcing_obc_segment_004.nc(v),SSH=file:forcing_obc_segment_004.nc(eta),TEMP=file:forcing_obc_segment_004.nc(temp),SALT=file:forcing_obc_segment_004.nc(salt),Uamp=file:tu_segment_004.nc(uamp),Uphase=file:tu_segment_004.nc(uphase),Vamp=file:tu_segment_004.nc(vamp),Vphase=file:tu_segment_004.nc(vphase),SSHamp=file:tz_segment_004.nc(zamp),SHphase=file:tz_segment_004.nc(zphase),Uamp=file:tu_segment_004.nc(uamp),Uphase=file:tu_segment_004.nc(uphase),Vamp=file:tu_segment_004.nc(vamp),Vphase=file:tu_segment_004.nc(vphase),SSHamp=file:tz_segment_004.nc(zamp),SSHphase=file:tz_segment_004.nc(zphase),no3=file:forcing_obc_segment_004.nc(no3),fe=file:forcing_obc_segment_004.nc(fe),o2=file:forcing_obc_segment_004.nc(o2),dic=file:forcing_obc_segment_004.nc(dic),adic=file:forcing_obc_segment_004.nc(adic),zoo=file:forcing_obc_segment_004.nc(zoo),phy=file:forcing_obc_segment_004.nc(phy),det=file:forcing_obc_segment_004.nc(det),alk=file:forcing_obc_segment_004.nc(alk),caco3=file:forcing_obc_segment_004.nc(caco3),caco3_sediment=file:forcing_obc_segment_004.nc(caco3_sediment),det_sediment=file:forcing_obc_segment_004.nc(det_sediment)" !None
+#override OBC_SEGMENT_004_DATA = "U=file:forcing_obc_segment_004.nc(u)," // &
+                                "V=file:forcing_obc_segment_004.nc(v)," // &
+                                "SSH=file:forcing_obc_segment_004.nc(eta)," // &
+                                "TEMP=file:forcing_obc_segment_004.nc(temp)," // &
+                                "SALT=file:forcing_obc_segment_004.nc(salt)," // &
+                                "Uamp=file:tu_segment_004.nc(uamp)," // &
+                                "Uphase=file:tu_segment_004.nc(uphase)," // &
+                                "Vamp=file:tu_segment_004.nc(vamp)," // &
+                                "Vphase=file:tu_segment_004.nc(vphase)," // &
+                                "SSHamp=file:tz_segment_004.nc(zamp)," // &
+                                "SSHphase=file:tz_segment_004.nc(zphase)," // &
+                                "no3=file:forcing_obc_segment_004.nc(no3)," // &
+                                "fe=file:forcing_obc_segment_004.nc(fe)," // &
+                                "o2=file:forcing_obc_segment_004.nc(o2)," // &
+                                "dic=file:forcing_obc_segment_004.nc(dic)," // &
+                                "adic=file:forcing_obc_segment_004.nc(adic)," // &
+                                "zoo=file:forcing_obc_segment_004.nc(zoo)," // &
+                                "phy=file:forcing_obc_segment_004.nc(phy)," // &
+                                "det=file:forcing_obc_segment_004.nc(det)," // &
+                                "alk=file:forcing_obc_segment_004.nc(alk)," // &
+                                "caco3=file:forcing_obc_segment_004.nc(caco3)," // &
+                                "caco3_sediment=file:forcing_obc_segment_004.nc(caco3_sediment)," // &
+                                "det_sediment=file:forcing_obc_segment_004.nc(det_sediment)" !None
 #override TIDES = True !None
 #override OBC_TIDE_ADD_EQ_PHASE = True !None
 #override OBC_TIDE_N_CONSTITUENTS = 2 !None

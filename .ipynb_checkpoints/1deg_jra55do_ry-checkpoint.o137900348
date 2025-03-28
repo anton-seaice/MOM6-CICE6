@@ -12,25 +12,24 @@ Loading exe manifest: manifests/exe.yaml
 Setting up access-om3
 Checking exe, input and restart manifests
 Writing manifests/restart.yaml
-Writing manifests/exe.yaml
 mod access-om3-nuopc/0.4.0-bmecwy5
 mod access-om3/2025.01.0
 mod nco/5.0.5
 mpirun  -wdir /scratch/x77/ee8016/access-om3/work/access-rom3 -np 48  /scratch/x77/ee8016/access-om3/work/access-rom3/access-om3-MOM6
-/home/156/ee8016/access-om3/testBGC/access-rom3/access-om3.err /scratch/x77/ee8016/access-om3/archive/access-rom3/error_logs/access-om3.137870110.gadi-pbs.err
-/home/156/ee8016/access-om3/testBGC/access-rom3/access-om3.out /scratch/x77/ee8016/access-om3/archive/access-rom3/error_logs/access-om3.137870110.gadi-pbs.out
-/home/156/ee8016/access-om3/testBGC/access-rom3/job.yaml /scratch/x77/ee8016/access-om3/archive/access-rom3/error_logs/job.137870110.gadi-pbs.yaml
-/home/156/ee8016/access-om3/testBGC/access-rom3/env.yaml /scratch/x77/ee8016/access-om3/archive/access-rom3/error_logs/env.137870110.gadi-pbs.yaml
+/home/156/ee8016/access-om3/testBGC/access-rom3/access-om3.err /scratch/x77/ee8016/access-om3/archive/access-rom3/error_logs/access-om3.137900348.gadi-pbs.err
+/home/156/ee8016/access-om3/testBGC/access-rom3/access-om3.out /scratch/x77/ee8016/access-om3/archive/access-rom3/error_logs/access-om3.137900348.gadi-pbs.out
+/home/156/ee8016/access-om3/testBGC/access-rom3/job.yaml /scratch/x77/ee8016/access-om3/archive/access-rom3/error_logs/job.137900348.gadi-pbs.yaml
+/home/156/ee8016/access-om3/testBGC/access-rom3/env.yaml /scratch/x77/ee8016/access-om3/archive/access-rom3/error_logs/env.137900348.gadi-pbs.yaml
 
 ======================================================================================
-                  Resource Usage on 2025-03-28 10:28:57:
-   Job Id:             137870110.gadi-pbs
+                  Resource Usage on 2025-03-28 13:35:41:
+   Job Id:             137900348.gadi-pbs
    Project:            x77
    Exit Status:        1
-   Service Units:      0.85
+   Service Units:      0.83
    NCPUs Requested:    48                     NCPUs Used: 48              
-                                           CPU Time Used: 00:07:03        
-   Memory Requested:   100.0GB               Memory Used: 79.01GB         
-   Walltime requested: 00:10:00            Walltime Used: 00:00:32        
+                                           CPU Time Used: 00:07:18        
+   Memory Requested:   100.0GB               Memory Used: 79.16GB         
+   Walltime requested: 00:10:00            Walltime Used: 00:00:31        
    JobFS requested:    10.0GB                 JobFS used: 0B              
 ======================================================================================

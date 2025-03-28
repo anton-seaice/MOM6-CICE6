@@ -6,11 +6,11 @@ project: x77
 
 
 queue: normal
-ncpus: 48
+ncpus: 100
 jobfs: 10GB
 mem: 100GB
 
-walltime: 00:10:00
+walltime: 01:00:00
 jobname: 1deg_jra55do_ryf_wombatlite
 
 model: access-om3
@@ -62,7 +62,7 @@ metadata:
 
 userscripts:
     #setup: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
-    archive: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/archive.sh
+    #archive: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/archive.sh
 
 modules:
     use:
