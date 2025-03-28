@@ -5,8 +5,8 @@
 project: x77
 
 
-queue: normal
-ncpus: 100
+queue: express
+ncpus: 96
 jobfs: 10GB
 mem: 100GB
 
@@ -60,7 +60,7 @@ runlog: false
 metadata: 
     enable: false
 
-userscripts:
+# userscripts:
     #setup: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/setup.sh
     #archive: /usr/bin/bash /g/data/vk83/apps/om3-scripts/payu_config/archive.sh
 
