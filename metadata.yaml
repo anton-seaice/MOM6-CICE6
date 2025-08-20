@@ -25,5 +25,5 @@ license: CC-BY-4.0
 model: ACCESS-OM3
 url: https://github.com/ACCESS-NRI/access-om3-configs
 version: 1.0-beta
-experiment_uuid: 51c678c9-102b-44e2-848b-1d060e3760e5
-name: 632-dev-MC_25km_jra_ryf-632--MC_25km_jra_ryf-1.0-beta-51c678c9
+experiment_uuid: 9ba60f47-af4c-4fcc-9e77-c542807455a1
+name: 632-dev-MC_25km_jra_ryf-632--MC_25km_jra_ryf-1.0-beta-9ba60f47
