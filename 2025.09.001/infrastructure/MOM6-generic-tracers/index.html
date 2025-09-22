@@ -1,0 +1,1536 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://access-nri.github.io/access-om3-configs/2025.09.001/pages/infrastructure/MOM6-generic-tracers/">
+      
+      
+        <link rel="prev" href="../NUOPC-driver/">
+      
+      
+        <link rel="next" href="../Optimisation/">
+      
+      
+      <link rel="icon" href="../../assets/ACCESS_icon_HIVE.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>MOM6 generic tracers - ACCESS-OM3-configs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+      <link rel="stylesheet" href="../../fontello/css/fontello-codes.css">
+    
+      <link rel="stylesheet" href="../../fontello/css/fontello-ie7-codes.css">
+    
+      <link rel="stylesheet" href="../../fontello/css/fontello-ie7.css">
+    
+      <link rel="stylesheet" href="../../fontello/css/fontello.css">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="custom-light" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#background" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ACCESS-OM3-configs" class="md-header__button md-logo" aria-label="ACCESS-OM3-configs" data-md-component="logo">
+      
+  <img src="../../assets/ACCESS_icon_HIVE.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACCESS-OM3-configs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MOM6 generic tracers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="custom-light" data-md-color-primary="none" data-md-color-accent="none"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07zm-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13zm-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87zM19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35zm4.33-2.7 1.15-2.77 2.2 2.54zm1.15-4.96-1.14-2.78 3.34.24zM9.63 18.93l2.77 1.15-2.53 2.19z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="custom-dark" data-md-color-primary="none" data-md-color-accent="none"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07zm-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13zm-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87zM19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35zm4.33-2.7 1.15-2.77 2.2 2.54zm1.15-4.96-1.14-2.78 3.34.24zM9.63 18.93l2.77 1.15-2.53 2.19z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ACCESS-NRI/access-om3-configs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ACCESS-NRI/access-om3-configs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ACCESS-OM3-configs" class="md-nav__button md-logo" aria-label="ACCESS-OM3-configs" data-md-component="logo">
+      
+  <img src="../../assets/ACCESS_icon_HIVE.png" alt="logo">
+
+    </a>
+    ACCESS-OM3-configs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ACCESS-NRI/access-om3-configs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ACCESS-NRI/access-om3-configs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../contributing/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contributing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/Edit-Config-Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Edit this Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/Add-Supported-Config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Add Supported Config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Inputs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Inputs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/Forcing-data-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Forcing data models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/Grids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grids
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/Topography-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Topography generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/Initial-conditions-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Initial condition generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inputs/WW3_setup_and_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WW3 workflow and input files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Configurations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Configurations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/MOM6-CICE6-WW3-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WW3 config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/WW3_parameter_choices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WW3 parameter choices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/MC_25km_jra_ryf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MOM6-CICE 25km JRA RYF 1.0-beta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Infrastructure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NUOPC-driver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NUOPC driver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MOM6 generic tracers
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    MOM6 generic tracers
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fms-coupler-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      FMS coupler types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-tracer-flux-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional tracer flux handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional tracer flux handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schematic-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schematic summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuopc-coupled-mom6-and-generic_tracers" class="md-nav__link">
+    <span class="md-ellipsis">
+      NUOPC-coupled MOM6 and generic_tracers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NUOPC-coupled MOM6 and generic_tracers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mom_cap_gtracer_flux-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      The mom_cap_gtracer_flux module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schematic-summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schematic summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnostics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data override
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optimisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Online-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Online Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fms-coupler-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      FMS coupler types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-tracer-flux-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional tracer flux handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional tracer flux handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schematic-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schematic summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuopc-coupled-mom6-and-generic_tracers" class="md-nav__link">
+    <span class="md-ellipsis">
+      NUOPC-coupled MOM6 and generic_tracers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NUOPC-coupled MOM6 and generic_tracers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mom_cap_gtracer_flux-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      The mom_cap_gtracer_flux module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schematic-summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schematic summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnostics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data override
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/ACCESS-NRI/access-om3-configs/blob/main/documentation/docs/pages/infrastructure/MOM6-generic-tracers.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>MOM6 generic tracers</h1>
+
+<p>NOAA-GFDL maintain a number of modules for modelling tracers, implemented via the GFDL “generic_tracer” API. These modules are “generic” in the sense that they can be used by both MOM and GOLD. They include a number of BGC models (BLING, COBALT, ERGOM, TOPAZ, miniBLING) and other useful tracers (e.g. CFC, SF6). The modules can be found <a href="https://github.com/NOAA-GFDL/ocean_BGC/tree/master/generic_tracers">here</a>.</p>
+<p>Many of the GFDL generic_tracer modules require coupling with other components of the earth system. For example, BLING carries a number of tracers with associated air-sea gas fluxes, runoff fluxes or wet/dry deposition fluxes. Importantly, the additional fluxes required and associated coupled fields—depends on which/how generic_tracers have been configured for use <em>at runtime</em>.</p>
+<p>In the generic_tracer modules, coupling of these additional tracer fluxes is handled via <a href="https://github.com/NOAA-GFDL/FMS/blob/main/coupler/coupler_types.F90">FMS coupler_types</a> which are designed for use with the <a href="https://github.com/NOAA-GFDL/FMScoupler">FMScoupler</a>. Modifications to ACCESS-OM3 (which uses CMEPS/NUOPC for coupling, not FMScoupler) are required to allow the use of coupled generic_tracer modules. These modifications are described here.</p>
+<h2 id="background">Background</h2>
+<h3 id="fms-coupler-types">FMS coupler types</h3>
+<p>In <a href="https://github.com/NOAA-GFDL/FMScoupler">FMScoupler</a>, the handling of tracer fluxes in a fully-coupled system revolves around three related FMS <a href="https://github.com/NOAA-GFDL/FMS/blob/38bfde30e1cb8bf5222410a9c37e71529567bf69/coupler/coupler_types.F90#L365-L372"><code>coupler_1d_bc_type</code></a> data structures in <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/flux_exchange.F90#L594-L605"><code>FMScoupler:flux_exchange_mod</code></a>:</p>
+<ul>
+<li><code>ex_gas_fields_atm</code>: for atmospheric surface fields associated with tracer fluxes and related parameters</li>
+<li><code>ex_gas_fields_ice</code>: for ice top and ocean surface fields associated with tracer fluxes and related parameters</li>
+<li><code>ex_gas_fluxes</code>: for tracer fluxes and related fields</li>
+</ul>
+<p>Together, these structures define the additional tracer fluxes required, the fields needed for their calculation, and the calculation method/parameters to use (defined by the flux type and implementation). A number of flux types and implementations can be used and are described in the <code>/coupler_mod/types/</code> field manager list (see <a href="https://github.com/NOAA-GFDL/FMS/blob/38bfde30e1cb8bf5222410a9c37e71529567bf69/coupler/atmos_ocean_fluxes.F90#L937">here</a> for where this list is defined). There are multiple implementations (i.e. calculation methods) for air-sea gas, air-sea deposition and land-sea runoff flux types. Each flux in the <code>ex_gas_*</code> structures has a type and implementation and is associated with an entry in the <code>/coupler_mod/fluxes/</code> field manager list.</p>
+<p>As an example, suppose we require an additional tracer flux <code>"co2_flux"</code> of type <code>"air_sea_gas_flux_generic"</code> and implementation <code>"ocmip2"</code> (<code>”ocmip2”</code> describes a particular method for calculating air-sea gas fluxes). After initialising the <code>ex_gas_*</code> structures with this flux, the relevant entry in the <code>/coupler_mod/types/</code> field manager list is:
+<div class="highlight"><pre><span></span><code>air_sea_gas_flux_generic/
+<span class="w">      </span>implementation/
+<span class="w">            </span>ocmip2/
+<span class="w">                  </span><span class="nv">num_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="w">            </span>duce/
+<span class="w">                  </span><span class="nv">num_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">            </span>johnson/
+<span class="w">                  </span><span class="nv">num_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="w">      </span><span class="nv">num_flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">      </span><span class="nv">use_atm_pressure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>T
+<span class="w">      </span><span class="nv">use_10m_wind_speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>T
+<span class="w">      </span><span class="nv">pass_through_ice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>F
+<span class="w">      </span>atm/
+<span class="w">            </span>name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pcair&#39;</span>
+<span class="w">            </span>name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;u10&#39;</span>
+<span class="w">            </span>name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;psurf&#39;</span>
+<span class="w">            </span>long_name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Atmospheric concentration&#39;</span>
+<span class="w">            </span>long_name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Wind speed at 10 m&#39;</span>
+<span class="w">            </span>long_name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface atmospheric pressure&#39;</span>
+<span class="w">            </span>units<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/mol&#39;</span>
+<span class="w">            </span>units<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;m/s&#39;</span>
+<span class="w">            </span>units<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Pa&#39;</span>
+<span class="w">      </span>ice/
+<span class="w">            </span>name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;alpha&#39;</span>
+<span class="w">            </span>name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;csurf&#39;</span>
+<span class="w">            </span>name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sc_no&#39;</span>
+<span class="w">            </span>long_name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Solubility w.r.t. atmosphere&#39;</span>
+<span class="w">            </span>long_name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ocean concentration&#39;</span>
+<span class="w">            </span>long_name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Schmidt number&#39;</span>
+<span class="w">            </span>units<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^3/atm&#39;</span>
+<span class="w">            </span>units<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^3&#39;</span>
+<span class="w">            </span>units<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;dimensionless&#39;</span>
+<span class="w">      </span>flux/
+<span class="w">            </span>name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;flux&#39;</span>
+<span class="w">            </span>name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;deltap&#39;</span>
+<span class="w">            </span>name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;kw&#39;</span>
+<span class="w">            </span>name<span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;flux0&#39;</span>
+<span class="w">            </span>long_name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface flux&#39;</span>
+<span class="w">            </span>long_name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ocean-air delta pressure&#39;</span>
+<span class="w">            </span>long_name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Piston velocity&#39;</span>
+<span class="w">            </span>long_name<span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface flux no atm&#39;</span>
+<span class="w">            </span>units<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^2/s&#39;</span>
+<span class="w">            </span>units<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;uatm&#39;</span>
+<span class="w">            </span>units<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;m/s&#39;</span>
+<span class="w">            </span>units<span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^2/s&#39;</span>
+</code></pre></div></p>
+<p>the <code>"co2_flux"</code> entry in the <code>/coupler_mod/fluxes/</code> field manager list is something like:</p>
+<div class="highlight"><pre><span></span><code>co2_flux/
+<span class="w">      </span><span class="nv">flux_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;air_sea_gas_flux_generic&#39;</span>
+<span class="w">      </span><span class="nv">implementation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ocmip2&#39;</span>
+<span class="w">      </span><span class="nv">atm_tr_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">      </span><span class="nv">mol_wt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">44</span>.0099500000000
+<span class="w">      </span><span class="nv">ice_restart_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ice_bling.res.nc&#39;</span>
+<span class="w">      </span><span class="nv">ocean_restart_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ocean_bling_airsea_flux.res.nc&#39;</span>
+<span class="w">      </span>param<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span>.360000000000000E-007
+<span class="w">      </span>param<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span>.756100000000000E-006
+<span class="w">      </span><span class="nv">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>NULL
+<span class="w">      </span>flux-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^2/s&#39;</span>
+<span class="w">      </span>flux-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface flux&#39;</span>
+<span class="w">      </span>deltap-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;uatm&#39;</span>
+<span class="w">      </span>deltap-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ocean-air delta pressure&#39;</span>
+<span class="w">      </span>kw-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;m/s&#39;</span>
+<span class="w">      </span>kw-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Piston velocity&#39;</span>
+<span class="w">      </span>flux0-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^2/s&#39;</span>
+<span class="w">      </span>flux0-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface flux no atm&#39;</span>
+<span class="w">      </span>pcair-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/mol&#39;</span>
+<span class="w">      </span>pcair-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Atmospheric concentration&#39;</span>
+<span class="w">      </span>u10-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;m/s&#39;</span>
+<span class="w">      </span>u10-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Wind speed at 10 m&#39;</span>
+<span class="w">      </span>psurf-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Pa&#39;</span>
+<span class="w">      </span>psurf-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface atmospheric pressure&#39;</span>
+<span class="w">      </span>alpha-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^3/atm&#39;</span>
+<span class="w">      </span>alpha-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Solubility w.r.t. atmosphere&#39;</span>
+<span class="w">      </span>csurf-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^3&#39;</span>
+<span class="w">      </span>csurf-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ocean concentration&#39;</span>
+<span class="w">      </span>sc_no-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;dimensionless&#39;</span>
+<span class="w">      </span>sc_no-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Schmidt number&#39;</span>
+</code></pre></div>
+<p>and (assuming <code>ind_co2</code> is the index for the <code>"co2_flux"</code> flux):
+- <code>ex_gas_fields_atm%bc(ind_co2)</code> is initialised to carry the fields <code>pcair</code>, <code>u10</code> and <code>psurf</code>
+- <code>ex_gas_fields_ice%bc(ind_co2)</code> is initialised to carry the fields <code>alpha</code>, <code>csurf</code> and <code>sc_no</code>
+- <code>ex_gas_fluxes%bc(ind_co2)</code> is initialised to carry the fields <code>flux</code>, <code>deltap</code>, <code>kw</code> and <code>flux0</code></p>
+<p>During a coupling loop with FMScoupler the fields for each flux in <code>ex_gas_fields_atm</code> and <code>ex_gas_fields_ice</code> are set and the fluxes in <code>ex_gas_fluxes</code> are calculated from these fields. <strong>Importantly, the arrays in the <code>ex_gas_*</code> structures are 1-dimensional (<code>coupler_1d_bc_type</code>). They will store the fields on the exchange grid used in FMScoupler.</strong></p>
+<h3 id="additional-tracer-flux-handling">Additional tracer flux handling</h3>
+<p>A (greatly) simplified summary of the handling of additional tracer fluxes in FMScoupler is as follows:</p>
+<ul>
+<li>Initialise <code>ex_gas_fields_atm</code>, <code>ex_gas_fields_ice</code> and <code>ex_gas_fluxes</code> for the additional tracer fluxes. This step calls initialisation routines within the ocean and atmosphere models to determine what additional tracer fluxes are required. No field arrays set at this point. (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L1689"><code>gas_exchange_init</code></a>).</li>
+<li>Spawn a 2D version, <code>Ocean%fields</code> (<code>coupler_2d_bc_type</code>), of <code>ex_gas_fields_ice</code>. (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L1801"><code>ocean_model_init</code></a>)</li>
+<li>Calculate/set field arrays for <code>alpha</code>, <code>csurf</code> and <code>sc_no</code> for air-sea gasfluxes in <code>Ocean%fields</code>. (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L1801"><code>ocean_model_init</code></a>)</li>
+<li>Spawn a 2D version, <code>Atm%fields</code>, of <code>ex_gas_fields_atm</code>. (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L1857"><code>flux_exchange_init</code></a>)</li>
+<li>Spawn a 2D version, <code>Ice_ocean_boundary%fluxes</code>, of <code>ex_gas_fluxes</code>. (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L1857"><code>flux_exchange_init</code></a>)</li>
+<li><strong>&gt;&gt;&gt; Begin coupling loop</strong></li>
+<li>Set arrays for <code>pcair</code> (air-sea gas fluxes) and <code>deposition</code> (air-sea deposition fluxes) in <code>Atm%fields</code>. (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L789"><code>atmos_tracer_driver_gather_data</code></a>)</li>
+<li>Set arrays for <code>u10</code> and <code>psurf</code> for air-sea gas fluxes in <code>Atm%fields</code>. (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L795"><code>sfc_boundary_layer</code></a>)</li>
+<li>Map <code>Ocean%fields</code> and <code>Atm%fields</code> onto exchange grid to set 1D fields in <code>ex_gas_fields_ice</code> and <code>ex_gas_fields_atm</code>, respectively. (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L795"><code>sfc_boundary_layer</code></a>)</li>
+<li>Calculate fluxes <code>ex_gas_fluxes</code> from <code>ex_gas_fields_ice</code> and <code>ex_gas_fields_atm</code> according to flux types and implementations. (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L795"><code>sfc_boundary_layer</code></a>)</li>
+<li><strong>Update atmosphere</strong> (this is actually done in multiple steps within a fast coupling loop, but here we’ve simplified)</li>
+<li>Map 1D <code>ex_gas_fluxes</code> fields onto 2D <code>Ice_ocean_boundary%fluxes</code> (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L857"><code>flux_down_from_atmos</code></a> and <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L907"><code>flux_atmos_to_ocean</code></a>)</li>
+<li><strong>Update land</strong> (this is actually done in multiple steps across two coupling loops, but here we’ve simplified)</li>
+<li><strong>Update ice</strong> (this is actually done in multiple steps across two coupling loops, but here we’ve simplified)</li>
+<li><strong>Update ocean</strong>, applying <code>Ice_ocean_boundary%fluxes</code>. Calculate/set field arrays for <code>alpha</code>, <code>csurf</code> and <code>sc_no</code> for air-sea gas fluxes in <code>Ocean%fields</code>. (via <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/coupler_main.F90#L1063"><code>update_ocean_model</code></a>)</li>
+<li><strong>&lt;&lt;&lt; End coupling loop</strong></li>
+</ul>
+<h4 id="schematic-summary">Schematic summary</h4>
+<p>The schematic below traces the handling of additional tracer fluxes in more detail and shows where simplifications were made in the above summary. Note that I generated this schematic by reading the source code and it hasn’t (yet) been verified by any FMScoupler developer. To the best of my knowledge it is mostly complete/correct but I make no guarantees.</p>
+<p><img src="https://github.com/dougiesquire/access-om3/assets/42455466/001ba241-1ae8-4bb0-99b1-b63b5569f85b" width=100%></p>
+<h2 id="nuopc-coupled-mom6-and-generic_tracers">NUOPC-coupled MOM6 and generic_tracers</h2>
+<p>Code changes are required to allow the use of coupled generic_tracers with NUOPC-coupled MOM6. These changes are guided by the following design principles:</p>
+<ul>
+<li>Use exisiting code where possible, with as little change as possible</li>
+<li>Avoid making edits to source code in MOM6 or GFDL generic_tracer modules</li>
+</ul>
+<p>The code changes are limited to the <a href="https://github.com/NCAR/MOM6/tree/d363034fcc99eef960889b613b4144df8d8eea5a/config_src/drivers/nuopc_cap">MOM6 NUOPC cap</a> and broadly do as follows:</p>
+<ol>
+<li>Initialisation phases<ol>
+<li>Initialise <code>coupler_1d_bc_type</code> data structures <code>ex_gas_fields_atm</code>, <code>ex_gas_fields_ocn</code> and <code>ex_gas_fluxes</code>. Note these structures are never actually populated with data (unlike in FMScoupler) - they are just used to spawn 2D structures (<code>coupler_2d_bc_type</code>).</li>
+<li>Initialise ocean model with (a pointer to) <code>ex_gas_fields_ocn</code> to populate relevant fields.</li>
+<li>Spawn 2D <code>Ice_ocean_boundary%fluxes</code> from (a pointer to) <code>ex_gas_fluxes</code>.</li>
+<li>Spawn 2D <code>atm_fields</code> from (a pointer to) <code>ex_gas_fields_atm</code>.</li>
+<li>Using (a pointer to) <code>ex_gas_fluxes</code>, register with NUOPC the additional atmospheric import fields required flux calculations. Field export has not yet been implemented.</li>
+</ol>
+</li>
+<li>Advance phase<ol>
+<li>Get/set atmospheric fields in <code>atm_fields</code> from the coupler.</li>
+<li>Calculate the fluxes in <code>Ice_ocean_boundary%fluxes</code> using a modified version of the routine used by FMScoupler that operates on FMS <code>coupler_2d_bc_type</code> inputs.</li>
+</ol>
+</li>
+</ol>
+<p>The additional fluxes will be applied from <code>Ice_ocean_boundary%fluxes</code> when the model is advanced.</p>
+<h3 id="code-structure">Code structure</h3>
+<p>The most important changes made include modifications to:</p>
+<ul>
+<li><code>MOM6/config_src/drivers/nuopc_cap/mom_cap.F90</code></li>
+<li><code>MOM6/config_src/drivers/nuopc_cap/mom_cap_methods.F90</code></li>
+</ul>
+<p>and the addition of a new module to the NUOPC cap: <code>mom_cap_gtracer_flux.F90</code></p>
+<p>Code modifications/additions have been made via patch files found in the <code>MOM6/patches</code> directory. The new module can be found in the <code>MOM6/extra_sources</code> directory.</p>
+<h4 id="the-mom_cap_gtracer_flux-module">The <code>mom_cap_gtracer_flux</code> module</h4>
+<p>This is where most of the new code is, with many of the changes to <code>mom_cap.F90</code> and <code>mom_cap_methods.F90</code> being calls to routines defined here. This module also includes the data structures <code>ex_gas_fields_atm</code>, <code>ex_gas_fields_ocn</code> and <code>ex_gas_fluxes</code>. Public routines are:</p>
+<ul>
+<li><code>gas_exchange_init</code>: initialise <code>ex_gas_fields_atm</code>, <code>ex_gas_fields_ocn</code> and <code>ex_gas_fluxes</code> and optionally returns pointers to them.</li>
+<li><code>gas_fields_restore</code>: restore an FMS <code>coupler_2d_bc_type</code> state from the ocean restart file defined internally.</li>
+<li><code>gas_fields_restart</code>: write restart for an FMS <code>coupler_2d_bc_type</code> to the ocean restart file defined internally.</li>
+<li><code>add_gas_fluxes_param</code>: for each flux in an FMS <code>coupler_2d_bc_type</code>, retrieve the <code>param</code> array from the <code>/coupler_mod/fluxes/</code> field manager list and set it in the <code>coupler_2d_bc_type</code>. This is only needed because spawning a <code>coupler_*d_bc_type</code> does not copy the <code>param</code> array into the spawned type.</li>
+<li><code>get_coupled_field_name</code>: provides the CMEPS field standard name of any fields that need to be coupled for a given generic_tracer flux name. Currently only generic_tracer fluxes <code>"co2_flux"</code> and <code>"o2_flux"</code> have been implemented.</li>
+<li><code>atmos_ocean_fluxes_calc</code>: calculates the tracer fluxes according to their flux type and implementation. This routine was copied from <a href="https://github.com/NOAA-GFDL/FMScoupler/blob/6442d387153064644325c96a5e9e2935139d5e3c/full/atmos_ocean_fluxes_calc.F90">FMScoupler</a> and modified. Key modifications include:<ul>
+<li>Operate on <code>coupler_2d_bc_type</code> inputs, rather than <code>coupler_1d_bc_type</code>.</li>
+<li>Include calculation for <code>"air_sea_deposition"</code> flux types (which in FMScoupler is done in a separate step)</li>
+<li>Account for sea-ice fraction (in FMScoupler this is done as part of the exchange grid mapping)</li>
+<li>Make <code>tsurf</code> input optional, as it is only used by a few implementations</li>
+</ul>
+</li>
+</ul>
+<h4 id="schematic-summary_1">Schematic summary</h4>
+<p>The schematic below traces the handling of coupled generic_tracer fluxes in the MOM6 NUOPC cap.</p>
+<p><img src="https://github.com/dougiesquire/access-om3/assets/42455466/b39aff05-4193-42e9-83f7-cce9cb7a974f" width=65%></p>
+<h3 id="diagnostics">Diagnostics</h3>
+<p>Diagnostics can be output for the FMS <code>coupler_2d_bc_type</code> fields involved in the handling of the tracer fluxes (flux fields: <code>Ice_ocean_boundary%fluxes</code>, ocean fields: <code>ocean_public%fields</code>, atmos fields: <code>atm_fields</code>). The “model_name” for each type is: flux fields: <code>“ocean_flux”</code>, ocean fields: <code>“ocean_sfc”</code>, atmos fields: <code>“atmos_sfc”</code>. The naming convention for diagnostics of FMS <code>coupler_bc_type</code>s is: <code>&lt;flux_name&gt;_&lt;field_name&gt;_&lt;suffix&gt;</code>, where <code>&lt;suffix&gt;</code> is <code>”_ice_ocn”</code>, <code>”_ocn”</code> and <code>”_atm”</code> for the flux, ocean and atmos fields, respectively. For example, the surface flux field for the <code>”co2_flux”</code> example above is called <code>”co2_flux_flux_ice_ocn”</code>.</p>
+<p>The flux and atmos diagnostics are sent immediately after the tracer flux calculation is done, prior to advancing the model. The ocean diagnostics are sent after advancing the model. This means that the flux/atmos diagnostics are not available at Tfinal+dt (whereas the ocean diagnostics are) and the ocean diagnostics are not available at Tstart (whereas the flux/atmos diagnostics are).</p>
+<h3 id="data-override">Data override</h3>
+<p>FMS data override functionality has been added to allow the tracer fluxes and the contributing atmospheric fields to be overridden via a <code>data_table</code> using the component name <code>"OCN"</code>. The naming convention for overriding fields is as described above. E.g. one could override the atmospheric concentration field for the <code>”co2_flux”</code> example above using the fieldname <code>”co2_flux_pcair_atm”</code></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--><div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <div>
+        <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution 4.0 International license">
+          <i class="icon-cc"></i>
+          <i class="icon-cc-by"></i>
+        </a>
+          Copyright &copy; 2025 ACCESS-NRI
+      </div>
+    </div>
+    
+    
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://bsky.app/profile/access-nri.bsky.social" target="_blank" rel="noopener" title="ACCESS-NRI on Bluesky" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2 42.1-31.6 110.3-56 110.3 21.8 0 15.5-8.9 130.5-14.1 149.2-18.2 64.8-84.4 81.4-143.3 71.3C456 322 482.2 380 425.6 438c-107.4 110.2-154.3-27.6-166.3-62.9-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8c-12 35.3-59 173.1-166.3 62.9-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1 10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/access-nri" target="_blank" rel="noopener" title="ACCESS-NRI on Linkedin" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
+      
+    
+  </body>
+</html>
