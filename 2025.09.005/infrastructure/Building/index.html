@@ -850,16 +850,14 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -911,26 +909,24 @@
 
   <h1>Building</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>This page is out of date, and needs to be updated to the new Spack-based build process!</strong></p>
-</div>
+<p>!!! warning
+    <strong>This page is out of date, and needs to be updated to the new Spack-based build process!</strong></p>
 <p>If you don't want to use a precompiled executable from an <a href="../../pages/infrastructure/Releases/">ACCESS-OM3 release</a>, you can build it yourself.</p>
 <p>Building access-om3 requires membership of the <code>ik11</code> project - apply at https://my.nci.org.au/mancini/project/ik11 if needed.</p>
 <p>First clone access-om3 following the steps in the <a href="https://github.com/COSIMA/access-om3#readme">README</a>.
-Then do
-<div class="highlight"><pre><span></span><code>cd access-om3
+Then do</p>
+<pre><code>cd access-om3
 ./build.sh
-</code></pre></div>
-After a little while you'll get shiny new executables:
-<div class="highlight"><pre><span></span><code>Release/bin/access-om3-CICE6-WW3
+</code></pre>
+<p>After a little while you'll get shiny new executables:</p>
+<pre><code>Release/bin/access-om3-CICE6-WW3
 Release/bin/access-om3-MOM6-CICE6
 Release/bin/access-om3-MOM6-CICE6-WW3
 Debug/bin/access-om3-CICE6-WW3
 Debug/bin/access-om3-MOM6-CICE6
 Debug/bin/access-om3-MOM6-CICE6-WW3
-</code></pre></div>
-The executables in <code>Releases</code> are optimised for production use. The <code>Debug</code> versions may be useful for getting more information on model crashes, but should not be used for production runs as they are much slower.</p>
+</code></pre>
+<p>The executables in <code>Releases</code> are optimised for production use. The <code>Debug</code> versions may be useful for getting more information on model crashes, but should not be used for production runs as they are much slower.</p>
 <p>The executable names are labelled by the included model components. There are additional combinations of components which can be built by changing <code>OFF</code> to <code>ON</code> in <a href="https://github.com/COSIMA/access-om3/blob/6f9085f4c0832b719ea2ae5dc4630004c3db9263/CMakeLists.txt#L20-L26">this section of <code>CMakeLists.txt</code></a> and running <code>./build.sh</code> again.</p>
 <h3 id="a-note-on-dependencies">A note on dependencies</h3>
 <p>ACCESS-OM3 has several dependencies which are unavailable from NCI, so we supply them via Spack using https://github.com/COSIMA/spack-config which is installed in <code>/g/data/ik11/spack/</code>.</p>
@@ -1057,14 +1053,6 @@ The executables in <code>Releases</code> are optimised for production use. The <
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

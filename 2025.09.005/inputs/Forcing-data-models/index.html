@@ -468,9 +468,7 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -479,7 +477,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -993,9 +991,7 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1004,7 +1000,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1167,7 +1163,7 @@ Thus <code>Fioi_taux</code> is calculated in CICE6, whereas <code>Faox_taux</cod
 <h3 id="ice-ocean-stress">Ice-ocean stress</h3>
 <p>The ice-ocean stress components <code>Fioi_taux</code> and <code>Fioi_tauy</code> are calculated in CICE6.
 <code>Fioi_taux</code> and <code>Fioi_tauy</code> are <a href="https://github.com/ACCESS-NRI/CICE/blob/e68e05b7962fc926c8a35397bca464d6b1e06ab9/cicecore/drivers/nuopc/cmeps/ice_import_export.F90#L1253-L1261">mapped from <code>tauxo</code> and <code>tauyo</code> in the CICE6 cap</a>, which are in turn <a href="https://github.com/ACCESS-NRI/CICE/blob/e68e05b7962fc926c8a35397bca464d6b1e06ab9/cicecore/drivers/nuopc/cmeps/ice_import_export.F90#L1011-L1014">calculated in the CICE6 cap from <code>strocnxT_iavg</code> and <code>strocnyT_iavg</code></a>, which are per-ice-area quantities at T points <a href="https://github.com/ACCESS-NRI/CICE/blob/e68e05b7962fc926c8a35397bca464d6b1e06ab9/cicecore/cicedyn/general/ice_step_mod.F90#L977-L1007">calculated from per-cell-area stresses at U points <code>strocnxU</code> and <code>strocnyU</code></a>.
-<code>strocnxU</code> and <code>strocnyU</code> are calculated by <a href="https://github.com/ACCESS-NRI/CICE/blob/e68e05b7962fc926c8a35397bca464d6b1e06ab9/cicecore/cicedyn/dynamics/ice_dyn_evp.F90#L1384-L1398">subtroutine <code>dyn_finish</code></a> using <a href="https://github.com/ACCESS-NRI/CICE/blob/e68e05b7962fc926c8a35397bca464d6b1e06ab9/cicecore/cicedyn/dynamics/ice_dyn_shared.F90#L1291-L1316">this code</a>; see <a href="https://cice-consortium-cice.readthedocs.io/en/main/science_guide/sg_coupling.html#equation-tauw">equation (4) here</a> and <a href="https://cice-consortium-cice.readthedocs.io/en/cice6.4.0/science_guide/sg_dynamics.html">equation (2) here</a> for an explanation. We use a turning angle <span class="arithmatex">\(\theta=0\)</span> (<code>cosw = 1.0</code>, <code>sinw = 0.0</code>, the <a href="https://cice-consortium-cice.readthedocs.io/en/main/cice_index.html">defaults</a>), which is appropriate for an ocean component with vertical resolution sufficient to resolve the surface Ekman layer. We don't use <a href="https://cice-consortium-icepack.readthedocs.io/en/main/science_guide/sg_boundary_forcing.html#variable-exchange-coefficients">spatiotemporally variable form drag</a> (<code>formdrag = .false</code>, the <a href="https://cice-consortium-cice.readthedocs.io/en/cice6.4.0/user_guide/ug_case_settings.html#forcing-nml">default</a>).</p>
+<code>strocnxU</code> and <code>strocnyU</code> are calculated by <a href="https://github.com/ACCESS-NRI/CICE/blob/e68e05b7962fc926c8a35397bca464d6b1e06ab9/cicecore/cicedyn/dynamics/ice_dyn_evp.F90#L1384-L1398">subtroutine <code>dyn_finish</code></a> using <a href="https://github.com/ACCESS-NRI/CICE/blob/e68e05b7962fc926c8a35397bca464d6b1e06ab9/cicecore/cicedyn/dynamics/ice_dyn_shared.F90#L1291-L1316">this code</a>; see <a href="https://cice-consortium-cice.readthedocs.io/en/main/science_guide/sg_coupling.html#equation-tauw">equation (4) here</a> and <a href="https://cice-consortium-cice.readthedocs.io/en/cice6.4.0/science_guide/sg_dynamics.html">equation (2) here</a> for an explanation. We use a turning angle $\theta=0$ (<code>cosw = 1.0</code>, <code>sinw = 0.0</code>, the <a href="https://cice-consortium-cice.readthedocs.io/en/main/cice_index.html">defaults</a>), which is appropriate for an ocean component with vertical resolution sufficient to resolve the surface Ekman layer. We don't use <a href="https://cice-consortium-icepack.readthedocs.io/en/main/science_guide/sg_boundary_forcing.html#variable-exchange-coefficients">spatiotemporally variable form drag</a> (<code>formdrag = .false</code>, the <a href="https://cice-consortium-cice.readthedocs.io/en/cice6.4.0/user_guide/ug_case_settings.html#forcing-nml">default</a>).</p>
 <p><strong>TODO: what namelist controls the ice-ocean stress calculation?</strong>  </p>
 <h3 id="atmosphere-ocean-stress">Atmosphere-ocean stress</h3>
 <p>The atmosphere-ocean stress components <code>Faox_taux</code> and <code>Faox_tauy</code> are <a href="https://github.com/ESCOMP/CMEPS/blob/bc29792d76c16911046dbbfcfc7f4c3ae89a6f00/cesm/flux_atmocn/shr_flux_mod.F90#L434-L438">calculated in the mediator</a>.
@@ -1295,14 +1291,6 @@ https://doi.org/10.1016/j.ocemod.2019.101557.</p>
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

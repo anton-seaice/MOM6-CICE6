@@ -786,16 +786,14 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1010,16 +1008,14 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1170,85 +1166,85 @@
 <li><code>ex_gas_fluxes</code>: for tracer fluxes and related fields</li>
 </ul>
 <p>Together, these structures define the additional tracer fluxes required, the fields needed for their calculation, and the calculation method/parameters to use (defined by the flux type and implementation). A number of flux types and implementations can be used and are described in the <code>/coupler_mod/types/</code> field manager list (see <a href="https://github.com/NOAA-GFDL/FMS/blob/38bfde30e1cb8bf5222410a9c37e71529567bf69/coupler/atmos_ocean_fluxes.F90#L937">here</a> for where this list is defined). There are multiple implementations (i.e. calculation methods) for air-sea gas, air-sea deposition and land-sea runoff flux types. Each flux in the <code>ex_gas_*</code> structures has a type and implementation and is associated with an entry in the <code>/coupler_mod/fluxes/</code> field manager list.</p>
-<p>As an example, suppose we require an additional tracer flux <code>"co2_flux"</code> of type <code>"air_sea_gas_flux_generic"</code> and implementation <code>"ocmip2"</code> (<code>”ocmip2”</code> describes a particular method for calculating air-sea gas fluxes). After initialising the <code>ex_gas_*</code> structures with this flux, the relevant entry in the <code>/coupler_mod/types/</code> field manager list is:
-<div class="highlight"><pre><span></span><code>air_sea_gas_flux_generic/
-<span class="w">      </span>implementation/
-<span class="w">            </span>ocmip2/
-<span class="w">                  </span><span class="nv">num_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
-<span class="w">            </span>duce/
-<span class="w">                  </span><span class="nv">num_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
-<span class="w">            </span>johnson/
-<span class="w">                  </span><span class="nv">num_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
-<span class="w">      </span><span class="nv">num_flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
-<span class="w">      </span><span class="nv">use_atm_pressure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>T
-<span class="w">      </span><span class="nv">use_10m_wind_speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>T
-<span class="w">      </span><span class="nv">pass_through_ice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>F
-<span class="w">      </span>atm/
-<span class="w">            </span>name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pcair&#39;</span>
-<span class="w">            </span>name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;u10&#39;</span>
-<span class="w">            </span>name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;psurf&#39;</span>
-<span class="w">            </span>long_name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Atmospheric concentration&#39;</span>
-<span class="w">            </span>long_name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Wind speed at 10 m&#39;</span>
-<span class="w">            </span>long_name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface atmospheric pressure&#39;</span>
-<span class="w">            </span>units<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/mol&#39;</span>
-<span class="w">            </span>units<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;m/s&#39;</span>
-<span class="w">            </span>units<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Pa&#39;</span>
-<span class="w">      </span>ice/
-<span class="w">            </span>name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;alpha&#39;</span>
-<span class="w">            </span>name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;csurf&#39;</span>
-<span class="w">            </span>name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sc_no&#39;</span>
-<span class="w">            </span>long_name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Solubility w.r.t. atmosphere&#39;</span>
-<span class="w">            </span>long_name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ocean concentration&#39;</span>
-<span class="w">            </span>long_name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Schmidt number&#39;</span>
-<span class="w">            </span>units<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^3/atm&#39;</span>
-<span class="w">            </span>units<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^3&#39;</span>
-<span class="w">            </span>units<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;dimensionless&#39;</span>
-<span class="w">      </span>flux/
-<span class="w">            </span>name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;flux&#39;</span>
-<span class="w">            </span>name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;deltap&#39;</span>
-<span class="w">            </span>name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;kw&#39;</span>
-<span class="w">            </span>name<span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;flux0&#39;</span>
-<span class="w">            </span>long_name<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface flux&#39;</span>
-<span class="w">            </span>long_name<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ocean-air delta pressure&#39;</span>
-<span class="w">            </span>long_name<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Piston velocity&#39;</span>
-<span class="w">            </span>long_name<span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface flux no atm&#39;</span>
-<span class="w">            </span>units<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^2/s&#39;</span>
-<span class="w">            </span>units<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;uatm&#39;</span>
-<span class="w">            </span>units<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;m/s&#39;</span>
-<span class="w">            </span>units<span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^2/s&#39;</span>
-</code></pre></div></p>
+<p>As an example, suppose we require an additional tracer flux <code>"co2_flux"</code> of type <code>"air_sea_gas_flux_generic"</code> and implementation <code>"ocmip2"</code> (<code>”ocmip2”</code> describes a particular method for calculating air-sea gas fluxes). After initialising the <code>ex_gas_*</code> structures with this flux, the relevant entry in the <code>/coupler_mod/types/</code> field manager list is:</p>
+<pre><code class="language-bash">air_sea_gas_flux_generic/
+      implementation/
+            ocmip2/
+                  num_parameters = 2
+            duce/
+                  num_parameters = 1
+            johnson/
+                  num_parameters = 2
+      num_flags = 0
+      use_atm_pressure = T
+      use_10m_wind_speed = T
+      pass_through_ice = F
+      atm/
+            name[1] = 'pcair'
+            name[2] = 'u10'
+            name[3] = 'psurf'
+            long_name[1] = 'Atmospheric concentration'
+            long_name[2] = 'Wind speed at 10 m'
+            long_name[3] = 'Surface atmospheric pressure'
+            units[1] = 'mol/mol'
+            units[2] = 'm/s'
+            units[3] = 'Pa'
+      ice/
+            name[1] = 'alpha'
+            name[2] = 'csurf'
+            name[3] = 'sc_no'
+            long_name[1] = 'Solubility w.r.t. atmosphere'
+            long_name[2] = 'Ocean concentration'
+            long_name[3] = 'Schmidt number'
+            units[1] = 'mol/m^3/atm'
+            units[2] = 'mol/m^3'
+            units[3] = 'dimensionless'
+      flux/
+            name[1] = 'flux'
+            name[2] = 'deltap'
+            name[3] = 'kw'
+            name[4] = 'flux0'
+            long_name[1] = 'Surface flux'
+            long_name[2] = 'Ocean-air delta pressure'
+            long_name[3] = 'Piston velocity'
+            long_name[4] = 'Surface flux no atm'
+            units[1] = 'mol/m^2/s'
+            units[2] = 'uatm'
+            units[3] = 'm/s'
+            units[4] = 'mol/m^2/s'
+</code></pre>
 <p>the <code>"co2_flux"</code> entry in the <code>/coupler_mod/fluxes/</code> field manager list is something like:</p>
-<div class="highlight"><pre><span></span><code>co2_flux/
-<span class="w">      </span><span class="nv">flux_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;air_sea_gas_flux_generic&#39;</span>
-<span class="w">      </span><span class="nv">implementation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ocmip2&#39;</span>
-<span class="w">      </span><span class="nv">atm_tr_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
-<span class="w">      </span><span class="nv">mol_wt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">44</span>.0099500000000
-<span class="w">      </span><span class="nv">ice_restart_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ice_bling.res.nc&#39;</span>
-<span class="w">      </span><span class="nv">ocean_restart_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ocean_bling_airsea_flux.res.nc&#39;</span>
-<span class="w">      </span>param<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span>.360000000000000E-007
-<span class="w">      </span>param<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span>.756100000000000E-006
-<span class="w">      </span><span class="nv">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>NULL
-<span class="w">      </span>flux-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^2/s&#39;</span>
-<span class="w">      </span>flux-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface flux&#39;</span>
-<span class="w">      </span>deltap-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;uatm&#39;</span>
-<span class="w">      </span>deltap-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ocean-air delta pressure&#39;</span>
-<span class="w">      </span>kw-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;m/s&#39;</span>
-<span class="w">      </span>kw-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Piston velocity&#39;</span>
-<span class="w">      </span>flux0-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^2/s&#39;</span>
-<span class="w">      </span>flux0-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface flux no atm&#39;</span>
-<span class="w">      </span>pcair-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/mol&#39;</span>
-<span class="w">      </span>pcair-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Atmospheric concentration&#39;</span>
-<span class="w">      </span>u10-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;m/s&#39;</span>
-<span class="w">      </span>u10-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Wind speed at 10 m&#39;</span>
-<span class="w">      </span>psurf-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Pa&#39;</span>
-<span class="w">      </span>psurf-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Surface atmospheric pressure&#39;</span>
-<span class="w">      </span>alpha-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^3/atm&#39;</span>
-<span class="w">      </span>alpha-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Solubility w.r.t. atmosphere&#39;</span>
-<span class="w">      </span>csurf-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mol/m^3&#39;</span>
-<span class="w">      </span>csurf-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ocean concentration&#39;</span>
-<span class="w">      </span>sc_no-units<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;dimensionless&#39;</span>
-<span class="w">      </span>sc_no-long_name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Schmidt number&#39;</span>
-</code></pre></div>
+<pre><code class="language-bash">co2_flux/
+      flux_type = 'air_sea_gas_flux_generic'
+      implementation = 'ocmip2'
+      atm_tr_index = 0
+      mol_wt = 44.0099500000000
+      ice_restart_file = 'ice_bling.res.nc'
+      ocean_restart_file = 'ocean_bling_airsea_flux.res.nc'
+      param[1] = 9.360000000000000E-007
+      param[2] = 9.756100000000000E-006
+      flag = NULL
+      flux-units = 'mol/m^2/s'
+      flux-long_name = 'Surface flux'
+      deltap-units = 'uatm'
+      deltap-long_name = 'Ocean-air delta pressure'
+      kw-units = 'm/s'
+      kw-long_name = 'Piston velocity'
+      flux0-units = 'mol/m^2/s'
+      flux0-long_name = 'Surface flux no atm'
+      pcair-units = 'mol/mol'
+      pcair-long_name = 'Atmospheric concentration'
+      u10-units = 'm/s'
+      u10-long_name = 'Wind speed at 10 m'
+      psurf-units = 'Pa'
+      psurf-long_name = 'Surface atmospheric pressure'
+      alpha-units = 'mol/m^3/atm'
+      alpha-long_name = 'Solubility w.r.t. atmosphere'
+      csurf-units = 'mol/m^3'
+      csurf-long_name = 'Ocean concentration'
+      sc_no-units = 'dimensionless'
+      sc_no-long_name = 'Schmidt number'
+</code></pre>
 <p>and (assuming <code>ind_co2</code> is the index for the <code>"co2_flux"</code> flux):
 - <code>ex_gas_fields_atm%bc(ind_co2)</code> is initialised to carry the fields <code>pcair</code>, <code>u10</code> and <code>psurf</code>
 - <code>ex_gas_fields_ice%bc(ind_co2)</code> is initialised to carry the fields <code>alpha</code>, <code>csurf</code> and <code>sc_no</code>
@@ -1447,14 +1443,6 @@
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

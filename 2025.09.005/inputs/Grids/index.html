@@ -489,16 +489,14 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -938,16 +936,14 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1020,7 +1016,7 @@ For ACCESS-OM3, new grids will be created from scratch for all resolutions. So-f
 The 25km grid and future OM3 grids largely follows the grids used in OM2, with some refinements to increase resolution and extent around Antarctica, and align the equator with model cell centres, rather than edges.</p>
 <p>Ocean cells cover the global ocean from the North Pole to
 south of the Antarctic ice shelf edge (81&deg; S). The longitude range is −280 to +80&deg; E,
-placing the join in the middle of the Indian Ocean. The grid is defined using the conventional tripolar definition(Murray, 1996)<sup id="fnref:Murray1996a"><a class="footnote-ref" href="#fn:Murray1996a">1</a></sup> 
+placing the join in the middle of the Indian Ocean. The grid is defined using the conventional tripolar definition(Murray, 1996)[^Murray1996a] 
 in all configurations, with two northern poles placed on land at 65&deg; N, −100&deg; E and 65&deg; N, 80&deg; E,
 and a third pole at the South Pole; consequently, the grid
 directions are zonal and meridional only south of 65&deg; N. The grid is Mercator (i.e. the
@@ -1032,8 +1028,8 @@ is held at the same value as at 65&deg; S.</p>
 First the grid is created using the python <a href="https://github.com/ACCESS-NRI/ocean_model_grid_generator/">Ocean Model Grid Generator</a>, 
 to generate a MOM supergrid file. The MOM supergrid splits each model cell into four supergrid cells. </p>
 <p>As an example, the 25km grid was once generated using the python based ocean model grid generator using these arguments:</p>
-<div class="highlight"><pre><span></span><code><span class="n">ocean_grid_generator</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">r</span> <span class="mi">4</span> <span class="o">--</span><span class="n">no_south_cap</span> <span class="o">--</span><span class="n">ensure_nj_even</span> <span class="o">--</span><span class="n">bipolar_lower_lat</span> <span class="mi">65</span> <span class="o">--</span><span class="n">mercator_lower_lat</span> <span class="o">-</span><span class="mi">75</span> <span class="o">--</span><span class="n">mercator_upper_lat</span> <span class="mi">65</span> <span class="o">--</span><span class="n">match_dy</span> <span class="n">so</span> <span class="o">--</span><span class="n">shift_equator_to_u_point</span> <span class="o">--</span><span class="n">south_ocean_lower_lat</span> <span class="o">-</span><span class="mi">81</span>
-</code></pre></div>
+<pre><code class="language-python">ocean_grid_generator.py -r 4 --no_south_cap --ensure_nj_even --bipolar_lower_lat 65 --mercator_lower_lat -75 --mercator_upper_lat 65 --match_dy so --shift_equator_to_u_point --south_ocean_lower_lat -81
+</code></pre>
 <p>However refer to the metadata of the latest <code>ocean_hgrid.nc</code> to find the latest setup.</p>
 <p>Secondly, an <em>ESMF Mesh</em> file is <a href="https://github.com/COSIMA/om3-scripts/blob/main/mesh_generation/generate_mesh.py">derived</a> from the MOM supergrid. 
 The MOM supergrid file is used by the MOM and CICE model components, whilst the ESMF Mesh file is used in the coupler. 
@@ -1047,23 +1043,14 @@ The MOM supergrid file is used by the MOM and CICE model components, whilst the 
 are subtly different to the grid areas used in the model components. The model component caps <a href="https://escomp.github.io/CMEPS/versions/master/html/introduction.html#area-corrections">apply a correction</a> between
 model areas and mediator areas. </p>
 <h2 id="vertical-grid">Vertical grid</h2>
-<p>In the ocean model, we use a <a href="https://github.com/COSIMA/om3-scripts/blob/main/grid_generation/generate_vertical_grid.py">75 level vertical grid</a> unchanged from many OM2 configurations, following Stewart et al.(2017)(Stewart et al., 2017)<sup id="fnref:StewartHoggGriffiesHeerdegenWardSpenceEngland2017a"><a class="footnote-ref" href="#fn:StewartHoggGriffiesHeerdegenWardSpenceEngland2017a">2</a></sup>.</p>
+<p>In the ocean model, we use a <a href="https://github.com/COSIMA/om3-scripts/blob/main/grid_generation/generate_vertical_grid.py">75 level vertical grid</a> unchanged from many OM2 configurations, following Stewart et al.(2017)(Stewart et al., 2017)[^StewartHoggGriffiesHeerdegenWardSpenceEngland2017a].</p>
 <h2 id="aditional-reading">Aditional reading:</h2>
 <ul>
 <li><a href="https://gist.github.com/adcroft/c1e207024fe1189b43dddc5f1fe7dd6c#file-cheat-sheet-for-using-a-mosaic-grid-with-mom6-output-ipynb">Cheat sheet for using a Mosaic grid with MOM6 output</a></li>
-<li><a href="https://www.researchgate.net/publication/228641121_Gridspec_A_standard_for_the_description_of_grids_used_in_Earth_System_models">Gridspec: A standard for the description of grids used in Earth System models</a> <!-- https://extranet.gfdl.noaa.gov/~vb/pdf/gridstd.pdf is busted? --></li>
+<li><a href="https://www.researchgate.net/publication/228641121_Gridspec_A_standard_for_the_description_of_grids_used_in_Earth_System_models">Gridspec: A standard for the description of grids used in Earth System models</a> <!-- https://extranet.gfdl.noaa.gov/~vb/pdf/gridstd.pdf is busted? -->
+[^Murray1996a]: Murray, R. J. (1996). Explicit generation of orthogonal grids for ocean models. <em>Journal of Computational Physics</em>, <em>126</em>(2), 251--273. <a href="https://doi.org/10.1006/jcph.1996.0136">https://doi.org/10.1006/jcph.1996.0136</a>
+[^StewartHoggGriffiesHeerdegenWardSpenceEngland2017a]: Stewart, K. D., Hogg, A. McC., Griffies, S. M., Heerdegen, A. P., Ward, M. L., Spence, P., &amp; England, M. H. (2017). Vertical resolution of baroclinic modes in global ocean models. <em>Ocean Modelling</em>, <em>113</em>, 50--65. <a href="https://doi.org/10.1016/j.ocemod.2017.03.012">https://doi.org/10.1016/j.ocemod.2017.03.012</a></li>
 </ul>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:Murray1996a">
-<p>Murray, R. J. (1996). Explicit generation of orthogonal grids for ocean models. <em>Journal of Computational Physics</em>, <em>126</em>(2), 251--273. <a href="https://doi.org/10.1006/jcph.1996.0136">https://doi.org/10.1006/jcph.1996.0136</a>&#160;<a class="footnote-backref" href="#fnref:Murray1996a" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:StewartHoggGriffiesHeerdegenWardSpenceEngland2017a">
-<p>Stewart, K. D., Hogg, A. McC., Griffies, S. M., Heerdegen, A. P., Ward, M. L., Spence, P., &amp; England, M. H. (2017). Vertical resolution of baroclinic modes in global ocean models. <em>Ocean Modelling</em>, <em>113</em>, 50--65. <a href="https://doi.org/10.1016/j.ocemod.2017.03.012">https://doi.org/10.1016/j.ocemod.2017.03.012</a>&#160;<a class="footnote-backref" href="#fnref:StewartHoggGriffiesHeerdegenWardSpenceEngland2017a" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 
 
 
@@ -1179,14 +1166,6 @@ model areas and mediator areas. </p>
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

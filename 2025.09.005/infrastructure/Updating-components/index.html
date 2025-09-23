@@ -850,16 +850,14 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -929,36 +927,34 @@
 <p>All the components that make up OM3 (models, coupler, etc) are currently included as <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">git submodules</a> and built using <a href="https://cmake.org/">CMake</a>. This means that, in a nutshell, updating a given component usually requires updating the git submodule and the CMake build system.</p>
 <h2 id="step-by-step-instructions">Step by step instructions</h2>
 <h3 id="submodule-update">Submodule update</h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>This page is out of date, and needs to be updated to the new Spack-based build process! We no longer use the COSIMA respository for ACCESS-OM3 builds</strong></p>
-</div>
-<p>Although not required, we recommend starting the process from a clean git repository:
-<div class="highlight"><pre><span></span><code><span class="go">git clone --recursive https://github.com/COSIMA/access-om3.git</span>
-</code></pre></div>
-Next, go to the directory of the component to update. For example, to update MOM6:
-<div class="highlight"><pre><span></span><code><span class="go">cd access-om3/MOM6/MOM6</span>
-</code></pre></div>
-and checkout the branch/tag/commit you want to update to:
-<div class="highlight"><pre><span></span><code><span class="go">git checkout &lt;branch/tag/commit&gt;</span>
-</code></pre></div>
-Some of the components have git submodules themselves. If that's the case, they need also need to be updated:
-<div class="highlight"><pre><span></span><code><span class="go">git submodule update --recursive</span>
-</code></pre></div></p>
+<p>!!! warning
+      <strong>This page is out of date, and needs to be updated to the new Spack-based build process! We no longer use the COSIMA respository for ACCESS-OM3 builds</strong></p>
+<p>Although not required, we recommend starting the process from a clean git repository:</p>
+<pre><code class="language-console">git clone --recursive https://github.com/COSIMA/access-om3.git
+</code></pre>
+<p>Next, go to the directory of the component to update. For example, to update MOM6:</p>
+<pre><code class="language-console">cd access-om3/MOM6/MOM6
+</code></pre>
+<p>and checkout the branch/tag/commit you want to update to:</p>
+<pre><code class="language-console">git checkout &lt;branch/tag/commit&gt;
+</code></pre>
+<p>Some of the components have git submodules themselves. If that's the case, they need also need to be updated:</p>
+<pre><code class="language-console">git submodule update --recursive
+</code></pre>
 <h3 id="cmake-update">CMake update</h3>
 <p>Quite often the changes to the component's sources will include addition and/or removal of files. When this happens, the CMake build system also need to be updated accordingly. The sources are listed in the <code>CMakeLists.txt</code> files that one can find in each component subdirectory. For example, in the case of WW3, that's the <code>WW3/CMakeLists.txt</code> (not <code>WW3/WW3/CMakeLists.txt</code>!).</p>
-<p>At this point, it might also happen that some patches are not necessary anymore and they will throw an error when building the code. If this happens, one needs to update the corresponding patch. If no patch at all is needed after the update, the corresponding patch should be removed from the git repository:
-<div class="highlight"><pre><span></span><code><span class="go">git rm &lt;COMPONENT&gt;/patches/&lt;file&gt;.F90_patch</span>
-</code></pre></div>
-and the original source file needs to be moved from the list of sources to patch to the "normal" source files list in <code>CMakeLists.txt</code>. The changes should look like this:
-<div class="highlight"><pre><span></span><code><span class="w"> </span>target_sources(OM3_&lt;target&gt; PRIVATE
-<span class="w"> </span>  ...
-<span class="gi">+  &lt;file&gt;</span>
-<span class="w"> </span>  ...
-<span class="w"> </span>)
-<span class="w"> </span>...
-<span class="gd">-add_patched_source(OM3_&lt;target&gt; &lt;file&gt;)</span>
-</code></pre></div></p>
+<p>At this point, it might also happen that some patches are not necessary anymore and they will throw an error when building the code. If this happens, one needs to update the corresponding patch. If no patch at all is needed after the update, the corresponding patch should be removed from the git repository:</p>
+<pre><code class="language-console">git rm &lt;COMPONENT&gt;/patches/&lt;file&gt;.F90_patch
+</code></pre>
+<p>and the original source file needs to be moved from the list of sources to patch to the "normal" source files list in <code>CMakeLists.txt</code>. The changes should look like this:</p>
+<pre><code class="language-diff"> target_sources(OM3_&lt;target&gt; PRIVATE
+   ...
++  &lt;file&gt;
+   ...
+ )
+ ...
+-add_patched_source(OM3_&lt;target&gt; &lt;file&gt;)
+</code></pre>
 <h2 id="new-releases">New Releases</h2>
 <p>When it is needed to update the model components to incorporate new upstream updates, this triggers a new minor release. These are the high-level steps to update the model component versions:</p>
 <ol>
@@ -1087,14 +1083,6 @@ and the original source file needs to be moved from the list of sources to patch
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

@@ -558,16 +558,14 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -974,16 +972,14 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1098,7 +1094,7 @@
 </ul>
 <hr />
 <h3 id="preprocessing-binary-input-files-required-by-ww3">Preprocessing &amp; Binary Input Files Required by WW3</h3>
-<p><img alt="WW3 Workflow" loading="lazy" src="../assets/WW3_workflow.png" /></p>
+<p><img alt="WW3 Workflow" src="../assets/WW3_workflow.png" />{: loading="lazy"}</p>
 <p>The <strong>grid preprocessor</strong> (<code>ww3_grid</code>) takes static grid data files located in the <code>WW3_PreProc</code> directory — including <code>OM2_1.Dpt</code> (bathymetry), <code>OM2_1.Lat</code> and <code>OM2_1.Lon</code> (coordinates), <code>OM2_1.Mask</code> (land mask), and <code>OM2_1.Obstr</code> (obstruction) — and produces the binary grid definition file <code>mod_def.ww3</code>. Similarly, an <strong>initialization tool</strong> (<code>ww3_strt</code>) creates a binary <code>restart.ww3</code> based on the <code>ww3_strt.inp</code>  file representing the initial wave state. These binary files are then consumed by the WW3 model during the simulation.</p>
 <ul>
 <li><strong>Dependency on Pre-Generated Files:</strong> WW3 expects <code>mod_def.ww3</code> and usually a <code>restart.ww3</code> to be present before a coupled run can start.</li>
@@ -1257,14 +1253,6 @@
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

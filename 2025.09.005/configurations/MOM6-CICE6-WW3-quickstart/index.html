@@ -651,9 +651,7 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -662,7 +660,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1023,9 +1021,7 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1034,7 +1030,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1185,18 +1181,18 @@
 <hr />
 <h2 id="1-load-required-modules">1. Load Required Modules</h2>
 <p>First, configure your environment by loading the appropriate modules:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>use<span class="w"> </span>/g/data/vk83/modules
-module<span class="w"> </span>load<span class="w"> </span>payu
-</code></pre></div>
+<pre><code class="language-bash">module use /g/data/vk83/modules
+module load payu
+</code></pre>
 <hr />
 <h2 id="2-clone-the-wave-configuration">2. Clone the Wave Configuration</h2>
 <p>Use <code>payu</code> to clone one of the existing wave-coupled ACCESS-OM3 configurations:</p>
 <h3 id="for-ryf-forcing">For <strong>RYF forcing</strong>:</h3>
-<div class="highlight"><pre><span></span><code>payu<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span>dev-MCW_100km_jra_ryf<span class="w">   </span>git@github.com:ACCESS-NRI/access-om3-configs.git<span class="w"> </span>wav_config_ryf
-</code></pre></div>
+<pre><code class="language-bash">payu clone --branch dev-MCW_100km_jra_ryf   git@github.com:ACCESS-NRI/access-om3-configs.git wav_config_ryf
+</code></pre>
 <h3 id="for-iaf-forcing">For <strong>IAF forcing</strong>:</h3>
-<div class="highlight"><pre><span></span><code>payu<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span>dev-MCW_100km_jra_iaf<span class="w">   </span>git@github.com:ACCESS-NRI/access-om3-configs.git<span class="w"> </span>wav_config_iaf
-</code></pre></div>
+<pre><code class="language-bash">payu clone --branch dev-MCW_100km_jra_iaf   git@github.com:ACCESS-NRI/access-om3-configs.git wav_config_iaf
+</code></pre>
 <p>This creates a working directory (<code>wav_config_ryf/</code> or <code>wav_config_iaf/</code>) containing the configuration files.</p>
 <hr />
 <h2 id="3-optional-regenerate-ww3-input-files">3. (Optional) Regenerate WW3 Input Files</h2>
@@ -1213,29 +1209,29 @@ If you modify <code>WW3_PreProc/namelists_Global.nml</code>, this affects WW3 ph
 <ol>
 <li><strong>Load the module version matching your <code>config.yaml</code>:</strong></li>
 </ol>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>use<span class="w"> </span>/g/data/vk83/modules
-module<span class="w"> </span>load<span class="w"> </span>access-om3/&lt;version&gt;<span class="w">  </span><span class="c1"># Use exact version listed in config.yaml</span>
-</code></pre></div>
+<pre><code class="language-bash">module use /g/data/vk83/modules
+module load access-om3/&lt;version&gt;  # Use exact version listed in config.yaml
+</code></pre>
 <ol>
 <li><strong>Run preprocessing tools from the config directory:</strong></li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;wave_config_directory&gt;/WW3_PreProc
+<pre><code class="language-bash">cd &lt;wave_config_directory&gt;/WW3_PreProc
 
-<span class="c1"># Generate mod_def.ww3</span>
+# Generate mod_def.ww3
 ww3_grid
 
-<span class="c1"># Generate restart.ww3</span>
+# Generate restart.ww3
 ww3_strt
-</code></pre></div>
+</code></pre>
 <p>This creates updated <code>mod_def.ww3</code> and <code>restart.ww3</code> in the <code>WW3_PreProc</code> directory.</p>
 <hr />
 <h2 id="4-modify-configyaml-if-using-regenerated-ww3-files">4. Modify <code>config.yaml</code> (if using regenerated WW3 files)</h2>
 <p>If you regenerated WW3 input files, update your <code>config.yaml</code> file:</p>
 <h3 id="replace-the-default-ww3-input-paths-with-the-regenerated-ones">Replace the default WW3 input paths with the regenerated ones:</h3>
-<div class="highlight"><pre><span></span><code>input:
+<pre><code>input:
   - &lt;wave_config_directory&gt;/WW3_PreProc/restart.ww3
   - &lt;wave_config_directory&gt;/WW3_PreProc/mod_def.ww3
-</code></pre></div>
+</code></pre>
 <blockquote>
 <p>Replace <code>&lt;wave_config_directory&gt;</code> with your actual path.</p>
 </blockquote>
@@ -1244,11 +1240,11 @@ ww3_strt
 <h2 id="5-run-the-model">5. Run the Model</h2>
 <p>From the configuration directory:</p>
 <h3 id="clean-and-initialize">Clean and initialize:</h3>
-<div class="highlight"><pre><span></span><code>payu<span class="w"> </span>sweep
-</code></pre></div>
+<pre><code class="language-bash">payu sweep
+</code></pre>
 <h3 id="start-the-run">Start the run:</h3>
-<div class="highlight"><pre><span></span><code>payu<span class="w"> </span>run
-</code></pre></div>
+<pre><code class="language-bash">payu run
+</code></pre>
 <p>This will launch the MOM6–CICE6–WW3 coupled model using your configured setup and inputs.</p>
 <hr />
 
@@ -1366,14 +1362,6 @@ ww3_strt
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

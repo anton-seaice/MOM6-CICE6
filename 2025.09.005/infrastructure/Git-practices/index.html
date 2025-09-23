@@ -832,16 +832,14 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -932,16 +930,14 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1008,10 +1004,10 @@
 <h2 id="feature-branch-naming">Feature branch naming</h2>
 <p>All modifications to configuration branches should be carried out via a pull request from a feature branch. The name of the feature branch should be as follows: <code>{issue_number}-{configuration_branch}</code>, where <code>{issue_number}</code> is the number of a corresponding issue in the GitHub repo that provides context and information about the work being done in the feature branch - e.g. <code>99-dev-01deg_jra55_ryf</code>. Feature branches should be deleted once they are merged.</p>
 <h2 id="branch-synchronisation-for-releases">Branch synchronisation for releases</h2>
-<p>Prior to a release, configuration branches should be synchronised by cherry-picking across all configurations and across repos, and a new release number created. The <code>!cherry-pick</code> GitHub action makes this easier:
-<div class="highlight"><pre><span></span><code>!cherry-pick &lt;hash_1&gt; &lt;hash_2&gt; ... &lt;hash_n&gt; into &lt;branch_1&gt; &lt;branch_2&gt; ... &lt;branch_n&gt;
-</code></pre></div>
-See <a href="https://github.com/ACCESS-NRI/access-om3-configs/pull/90">more details here</a>.</p>
+<p>Prior to a release, configuration branches should be synchronised by cherry-picking across all configurations and across repos, and a new release number created. The <code>!cherry-pick</code> GitHub action makes this easier:</p>
+<pre><code>!cherry-pick &lt;hash_1&gt; &lt;hash_2&gt; ... &lt;hash_n&gt; into &lt;branch_1&gt; &lt;branch_2&gt; ... &lt;branch_n&gt;
+</code></pre>
+<p>See <a href="https://github.com/ACCESS-NRI/access-om3-configs/pull/90">more details here</a>.</p>
 <h2 id="production-runs">Production runs</h2>
 <p>Production runs should be forked as separate repos, and the git runlog enabled.</p>
 
@@ -1129,14 +1125,6 @@ See <a href="https://github.com/ACCESS-NRI/access-om3-configs/pull/90">more deta
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

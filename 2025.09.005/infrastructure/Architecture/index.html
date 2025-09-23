@@ -742,9 +742,7 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -753,7 +751,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -918,9 +916,7 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -929,7 +925,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -972,7 +968,7 @@
 
 <h1 id="access-om3-architecture">ACCESS-OM3 architecture</h1>
 <p>The schematic below illustrates the structure of the MOM6-CICE6-WW3 ACCESS-OM3 executable. ACCESS-OM3 is a single executable, consisting of the NUOPC driver (the main program) and several model components, each wrapped in a NUOPC cap; the caps are coupled through the <a href="https://escomp.github.io/CMEPS/versions/master/html/index.html">CMEPS mediator</a> via NUOPC connectors. NUOPC is an interoperability layer for ESMF which standardises how model components interact. See discussions <a href="https://github.com/COSIMA/access-om3/discussions/7#discussioncomment-3446345">here</a> and <a href="https://github.com/COSIMA/access-om3/discussions/9">here</a> for more information.</p>
-<p><img alt="ACCESS-OM3 architecture" loading="lazy" src="../assets/nuopc_overview.png" /></p>
+<p><img alt="ACCESS-OM3 architecture" src="../assets/nuopc_overview.png" />{: loading="lazy" }</p>
 <p>The coupled fields and remapping methods used are recorded in the mediator log output file and can be found with <code>grep '^ mapping' archive/output000/log/med.log</code>; see <a href="https://escomp.github.io/CMEPS/versions/master/html/esmflds.html">here</a> for how to decode this. See <a href="configurations/Overview.md#coupling">the Configurations Overview page</a> for details on how the coupling is determined.</p>
 <h2 id="overview-of-codebase">Overview of codebase</h2>
 <p>The ACCESS-OM3 software is built from libraries containing the code for each model component.</p>
@@ -1113,14 +1109,6 @@
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

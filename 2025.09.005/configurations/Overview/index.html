@@ -626,16 +626,14 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1079,16 +1077,14 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1322,19 +1318,21 @@
 <h4 id="coupling">Coupling</h4>
 <ul>
 <li><strong>active model components</strong></li>
-<li><a href="https://github.com/search?q=repo%3AACCESS-NRI%2Faccess-om3-configs+path%3Adoc%2Fnuopc.runconfig+component_list&amp;type=code"><code>component_list</code></a> and entries in <a href="https://github.com/search?q=repo%3AACCESS-NRI%2Faccess-om3-configs+path%3Adoc%2Fnuopc.runconfig+ALLCOMP_attributes&amp;type=code"><code>ALLCOMP_attributes</code></a> section in <code>nuopc.runconfig</code>, e.g.
-<div class="highlight"><pre><span></span><code><span class="nt">component_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MED ATM ICE OCN ROF</span>
-<span class="nt">ALLCOMP_attributes:</span><span class="p">:</span>
-<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">ATM_model = datm</span><span class="w">  </span><span class="c1"># data atmosphere</span>
-<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">GLC_model = sglc</span><span class="w">  </span><span class="c1"># no glaciers/land ice (stub)</span>
-<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">ICE_model = cice</span><span class="w">  </span><span class="c1"># active sea ice (cice)</span>
-<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">LND_model = slnd</span><span class="w">  </span><span class="c1"># no land model (stub)</span>
-<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">MED_model = cesm</span><span class="w">  </span><span class="c1"># mediator</span>
-<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">OCN_model = mom</span><span class="w">   </span><span class="c1"># active ocean model (mom6)</span>
-<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">ROF_model = drof</span><span class="w">  </span><span class="c1"># data runoff</span>
-<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">WAV_model = swav</span><span class="w">  </span><span class="c1"># no wave model (stub)</span>
-<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</code></pre></div></li>
+<li><a href="https://github.com/search?q=repo%3AACCESS-NRI%2Faccess-om3-configs+path%3Adoc%2Fnuopc.runconfig+component_list&amp;type=code"><code>component_list</code></a> and entries in <a href="https://github.com/search?q=repo%3AACCESS-NRI%2Faccess-om3-configs+path%3Adoc%2Fnuopc.runconfig+ALLCOMP_attributes&amp;type=code"><code>ALLCOMP_attributes</code></a> section in <code>nuopc.runconfig</code>, e.g.</li>
+</ul>
+<pre><code class="language-yaml">component_list: MED ATM ICE OCN ROF
+ALLCOMP_attributes::
+     ATM_model = datm  # data atmosphere
+     GLC_model = sglc  # no glaciers/land ice (stub)
+     ICE_model = cice  # active sea ice (cice)
+     LND_model = slnd  # no land model (stub)
+     MED_model = cesm  # mediator
+     OCN_model = mom   # active ocean model (mom6)
+     ROF_model = drof  # data runoff
+     WAV_model = swav  # no wave model (stub)
+     ...
+</code></pre>
+<ul>
 <li><strong>components and fields to couple</strong></li>
 <li>See the coupling architecture <a href="../Architecture.md">here</a></li>
 <li>Coupling is <a href="https://earthsystemmodeling.org/nuopc/">negotiated between model components during initialization</a> of a model run. See <a href="https://escomp.github.io/CMEPS/versions/master/html/esmflds.html">here</a>: "<em>CMEPS advertises all possible fields that can be imported to and exported by the mediator for the target coupled system. Not all of these fields will be connected to the various components. The connections will be determined by what the components advertise in their respective advertise phase.</em>"</li>
@@ -1571,14 +1569,6 @@
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

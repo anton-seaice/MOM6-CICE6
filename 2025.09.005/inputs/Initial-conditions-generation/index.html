@@ -537,9 +537,7 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -548,7 +546,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -969,9 +967,7 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -980,7 +976,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1076,16 +1072,16 @@
 <p>This guide outlines the steps to generate initial-condition fields for MOM6 from <strong>World Ocean Atlas 2023 (WOA23)</strong> data. The workflow produces <strong>Conservative Temperature (CT)</strong> and <strong>Absolute Salinity (SA)</strong>, the prognostic variables required by the TEOS-10 equation of state (EOS) for use in ACCESS-OM3.</p>
 <h2 id="repository-and-requirements">Repository and Requirements</h2>
 <p>Clone the repository that includes all necessary tools and submodules:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/ACCESS-NRI/initial_conditions_access-om3.git
-<span class="nb">cd</span><span class="w"> </span>initial_conditions_access-om3
-</code></pre></div>
+<pre><code class="language-bash">git clone --recursive https://github.com/ACCESS-NRI/initial_conditions_access-om3.git
+cd initial_conditions_access-om3
+</code></pre>
 <p>A recursive clone is needed because this repository includes Nic Hannah’s <a href="https://github.com/COSIMA/ocean-ic">ocean-ic</a> code as a submodule, used to interpolate WOA23 data onto MOM6 3D grids.</p>
 <hr />
 <h2 id="step-1-optional-regenerate-temperature-salinity-from-raw-woa23">Step 1: (Optional) Regenerate Temperature &amp; Salinity from Raw WOA23</h2>
 <p>Use this step <strong>only</strong> if you want to regenerate T/S fields from a <strong>different version</strong> of World Ocean Atlas dataset, or are changing the EOS in MOM6, 
 and the form of temperature and salinity used prognostically in MOM6 is changing.</p>
-<div class="highlight"><pre><span></span><code>./inte.csh
-</code></pre></div>
+<pre><code>./inte.csh
+</code></pre>
 <p>The <code>inte.csh</code> script processes World Ocean Atlas 2023 (WOA23) data to create consistent monthly temperature and salinity fields suitable for generating MOM6 initial conditions.</p>
 <h3 id="purpose">Purpose</h3>
 <p>By default, WOA23 provides:
@@ -1100,18 +1096,18 @@ and the form of temperature and salinity used prognostically in MOM6 is changing
 <li><strong>Rename the salinity variable</strong> from <code>s_an</code> to <code>practical_salinity</code> for compatibility with the processing pipeline.</li>
 <li>Run <code>setup_WOA_initial_conditions.py</code> to merge the monthly upper-ocean data with the seasonal lower-ocean data. During this step, in-situ temperature is converted to <strong>CT</strong> and practical salinity is converted to <strong>SA</strong>, ensuring consistency with the TEOS-10 EOS.</li>
 </ol>
-<p>The processed monthly files are output to:
-<div class="highlight"><pre><span></span><code>/g/data/ik11/inputs/access-om3/woa23/monthly/YYYY.MM.DD
-</code></pre></div></p>
+<p>The processed monthly files are output to:</p>
+<pre><code>/g/data/ik11/inputs/access-om3/woa23/monthly/YYYY.MM.DD
+</code></pre>
 <blockquote>
 <p>💡 You only need to run this script if you're updating or modifying the WOA23 dataset or prognostic form of temperature or salinity. Otherwise, skip this step and proceed directly to regridding using <code>make_initial_conditions.sh</code>.</p>
 </blockquote>
 <hr />
 <h2 id="step-2-regrid-to-mom6-grid">Step 2: Regrid to MOM6 Grid</h2>
 <p>Use the regridding script to interpolate temperature and salinity to your MOM6 model grid.</p>
-<div class="highlight"><pre><span></span><code>cd initial_conditions_WOA/
+<pre><code>cd initial_conditions_WOA/
 qsub -v VGRID=&quot;&lt;path_to_vgrid_file&gt;&quot;,HGRID=&quot;&lt;path_to_hgrid_file&gt;&quot;,INPUT_DIR=&quot;&lt;path_to_input_directory&gt;&quot;,OUTPUT_DIR=&quot;&lt;path_to_output_directory&gt;&quot; -P $PROJECT make_initial_conditions.sh
-</code></pre></div>
+</code></pre>
 <p>Replace the variables with your grid and directory paths:</p>
 <ul>
 <li><code>VGRID</code>: MOM6 vertical grid file</li>
@@ -1125,8 +1121,8 @@ qsub -v VGRID=&quot;&lt;path_to_vgrid_file&gt;&quot;,HGRID=&quot;&lt;path_to_hgr
 <hr />
 <h2 id="step-3-finalize-tag-metadata">Step 3: Finalize &amp; Tag Metadata</h2>
 <p>Once satisfied with the output, run:</p>
-<div class="highlight"><pre><span></span><code>./finalise.sh -o /g/data/ik11/inputs/access-om3/woa23/025/
-</code></pre></div>
+<pre><code>./finalise.sh -o /g/data/ik11/inputs/access-om3/woa23/025/
+</code></pre>
 <p>This:
 - Commits any changes with <code>git</code>
 - Adds Git metadata to the NetCDF metadata</p>
@@ -1251,14 +1247,6 @@ qsub -v VGRID=&quot;&lt;path_to_vgrid_file&gt;&quot;,HGRID=&quot;&lt;path_to_hgr
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

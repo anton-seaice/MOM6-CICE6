@@ -514,9 +514,7 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -525,7 +523,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -960,9 +958,7 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -971,7 +967,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1090,16 +1086,16 @@
 </li>
 <li>
 <p>Start an interactive PBS session with additional CPUs and memory, e.g.:</p>
-<div class="highlight"><pre><span></span><code>qsub<span class="w"> </span>-I<span class="w"> </span>-v<span class="w"> </span>DISPLAY<span class="w"> </span>-q<span class="w"> </span>normalbw<span class="w"> </span>-l<span class="w"> </span><span class="nv">ncpus</span><span class="o">=</span><span class="m">4</span>,mem64Gb,walltime<span class="o">=</span><span class="m">10</span>:00:00,storage<span class="o">=</span>gdata/ik11+gdata/vk83+gdata/xp65
-</code></pre></div>
+<p><code>bash
+qsub -I -v DISPLAY -q normalbw -l ncpus=4,mem64Gb,walltime=10:00:00,storage=gdata/ik11+gdata/vk83+gdata/xp65</code></p>
 <p>(add other storage points as appropriate)</p>
 </li>
 <li>
 <p>Run the <code>apply_bathy_mom_restarts.py</code> script from <code>restart_modifications</code> directory to create new MOM restarts based on the old restarts but with the new bathymetry and any new ocean points filled in with the template, e.g.:</p>
-<p><div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>om3-scripts/restart_modifications
-python<span class="w"> </span>apply_bathy_mom_restarts.py<span class="w"> </span>--help
-python<span class="w"> </span>apply_bathy_mom_restarts.py<span class="w"> </span>--template_dir<span class="w"> </span>new_restart_dir<span class="w"> </span>--old_dir<span class="w"> </span>old_restart_dir<span class="w"> </span>--output_dir<span class="w"> </span>patched_restart_dir<span class="w"> </span>--template_prefix<span class="w"> </span>access-om3.mom6.r.1900-01-01-00000<span class="w"> </span>--old_prefix<span class="w"> </span>access-om3.mom6.r.1900-01-01-00000<span class="w"> </span>--nprocs<span class="w"> </span><span class="m">4</span>
-</code></pre></div>
+<p><code>bash
+cd om3-scripts/restart_modifications
+python apply_bathy_mom_restarts.py --help
+python apply_bathy_mom_restarts.py --template_dir new_restart_dir --old_dir old_restart_dir --output_dir patched_restart_dir --template_prefix access-om3.mom6.r.1900-01-01-00000 --old_prefix access-om3.mom6.r.1900-01-01-00000 --nprocs 4</code>
 This can take quite a while. Note that <code>apply_bathy_mom_restarts.py</code> requires python and some dependencies --  these are available through <code>module use /g/data/xp65/public/modules; module load conda/analysis3</code>.</p>
 </li>
 <li>
@@ -1118,17 +1114,16 @@ This can take quite a while. Note that <code>apply_bathy_mom_restarts.py</code> 
 </li>
 <li>
 <p>Start an interactive PBS session (if needed)</p>
-<div class="highlight"><pre><span></span><code>qsub -I -v DISPLAY -q normalbw -l ncpus=2,mem=32GB,walltime=02:00:00,storage=gdata/ik11+gdata/vk83+gdata/xp65`
-</code></pre></div>
+<p><code>qsub -I -v DISPLAY -q normalbw -l ncpus=2,mem=32GB,walltime=02:00:00,storage=gdata/ik11+gdata/vk83+gdata/xp65`</code> </p>
 <p>Add any additional storage paths your data resides in.</p>
 </li>
 <li>
 <p>Run the coupler restart fix script <code>remask_cpl_restart.py</code> from <code>om3-scripts/restart_modifications</code></p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>om3-scripts/restart_modifications
-python3<span class="w"> </span>remask_cpl_restart.py<span class="w"> </span>--input_file<span class="w"> </span>/path/to/access-om3.cpl.r.0000-01-01-00000.nc<span class="w"> </span>--output_file<span class="w"> </span>/path/to/access-om3.cpl.r.0000-01-01-00000.nc<span class="w"> </span>--mask_file<span class="w"> </span>/path/to/kmt.nc<span class="w"> </span>--mask_var<span class="w"> </span>kmt
-
-<span class="sb">`</span>python3<span class="w"> </span>remask_cpl_restart.py<span class="w"> </span>--input_file<span class="w"> </span>/path/to/access-om3.cpl.r.0000-01-01-00000.nc<span class="w"> </span>--output_file<span class="w"> </span>/path/to/access-om3.cpl.r.0000-01-01-00000.nc<span class="w"> </span>--mask_file<span class="w"> </span>/path/to/kmt.nc<span class="w"> </span>--mask_var<span class="w"> </span>kmt<span class="sb">`</span>
-</code></pre></div>
+<p>``` bash
+cd om3-scripts/restart_modifications
+python3 remask_cpl_restart.py --input_file /path/to/access-om3.cpl.r.0000-01-01-00000.nc --output_file /path/to/access-om3.cpl.r.0000-01-01-00000.nc --mask_file /path/to/kmt.nc --mask_var kmt</p>
+<p><code>python3 remask_cpl_restart.py --input_file /path/to/access-om3.cpl.r.0000-01-01-00000.nc --output_file /path/to/access-om3.cpl.r.0000-01-01-00000.nc --mask_file /path/to/kmt.nc --mask_var kmt</code>
+```</p>
 </li>
 <li>
 <p>Check the output</p>
@@ -1141,10 +1136,9 @@ python3<span class="w"> </span>remask_cpl_restart.py<span class="w"> </span>--in
 <p>Place the modified MOM6 and coupler restart files (produced by the scripts) in this directory.</p>
 <p>Copy the unmodified restart files from other components (e.g., CICE, DATM, DROF) from your old restart directory into this same directory.</p>
 <p>Example files to copy alongside MOM6 and CPL restarts:
-<div class="highlight"><pre><span></span><code>access-om3.cice.r.1900-01-01-00000.nc  
+<code>access-om3.cice.r.1900-01-01-00000.nc  
 access-om3.datm.r.1900-01-01-00000.nc  
-access-om3.drof.r.1900-01-01-00000.nc  
-</code></pre></div></p>
+access-om3.drof.r.1900-01-01-00000.nc</code></p>
 <p>This ensures the new restart directory contains a complete, consistent set of restart files with updates only to MOM6 and the coupled components.</p>
 <p>Set this as the restart directory for a new experiment, using the <code>restart:</code> line in the <code>config.yaml</code> <a href="https://payu.readthedocs.io/en/stable/config.html#miscellaneous">Payu will use this as the restart for the experiment.
 </a> or the the <code>-r</code> flag when running <code>payu clone</code></p>
@@ -1265,14 +1259,6 @@ access-om3.drof.r.1900-01-01-00000.nc
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

@@ -850,16 +850,14 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -893,22 +891,20 @@
 
   <h1>Releases</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>This page is out of date, and needs to be updated to the new Spack-based build process! We no longer use the COSIMA respository for ACCESS-OM3 builds</strong></p>
-</div>
+<p>!!! warning
+      <strong>This page is out of date, and needs to be updated to the new Spack-based build process! We no longer use the COSIMA respository for ACCESS-OM3 builds</strong></p>
 <h2 id="releases">Releases</h2>
 <p>There are several <a href="https://github.com/COSIMA/access-om3/releases">ACCESS-OM3 releases</a> available.</p>
-<p>Precompiled executables of these are available via spack packages in
-<div class="highlight"><pre><span></span><code>/g/data/ik11/spack/*/modules/access-om3
-</code></pre></div>
-(Access requires membership of the <code>ik11</code> project - apply <a href="https://my.nci.org.au/mancini/project/ik11">here</a> if needed.)</p>
+<p>Precompiled executables of these are available via spack packages in</p>
+<pre><code>/g/data/ik11/spack/*/modules/access-om3
+</code></pre>
+<p>(Access requires membership of the <code>ik11</code> project - apply <a href="https://my.nci.org.au/mancini/project/ik11">here</a> if needed.)</p>
 <p>Those matching <a href="https://github.com/COSIMA/access-om3/releases">ACCESS-OM3 releases</a> are stable, and generally the newest is the recommended version for general use.
 Those containing "x" are unstable development versions which can change without notice.</p>
-<p>Executables themselves can be found via
-<div class="highlight"><pre><span></span><code>find /g/data/ik11/spack/*/opt -name &quot;access-om3-*CICE6*&quot;
-</code></pre></div>
-The file path includes the full <a href="https://github.com/COSIMA/access-om3/commits/main/">ACCESS-OM3 commit hash</a> indicating the sources used.</p>
+<p>Executables themselves can be found via</p>
+<pre><code>find /g/data/ik11/spack/*/opt -name &quot;access-om3-*CICE6*&quot;
+</code></pre>
+<p>The file path includes the full <a href="https://github.com/COSIMA/access-om3/commits/main/">ACCESS-OM3 commit hash</a> indicating the sources used.</p>
 <p>To switch to one of these you need to change the <code>exe:</code> and <code>modules: use:</code> entries in <code>config.yaml</code> in a consistent way - see <a href="https://github.com/COSIMA/access-om3/issues/93">here</a> for full details. You also need to change the <code>input:</code> entries to the matching version number.</p>
 
 
@@ -1025,14 +1021,6 @@ The file path includes the full <a href="https://github.com/COSIMA/access-om3/co
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>

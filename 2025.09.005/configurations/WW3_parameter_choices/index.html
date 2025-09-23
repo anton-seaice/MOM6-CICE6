@@ -674,9 +674,7 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -685,7 +683,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -716,21 +714,6 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sin6-sina0004" class="md-nav__link">
-    <span class="md-ellipsis">
-      &amp;SIN6 SINA0=0.04 /
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="&amp;SIN6 SINA0=0.04 /">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#swell-dissipation-in-ww3-swl6" class="md-nav__link">
@@ -1173,9 +1156,7 @@
                   <div class="md-sidebar__inner">
                     
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1184,7 +1165,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1215,21 +1196,6 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sin6-sina0004" class="md-nav__link">
-    <span class="md-ellipsis">
-      &amp;SIN6 SINA0=0.04 /
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="&amp;SIN6 SINA0=0.04 /">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#swell-dissipation-in-ww3-swl6" class="md-nav__link">
@@ -1504,23 +1470,24 @@ J. Atmos. Oceanic Techn., 29, 1329–1346.<br />
 <a href="https://doi.org/10.1175/JTECH-D-11-00092.1">https://doi.org/10.1175/JTECH-D-11-00092.1</a></p>
 </blockquote>
 <h3 id="current-st6-parameters">Current ST6 Parameters</h3>
-<div class="highlight"><pre><span></span><code>&amp;SIN6 SINA0=0.04 /
+<pre><code>&amp;SIN6 SINA0=0.04 /
 &amp;SWL6 SWLB1=0.22E-03, CSTB1=T /
 &amp;SNL1 LAMBDA=0.237, NLPROP=2.13E+07 /
-</code></pre></div>
+</code></pre>
 <p>These parameters configure wind input (<code>SIN6</code>), swell dissipation (<code>SWL6</code>), and nonlinear interactions (<code>SNL1</code>) for ST6 physics.</p>
 <hr />
 <h3 id="sina0">SINA0</h3>
 <p><code>SINA0</code> is a tuning parameter in the <code>&amp;SIN6</code> namelist that controls the <strong>damping effect of adverse winds</strong> in the ST6 wind input scheme. It scales the negative input term that reduces wave growth when the wind opposes wave direction, helping to prevent unrealistic wave energy buildup.</p>
 <p>Current setting:</p>
-<h2 id="sin6-sina0004"><div class="highlight"><pre><span></span><code>&amp;SIN6 SINA0=0.04 /
-</code></pre></div></h2>
+<pre><code>&amp;SIN6 SINA0=0.04 /
+</code></pre>
+<hr />
 <h3 id="swell-dissipation-in-ww3-swl6">Swell Dissipation in WW3 (<code>&amp;SWL6</code>)</h3>
 <p>Swell dissipation in WW3 accounts for wave energy loss due to interactions with oceanic turbulence, especially in non-breaking swell conditions. While its effect is small in regions dominated by wind waves, it becomes significant for long swells or parts of the wave spectrum below the breaking threshold.</p>
 <p>The dissipation is controlled through the <code>&amp;SWL6</code> namelist group in <code>namelists_Global.nml</code>.</p>
 <h3 id="parameters-used">Parameters Used</h3>
-<div class="highlight"><pre><span></span><code>&amp;SWL6 SWLB1 = 0.22E-03, CSTB1 = T /
-</code></pre></div>
+<pre><code>&amp;SWL6 SWLB1 = 0.22E-03, CSTB1 = T /
+</code></pre>
 <ul>
 <li>
 <p>SWLB1: Sets the dissipation coefficient for swell energy loss.</p>
@@ -1532,9 +1499,9 @@ J. Atmos. Oceanic Techn., 29, 1329–1346.<br />
 <hr />
 <h3 id="nonlinear-interactions-snl1">Nonlinear Interactions (<code>&amp;SNL1</code>)</h3>
 <p>The <code>&amp;SNL1</code> namelist configures nonlinear wave–wave interactions, which redistribute energy within the wave spectrum.</p>
-<p><div class="highlight"><pre><span></span><code>&amp;SNL1 LAMBDA = 0.237, NLPROP = 2.13E+07 /
-</code></pre></div>
-LAMBDA: Tuning factor for interaction strength.</p>
+<pre><code>&amp;SNL1 LAMBDA = 0.237, NLPROP = 2.13E+07 /
+</code></pre>
+<p>LAMBDA: Tuning factor for interaction strength.</p>
 <p>NLPROP: Constant in the nonlinear source term.</p>
 <hr />
 <h2 id="pr3-tuning-not-currently-used">🌊 PR3 Tuning (Not Currently Used)</h2>
@@ -1580,8 +1547,8 @@ LAMBDA: Tuning factor for interaction strength.</p>
 </tbody>
 </table>
 <p>If PR3 is adopted, these values can be set as based on the Grid resolution:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&amp;</span><span class="n">PRO3</span><span class="w"> </span><span class="n">WDTHCG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="k">value</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">WDTHTH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="k">value</span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span>
-</code></pre></div>
+<pre><code class="language-fortran">&amp;PRO3 WDTHCG = &lt;value&gt;, WDTHTH = &lt;value&gt; /
+</code></pre>
 <blockquote>
 <p>📚 Reference:
 Arun Chawla, Hendrik L. Tolman (2008), <strong>Obstruction grids for spectral wave models</strong>, <em>Ocean Modelling</em>, Volume 22, Issues 1–2, Pages 12–25,<a href="https://doi.org/10.1016/j.ocemod.2008.01.003">doi.org/10.1016/j.ocemod.2008.01.003</a></p>
@@ -1635,11 +1602,11 @@ Arun Chawla, Hendrik L. Tolman (2008), <strong>Obstruction grids for spectral wa
 </table>
 <h3 id="current-access-om3-coupled-model-configuration">Current ACCESS-OM3 Coupled Model Configuration</h3>
 <p>In the MOM6–CICE6–WW3 coupled setup, we use:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&amp;</span><span class="n">LMPN</span>
-<span class="w">  </span><span class="n">LMPENABLED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">,</span>
-<span class="w">  </span><span class="n">HSLMODE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="o">/</span>
-</code></pre></div>
+<pre><code class="language-fortran">&amp;LMPN
+  LMPENABLED = T,
+  HSLMODE = 1,
+/
+</code></pre>
 <ul>
 <li>
 <p><code>LMPENABLED = T</code><br />
@@ -1671,13 +1638,13 @@ Ocean Modelling, <strong>103</strong>, 145–160.<br />
 - Effective shear modulus</p>
 <p>This method attenuates wave energy as it propagates into ice-covered regions.</p>
 <h4 id="parameters-used-in-access-configuration">Parameters Used in ACCESS Configuration:</h4>
-<div class="highlight"><pre><span></span><code>&amp;SIC3
+<pre><code>&amp;SIC3
   IC3CHENG = .TRUE.,
   USECGICE = .FALSE.,
   IC3VISC  = 1.0e3,
   IC3DENS  = 917.0,
   IC3ELAS  = 1.0e3 /
-</code></pre></div>
+</code></pre>
 <ul>
 <li><code>IC3CHENG</code>: Enables a stable numerical solver.</li>
 <li><code>USECGICE</code>: When <code>FALSE</code>, group velocity is not affected by ice.</li>
@@ -1697,8 +1664,8 @@ Ocean Modelling, <strong>103</strong>, 145–160.<br />
 <p>The attenuation α is given by:</p>
 <p>α = C₁ + C₂·σ/2π + C₃·(σ/2π)² + C₄·(σ/2π)³ + C₅·(σ/2π)⁴</p>
 <p>Recommended coefficients (from Meylan et al. 2014):</p>
-<div class="highlight"><pre><span></span><code>Cice,1...5 = [0, 0, 2.12 × 10⁻³, 0, 4.59 × 10⁻²]
-</code></pre></div>
+<pre><code>Cice,1...5 = [0, 0, 2.12 × 10⁻³, 0, 4.59 × 10⁻²]
+</code></pre>
 <p>WW3 must be compiled with the <code>IC4</code> switch to use this wave attenuation scheme.</p>
 <h4 id="reference_1">Reference:</h4>
 <p>Meylan, M. H., Bennetts, L. G., &amp; Kohout, A. L. (2014). <em>In situ measurements and analysis of ocean waves in the Antarctic marginal ice zone</em>.<br />
@@ -1712,9 +1679,9 @@ Ocean Modelling, <strong>103</strong>, 145–160.<br />
 <li><strong>Anelastic dissipation</strong>, representing internal energy loss in sea ice due to stress oscillations.</li>
 </ul>
 <h4 id="parameters-used_1">Parameters Used</h4>
-<div class="highlight"><pre><span></span><code>&amp;IS2ANDISB = .TRUE.,
+<pre><code>&amp;IS2ANDISB = .TRUE.,
 IS2BACKSCAT = 0.2,
-</code></pre></div>
+</code></pre>
 <h4 id="description">Description</h4>
 <ul>
 <li><code>IS2ANDISB = .TRUE.</code> enables anelastic dissipation, allowing energy loss from wave-induced cyclic stress in sea ice.</li>
@@ -1842,14 +1809,6 @@ IS2BACKSCAT = 0.2,
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
-      
-        <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js"></script>
       
     
   </body>
