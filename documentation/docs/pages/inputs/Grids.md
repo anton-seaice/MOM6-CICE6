@@ -1,5 +1,7 @@
 ## Horizontal grid
 
+In the future, I write some new content
+
 All ACCESS global ocean and sea-ice models use a tripolar grid.
 For ACCESS-OM3, new grids will be created from scratch for all resolutions. So-far a new grid  (1142 x 1440 cells) has been created for 25km configurations. 
 The 25km grid and future OM3 grids largely follows the grids used in OM2, with some refinements to increase resolution and extent around Antarctica, and align the equator with model cell centres, rather than edges.
@@ -31,7 +33,7 @@ However refer to the metadata of the latest `ocean_hgrid.nc` to find the latest 
 
 Secondly, an _ESMF Mesh_ file is [derived](https://github.com/COSIMA/om3-scripts/blob/main/mesh_generation/generate_mesh.py) from the MOM supergrid. 
 The MOM supergrid file is used by the MOM and CICE model components, whilst the ESMF Mesh file is used in the coupler. 
-(Additional ESMF mesh files exist for the data atmosphere and runoff components). How to configure these in the model is captured in the [configurations](configurations/Overview.md) page.
+(Additional ESMF mesh files exist for the data atmosphere and runoff components). How to configure these in the model is captured in the [configurations](../configurations/Overview.md) page.
 
 For analysis, it's best to use model grids output by the models:
 
