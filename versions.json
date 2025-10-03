@@ -10,5 +10,12 @@
     "aliases": [
       "latest"
     ]
+  },
+  {
+    "version": "2025.01.000",
+    "title": "2025.01.000",
+    "aliases": [
+      "release"
+    ]
   }
 ]
