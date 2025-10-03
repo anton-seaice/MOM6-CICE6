@@ -1,5 +1,7 @@
 ## Horizontal grid
 
+In the future, I write some new content
+
 All ACCESS global ocean and sea-ice models use a tripolar grid.
 For ACCESS-OM3, new grids will be created from scratch for all resolutions. So-far a new grid  (1142 x 1440 cells) has been created for 25km configurations. 
 The 25km grid and future OM3 grids largely follows the grids used in OM2, with some refinements to increase resolution and extent around Antarctica, and align the equator with model cell centres, rather than edges.
