@@ -2,14 +2,14 @@ name: PR Preview
 
 on:
   pull_request:
-  types:
+    types:
       - opened
       - reopened
       - synchronize
       - closed
-  paths:
+    paths:
       - 'documentation/**'
-  workflow_dispatch: #Action can also be triggered manually
+    workflow_dispatch: #Action can also be triggered manually
 env:
   TZ: Australia/Canberra
   DOC_DIR: documentation
