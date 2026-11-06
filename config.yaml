@@ -29,7 +29,7 @@ jobfs: 10GB
 mem: 13000GB
 walltime: 6:00:00
 jobname: 1883-base
-experiment_prefix: MC_25km_jra_iaf
+experiment_prefix: MC_25km_jra_iaf_icespeed
 
 model: access-om3
 exe: access-om3-MOM6-CICE6
