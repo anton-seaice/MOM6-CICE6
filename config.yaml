@@ -28,7 +28,7 @@ ncpus: 2704
 jobfs: 10GB
 mem: 13000GB
 walltime: 6:00:00
-jobname: 1883-base
+jobname: drag-0.049
 experiment_prefix: MC_25km_jra_iaf_icespeed
 
 model: access-om3
