@@ -84,8 +84,8 @@ qsub_flags: -W umask=027
 restart_freq: 1YS
 
 # Start from test5.1 (MC_25km_jra_iaf+wombatlite) at 2005-01-01 (ACCESS-NRI/access-om3-configs#1883)
-restart: /scratch/x77/aek156/access-om3/archive/MC_25km_jra_iaf+wombatlite-test5.1-8f50b769/restart046
+restart: /g/data/ol01/outputs/access-om3-25km/MC_25km_jra_iaf+wombatlite-test5.1-8f50b769/restart046
 storage:
-  scratch:
-    - x77
+  gdata:
+    - ol01
 payu_minimum_version: 1.3.6
