@@ -5,5 +5,7 @@
   nx_global = 1440
   ny_global = 1152
   restfilm = "null"
+  rofi_scale_sh = 2.56, 2.54, 1.68, 0.871, 0.48, 0.452, 0.319, 0.327, 0.304, 0.35, 0.636, 1.48
+  rofi_scale_normalise = .true.
   skip_restart_read = .false.
 /
