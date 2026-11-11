@@ -36,7 +36,7 @@ PELAYOUT_attributes::
      cpl_pestride = 1
      cpl_rootpe = 0
      esmf_logging = ESMF_LOGKIND_NONE
-     ice_ntasks = 274
+     ice_ntasks = 482
      ice_nthreads = 1
      ice_pestride = 1
      ice_rootpe = 0
@@ -44,7 +44,7 @@ PELAYOUT_attributes::
      ocn_ntasks = 2430
      ocn_nthreads = 1
      ocn_pestride = 1
-     ocn_rootpe = 274
+     ocn_rootpe = 482
      pio_asyncio_ntasks = 0
      pio_asyncio_rootpe = 1
      pio_asyncio_stride = 0
