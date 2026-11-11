@@ -10,15 +10,15 @@ runSeq::
   OCN
   OCN -> MED :remapMethod=redist
   MED med_phases_post_ocn
+  ATM
+  ROF
   MED med_phases_prep_ice
   MED -> ICE :remapMethod=redist
   ICE
-  ROF
   MED med_phases_diag_rof
   MED med_phases_diag_ice_ice2med
   ICE -> MED :remapMethod=redist
   MED med_phases_post_ice
-  ATM
   ATM -> MED :remapMethod=redist
   MED med_phases_post_atm
   MED med_phases_diag_atm

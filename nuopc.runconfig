@@ -30,7 +30,7 @@ PELAYOUT_attributes::
      atm_ntasks = 274
      atm_nthreads = 1
      atm_pestride = 1
-     atm_rootpe = 0
+     atm_rootpe = 482
      cpl_ntasks = 274
      cpl_nthreads = 1
      cpl_pestride = 1
@@ -51,7 +51,7 @@ PELAYOUT_attributes::
      rof_ntasks = 274
      rof_nthreads = 1
      rof_pestride = 1
-     rof_rootpe = 0
+     rof_rootpe = 756
 ::
 
 component_list: MED ATM ICE OCN ROF
